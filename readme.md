@@ -1,5 +1,6 @@
 HW 18.02.2019
 progit: https://git-scm.com/book/ru/v2
+https://developer.android.com/guide/
 
 Create project (github || bitbucket), soursetree
 Push Android Project to master in repo (.gitignore)
