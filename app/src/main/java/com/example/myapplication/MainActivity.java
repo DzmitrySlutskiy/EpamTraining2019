@@ -14,4 +14,9 @@ public class MainActivity extends AppCompatActivity {
         Toast.makeText(this, "Simple toast for feature 2", Toast.LENGTH_SHORT).show();
         Toast.makeText(this, "This is second branch second toast", Toast.LENGTH_SHORT).show();
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
 }
