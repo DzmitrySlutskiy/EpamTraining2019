@@ -2,8 +2,8 @@
 
 ##### Usefull links . 
 
-progit: https://git-scm.com/book/ru/v2 . 
-https://developer.android.com/guide/ . 
+progit: https://git-scm.com/book/ru/v2  
+https://developer.android.com/guide/  
 
 Create project (github || bitbucket), soursetree  
 Push Android Project to master in repo (.gitignore)  
@@ -22,4 +22,4 @@ branching model https://habr.com/ru/post/106912/
 
 Send project theme and url to dsslutskiy@gmail.com
 Format
-First_Name Last_Name url name_of_proj . 
+First_Name Last_Name url name_of_proj  
