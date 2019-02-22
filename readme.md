@@ -1,6 +1,14 @@
+# HW 22.02.2019 
+
+No homework 
+## useful tools 
+ - https://github.com/Genymobile/scrcpy
+
+ - https://developer.android.com/studio/intro/studio-config
+
 # HW 18.02.2019
 
-##### Usefull links . 
+## Usefull links . 
 
 progit: https://git-scm.com/book/ru/v2  
 https://developer.android.com/guide/  
@@ -26,7 +34,4 @@ First_Name Last_Name url name_of_proj
 
 
 # mentors https://docs.google.com/spreadsheets/d/1eg91p9y_YCM7W3GlDLKIDfyohHzExp0S4jGO9YQVaKI/edit?usp=sharing
-# useful tools 
- - https://github.com/Genymobile/scrcpy
 
- - https://developer.android.com/studio/intro/studio-config
