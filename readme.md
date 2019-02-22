@@ -28,3 +28,5 @@ First_Name Last_Name url name_of_proj
 # mentors https://docs.google.com/spreadsheets/d/1eg91p9y_YCM7W3GlDLKIDfyohHzExp0S4jGO9YQVaKI/edit?usp=sharing
 # useful tools 
  - https://github.com/Genymobile/scrcpy
+
+ - https://developer.android.com/studio/intro/studio-config
