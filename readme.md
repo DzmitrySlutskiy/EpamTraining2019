@@ -46,5 +46,5 @@ Read about:
 
 ### Usefull links:
 
-- [Mentors] (https://docs.google.com/spreadsheets/d/1eg91p9y_YCM7W3GlDLKIDfyohHzExp0S4jGO9YQVaKI/edit?usp=sharing "Mentors")
+- [Mentors](https://docs.google.com/spreadsheets/d/1eg91p9y_YCM7W3GlDLKIDfyohHzExp0S4jGO9YQVaKI/edit?usp=sharing "Mentors")
 
