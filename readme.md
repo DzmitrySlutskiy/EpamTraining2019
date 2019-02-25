@@ -34,6 +34,15 @@ Send project theme and url to dsslutskiy@gmail.com
 Format
 First_Name Last_Name url name_of_proj  
 
+# HW 25.02.2019
+Read about:
+- Object basic methods: hashCode(), equals(), toString(), etc.
+- Collections: List, Set, Map, etc.
+- Generic Methods, Wildcards.
+- StringBuilder vs StringBuffer.
+- Error handling: try-catch-finally blocks.
+
+[Presentation: Java Basics](https://drive.google.com/file/d/1x-oEkT--PojEBBwFoxIOC5eeb5hZjqUA/view?usp=sharing "Java Basics")
 
 # mentors https://docs.google.com/spreadsheets/d/1eg91p9y_YCM7W3GlDLKIDfyohHzExp0S4jGO9YQVaKI/edit?usp=sharing
 
