@@ -44,5 +44,7 @@ Read about:
 
 [Presentation: Java Basics](https://drive.google.com/file/d/1x-oEkT--PojEBBwFoxIOC5eeb5hZjqUA/view?usp=sharing "Java Basics")
 
-# mentors https://docs.google.com/spreadsheets/d/1eg91p9y_YCM7W3GlDLKIDfyohHzExp0S4jGO9YQVaKI/edit?usp=sharing
+### Usefull links:
+
+- [Mentors] (https://docs.google.com/spreadsheets/d/1eg91p9y_YCM7W3GlDLKIDfyohHzExp0S4jGO9YQVaKI/edit?usp=sharing "Mentors")
 
