@@ -71,9 +71,3 @@ branching model https://habr.com/ru/post/106912/
 Send project theme and url to dsslutskiy@gmail.com
 Format
 First_Name Last_Name url name_of_proj  
-
-
-### Usefull links:
-
-- [Mentors](https://docs.google.com/spreadsheets/d/1eg91p9y_YCM7W3GlDLKIDfyohHzExp0S4jGO9YQVaKI/edit?usp=sharing "Mentors")
-
