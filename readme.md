@@ -1,4 +1,32 @@
+[Useful links and plugins](/Useful_things.md) 😉
+
 # HW Issues should be created in this repo!
+## Feel free to create issue if some links don't work or you need some help
+
+
+# HW 28.02.2019
+- Familiarize with code style guide.
+
+[Presentation: Clean Code](https://docs.google.com/presentation/d/1IS_aoc5RUhsLZKBqJW0JPkKnBpUE7I5fOG6sJkn7rbk/edit?usp=sharing "Clean Code")
+
+[More about: Clean Code [RU]](https://medium.com/clean-code-channel/understanding-clean-code-in-android-3f00301fe16e "Clean Code")
+
+
+## Part 1:
+- you will work in repository with Calculator from interview:  
+- make separate branch for refactoring (like *homework_28.02_clean_code*)
+- align code with code style guidelines
+- push changes and open pull request in your repository (from your branch to master)
+- create issue with link to your pull request and mention your **Mentor**.
+
+## Part 2:
+- fork training repository
+- make separate branch for refactoring
+- make some changes and after that make sure that all tests are successful
+- push changes and open pull request in training repository (from your branch to master)
+- add link for pull request to your previous issue
+
+The best homework request will get to the repository 😎
 
 # HW 25.02.2019
 Read about:
@@ -43,9 +71,3 @@ branching model https://habr.com/ru/post/106912/
 Send project theme and url to dsslutskiy@gmail.com
 Format
 First_Name Last_Name url name_of_proj  
-
-
-### Usefull links:
-
-- [Mentors](https://docs.google.com/spreadsheets/d/1eg91p9y_YCM7W3GlDLKIDfyohHzExp0S4jGO9YQVaKI/edit?usp=sharing "Mentors")
-
