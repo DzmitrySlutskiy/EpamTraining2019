@@ -5,7 +5,9 @@
 
 # HW 28.02.2019
 - Familiarize with code style guide.
+
 [Presentation: Clean Code](https://docs.google.com/presentation/d/1IS_aoc5RUhsLZKBqJW0JPkKnBpUE7I5fOG6sJkn7rbk/edit?usp=sharing "Clean Code")
+
 [More about: Clean Code [RU]](https://medium.com/clean-code-channel/understanding-clean-code-in-android-3f00301fe16e "Clean Code")
 
 
