@@ -20,5 +20,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         Log.d(getClass().getSimpleName(), "onResume() called");
+
+        new GradleDemo().foo();
     }
 }
