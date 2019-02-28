@@ -1,6 +1,7 @@
 [Useful links and plugins](/Useful_things.md) 😉
 
 # HW Issues should be created in this repo!
+## Feel free to create issue if some links don't work or you need some help
 
 
 # HW 28.02.2019
@@ -13,16 +14,17 @@
 
 ## Part 1:
 - you will work in repository with Calculator from interview:  
-- make separate branch for refactoring (like homework_28.02_clean_code)
+- make separate branch for refactoring (like *homework_28.02_clean_code*)
 - align code with code style guidelines
 - push changes and open pull request in your repository (from your branch to master)
-- create issue with link to your pull request.
+- create issue with link to your pull request and mention your **Mentor**.
 
 ## Part 2:
 - fork training repository
 - make separate branch for refactoring
 - make some changes and after that make sure that all tests are successful
 - push changes and open pull request in training repository (from your branch to master)
+- add link for pull request to your previous issue
 
 The best homework request will get to the repository 😎
 
