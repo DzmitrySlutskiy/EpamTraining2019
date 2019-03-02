@@ -1,39 +1,52 @@
 package com.epam.cleancode.comments;
 
 public class MortgageInstallmentCalculator {
+    private final static String NEGATIVE_VALUES_ARE_NOT_ALLOWED = "Negative values are not allowed";
+    private static double rateOfInterestInDecimal;
+    private static double termOfMortgageInMonths;
+    private static double monthlyRate;
 
     /**
-     *
-     * @param p principal amount
-     * @param t term of mortgage in years
-     * @param r rate of interest
+     * @param principalAmount            principal amount
+     * @param termOfMortgageInYear       term of mortgage in years
+     * @param rateOfInterestInPercentage rate of interest
      * @return monthly payment amount
      */
-    public static double calculateMonthlyPayment(
-            int p, int t, double r) {
+    public static double calculateMonthlyPayment(int principalAmount, int termOfMortgageInYear, double rateOfInterestInPercentage) {
 
-        //cannot have negative loanAmount, term duration and rate of interest
-        if (p < 0 || t <= 0 || r < 0) {
-            throw new InvalidInputException("Negative values are not allowed");
+        checkValidity(principalAmount, termOfMortgageInYear, rateOfInterestInPercentage);
+
+        rateOfInterestInDecimal = getRateOfInterestInDecimal(rateOfInterestInPercentage);
+        termOfMortgageInMonths = getTermOfMortgageInMonths(termOfMortgageInYear);
+
+        if (rateOfInterestInDecimal == 0) {
+            return principalAmount / termOfMortgageInMonths;
         }
 
-        // Convert interest rate into a decimal - eg. 6.5% = 0.065
-        r /= 100.0;
+        monthlyRate = getMonthlyRate(rateOfInterestInDecimal);
 
-        // convert term in years to term in months
-        double tim = t * 12;
+        return getMonthlyPayment(principalAmount, monthlyRate, termOfMortgageInMonths);
+    }
 
-        //for zero interest rates
-        if(r==0)
-            return  p/tim;
+    private static double getTermOfMortgageInMonths(int termOfMortgageInYear) {
+        return termOfMortgageInYear * 12;
+    }
 
-        // convert into monthly rate
-        double m = r / 12.0;
+    private static void checkValidity(int principalAmount, int termOfMortgageInYear, double rateOfInterestInPercentage) {
+        if (principalAmount < 0 || termOfMortgageInYear <= 0 || rateOfInterestInPercentage < 0) {
+            throw new InvalidInputException(NEGATIVE_VALUES_ARE_NOT_ALLOWED);
+        }
+    }
 
-        // Calculate the monthly payment
-        // The Math.pow() method is used calculate values raised to a power
-        double monthlyPayment = (p * m) / (1 - Math.pow(1 + m, -tim));
+    private static double getMonthlyRate(double rateOfInterestInDecimal) {
+        return rateOfInterestInDecimal / 12.0;
+    }
 
-        return monthlyPayment;
+    private static double getRateOfInterestInDecimal(double rateOfInterestInPercentage) {
+        return rateOfInterestInPercentage / 100.0;
+    }
+
+    private static double getMonthlyPayment(int principalAmount, double monthlyRate, double termOfMortgageInMonths) {
+        return (principalAmount * monthlyRate) / (1 - Math.pow(1 + monthlyRate, -termOfMortgageInMonths));
     }
 }
