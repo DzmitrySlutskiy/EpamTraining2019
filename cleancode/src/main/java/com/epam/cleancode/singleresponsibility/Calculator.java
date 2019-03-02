@@ -1,48 +1,67 @@
 package com.epam.cleancode.singleresponsibility;
 
-public class Calculator{
+import java.util.ArrayList;
+import java.util.List;
 
-    private static final String SEPARATOR = ",";
+interface IInputParser<T,U> {
+    void validate(T data);
+    List<U> parse(T data);
+}
+
+public class Calculator implements IInputParser<String, Integer> {
+    private static final String INPUT_DATA_SEPARATOR = ",";
+    enum Operation{
+        ADD,
+        MULTIPLY
+    }
+
+    @Override
+    public void validate(String data) {
+        if (data == null || data.matches("[\\d" + INPUT_DATA_SEPARATOR + "]*") == false) {
+            throw new WrongFormatException();
+        }
+    }
+
+    @Override
+    public List<Integer> parse(String data) {
+        ArrayList<Integer> arguments = new ArrayList<Integer>();
+        for (String eachArg: data.split(INPUT_DATA_SEPARATOR + "+")) {
+            if(eachArg.matches("\\d+")) {
+                arguments.add(Integer.valueOf(eachArg));
+            }
+        }
+
+        return arguments;
+    }
+
+    Integer calculate(Operation operator, List<Integer> arguments) {
+        Integer result = operator == Operation.ADD ? 0 : 1;
+        for(Integer num : arguments){
+            if(operator == Operation.MULTIPLY) {
+                result *= num;
+            }
+            else if(operator == Operation.ADD){
+                result += num;
+            }
+            else{
+                throw new WrongFormatException();
+            }
+        }
+
+        return result;
+    }
 
     public String add(String numbers) {
         validate(numbers);
-        return "sum: " + String.valueOf(getSum(numbers));
+        Integer sum = calculate(Operation.ADD, parse(numbers));
+
+        return "sum: " + String.valueOf(sum);
     }
 
     public String multiply(String numbers) {
         validate(numbers);
-        return "product: " + String.valueOf(getProduct(numbers));
-    }
+        Integer multi = calculate(Operation.MULTIPLY, parse(numbers));
 
-    private int getSum(String numbers) {
-        int sum = 0;
-        for (String s : numbers.split(SEPARATOR)) if (isNotEmpty(s)) sum += Integer.valueOf(s);
-        return sum;
+        return "product: " + String.valueOf(multi);
     }
-
-    private int getProduct(String numbers) {
-        int sum = 1;
-        for (String s : numbers.split(SEPARATOR))
-            if (isNotEmpty(s))
-                sum *= Integer.valueOf(s);
-        return sum;
-    }
-
-    private boolean isNotEmpty(String numbers) {
-        return !numbers.isEmpty();
-    }
-
-    private void validate(String numbers) {
-        if (numbers == null || isNotDigits(numbers))
-            throw new WrongFormatException();
-    }
-
-    private boolean isNotDigits(String numbers) {
-        return !isDigits(numbers);
-    }
-
-    private boolean isDigits(String numbers) {
-        return numbers.matches("[\\d" + SEPARATOR + "]*");
-    }
-
 }
