@@ -3,6 +3,7 @@ package com.epam.cleancode.singleresponsibility;
 class Calculator {
 
     private static final String SEPARATOR = ",";
+    private static final String WRONG_FORMAT_EXCEPTION = "letters are not allowed";
 
     String add(String numbers) {
         validate(numbers);
@@ -46,7 +47,7 @@ class Calculator {
 
     private void validate(String numbers) {
         if (numbers == null || isNotDigits(numbers)) {
-            throw new WrongFormatException("letters are not allowed");
+            throw new WrongFormatException(WRONG_FORMAT_EXCEPTION);
         }
     }
 

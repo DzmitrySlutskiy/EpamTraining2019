@@ -2,6 +2,8 @@ package com.epam.cleancode.comments;
 
 class MortgageInstallmentCalculator {
 
+    private static final String INVALID_INPUT_EXCEPTION = "Negative values are not allowed";
+
     MortgageInstallmentCalculator() {
     }
 
@@ -18,7 +20,7 @@ class MortgageInstallmentCalculator {
         double monthlyRate = rateInDecimal / 12.0;
 
         if (principalAmount < 0 || termOfMortgageInYears <= 0 || rateOfInterest < 0) {
-            throw new InvalidInputException("Negative values are not allowed");
+            throw new InvalidInputException(INVALID_INPUT_EXCEPTION);
         }
         if (rateInDecimal == 0) {
             return principalAmount / termInMonths;
