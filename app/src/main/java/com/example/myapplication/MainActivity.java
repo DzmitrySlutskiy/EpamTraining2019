@@ -5,6 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.github.andrei1993ak.mentoring.awesomemodule.AwesomeUtil;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -21,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
         super.onResume();
         Log.d(getClass().getSimpleName(), "onResume() called");
 
+        AwesomeUtil.Companion.toSting(this);
         new GradleDemo().foo();
     }
 }

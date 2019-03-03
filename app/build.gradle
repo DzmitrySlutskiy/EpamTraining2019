@@ -94,8 +94,41 @@ android {
     }
 }
 
+task helloWorld() {
+    println "Hello World"
+}
+
+task demoDepends(dependsOn: helloWorld) {
+    println "demoDepends"
+}
+
+task printV() {
+    doLast {
+        android.applicationVariants.all { variant ->
+            println variant.name
+        }
+    }
+}
+
+task mergeRequestFastCheck {
+    dependsOn 'clean'
+    dependsOn ':awesomemodule:testDebugUnitTest'
+    dependsOn 'testFullMinApi21DebugUnitTest'
+
+    doLast {
+        println 'mailStart'
+
+        if (tasks.testFullMinApi21DebugUnitTest.didWork) {
+            println 'SEND E-MAIL ANNOUNCING SUCCESS'
+        } else {
+            println 'SEND E-MAIL ANNOUNCING FAIL'
+        }
+    }
+}
+
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(':awesomemodule')
     implementation 'com.android.support:appcompat-v7:28.0.0'
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'
     fullImplementation 'com.squareup.picasso:picasso:2.71828'
