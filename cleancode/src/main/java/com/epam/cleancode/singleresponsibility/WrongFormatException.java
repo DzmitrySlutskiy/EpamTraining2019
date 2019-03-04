@@ -1,11 +1,11 @@
 package com.epam.cleancode.singleresponsibility;
 
-public class WrongFormatException extends IllegalArgumentException {
+public class WrongFormatException extends RuntimeException {
     private final String message;
 
-    WrongFormatException(String s) {
+    WrongFormatException(String errorMessage) {
         super();
-        this.message = s;
+        message = errorMessage;
 
     }
 
@@ -13,5 +13,4 @@ public class WrongFormatException extends IllegalArgumentException {
     public String getMessage() {
         return message;
     }
-
 }

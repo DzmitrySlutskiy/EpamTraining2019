@@ -3,6 +3,7 @@ package com.epam.cleancode.singleresponsibility;
 class Calculator {
 
     private static final String SEPARATOR = ",";
+    private static final String REGEX_FOR_CHECK_ON_DIGITS = "[\\d" + SEPARATOR + "]*";
     private static final String WRONG_FORMAT_EXCEPTION = "letters are not allowed";
 
     String add(String numbers) {
@@ -52,7 +53,7 @@ class Calculator {
     }
 
     private boolean isDigits(String numbers) {
-        return numbers.matches("[\\d" + SEPARATOR + "]*");
+        return numbers.matches(REGEX_FOR_CHECK_ON_DIGITS);
     }
 
 }

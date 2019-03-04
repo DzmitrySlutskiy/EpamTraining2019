@@ -1,11 +1,11 @@
 package com.epam.cleancode.comments;
 
-public class InvalidInputException extends IllegalArgumentException {
+public class InvalidInputException extends RuntimeException {
     private final String message;
 
-    InvalidInputException(String s) {
+    InvalidInputException(String errorMessage) {
         super();
-        this.message = s;
+        message = errorMessage;
 
     }
 
@@ -13,5 +13,4 @@ public class InvalidInputException extends IllegalArgumentException {
     public String getMessage() {
         return message;
     }
-
 }
