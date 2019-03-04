@@ -16,6 +16,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="com.epam.activities.AActivity" android:launchMode="singleInstance"/>
+        <activity android:name="com.epam.activities.BActivity" />
+        <activity android:name="com.epam.activities.CActivity" />
+
+        <service android:name="com.epam.SimpleService"/>
+
+        <receiver android:name="com.epam.SimpleBroadcastReceiver">
+            <intent-filter>
+                <action android:name="com.epam.CUSTOM_ACTION"/>
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>
