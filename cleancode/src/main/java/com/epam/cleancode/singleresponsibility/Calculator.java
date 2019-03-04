@@ -6,6 +6,7 @@ public class Calculator {
     }
 
     private static final String SEPARATOR = ",";
+    private static final String REGEX_FOR_SEARCH_DIGITS = "[\\d,]*";
 
     public String add(String numbers) {
         return "sum: " + String.valueOf(getResultOperation(numbers, Operation.SUM));
@@ -16,7 +17,7 @@ public class Calculator {
     }
 
     private int getResultOperation(String numbers, Operation operation) {
-        int Result = operation == Operation.MUL ? 1 : 0;
+        int result = operation == Operation.MUL ? 1 : 0;
 
         validate(numbers);
 
@@ -24,18 +25,18 @@ public class Calculator {
             if (!s.isEmpty()) {
                 switch (operation) {
                     case SUM:
-                        Result += Integer.valueOf(s);
+                        result += Integer.valueOf(s);
 
                         break;
                     case MUL:
-                        Result *= Integer.valueOf(s);
+                        result *= Integer.valueOf(s);
 
                         break;
                 }
             }
         }
 
-        return Result;
+        return result;
     }
 
     private void validate(String numbers) {
@@ -45,6 +46,6 @@ public class Calculator {
     }
 
     private boolean isDigits(String numbers) {
-        return numbers.matches("[\\d" + SEPARATOR + "]*");
+        return numbers.matches(REGEX_FOR_SEARCH_DIGITS);
     }
 }

@@ -15,7 +15,8 @@ public class MortgageInstallmentCalculator {
             return principalAmount / termInMonths;
         }
 
-        return (principalAmount * monthlyRate) / (1 - Math.pow(1 + monthlyRate, -termInMonths));
+        double monthlyPayment = (principalAmount * monthlyRate) / (1 - Math.pow(1 + monthlyRate, -termInMonths));
+        return monthlyPayment;
     }
 
     private static void validate(int principalAmount, int termOfMortgageInYears, double rateOfInterest) {
