@@ -16,13 +16,9 @@ public class Calculator {
     }
 
     private int getResultOperation(String numbers, Operation operation) {
-        int Result = 0;
+        int Result = operation == Operation.MUL ? 1 : 0;
 
         validate(numbers);
-
-        if (operation == Operation.MUL) {
-            Result = 1;
-        }
 
         for (String s : numbers.split(SEPARATOR)) {
             if (!s.isEmpty()) {
