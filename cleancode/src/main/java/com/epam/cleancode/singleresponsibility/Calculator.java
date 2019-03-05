@@ -16,7 +16,9 @@ public class Calculator{
 
     private int getSum(String numbers) {
         int sum = 0;
-        for (String s : numbers.split(SEPARATOR)) if (isNotEmpty(s)) sum += Integer.valueOf(s);
+        for (String s : numbers.split(SEPARATOR))
+            if (isNotEmpty(s))
+                sum += Integer.valueOf(s);
         return sum;
     }
 
@@ -34,7 +36,7 @@ public class Calculator{
 
     private void validate(String numbers) {
         if (numbers == null || isNotDigits(numbers))
-            throw new WrongFormatException();
+            throw new WrongFormatException("Only positive and negative numbers are allowed");
     }
 
     private boolean isNotDigits(String numbers) {
