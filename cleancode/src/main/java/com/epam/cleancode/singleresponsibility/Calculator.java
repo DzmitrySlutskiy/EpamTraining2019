@@ -2,6 +2,7 @@ package com.epam.cleancode.singleresponsibility;
 
 public class Calculator {
 
+    private static final String REGEX_NUMBERS_ROW = "[\\d,]*";
     private static final String SEPARATOR = ",";
 
     public String add(String numbers) {
@@ -19,9 +20,9 @@ public class Calculator {
     private int getSum(String numbers) {
         int result = 0;
 
-        for (String s : numbers.split(SEPARATOR)) {
-            if (!isEmpty(s)) {
-                result += Integer.valueOf(s);
+        for (String number : numbers.split(SEPARATOR)) {
+            if (!isEmpty(number)) {
+                result += Integer.valueOf(number);
             }
         }
 
@@ -29,11 +30,12 @@ public class Calculator {
     }
 
     private int getProduct(String numbers) {
+        //start initialization for correct multiply
         int result = 1;
 
-        for (String s : numbers.split(SEPARATOR)) {
-            if (!isEmpty(s)) {
-                result *= Integer.valueOf(s);
+        for (String number : numbers.split(SEPARATOR)) {
+            if (!isEmpty(number)) {
+                result *= Integer.valueOf(number);
             }
         }
 
@@ -47,7 +49,7 @@ public class Calculator {
     }
 
     private boolean isDigits(String numbers) {
-        return numbers.matches("[\\d" + SEPARATOR + "]*");
+        return numbers.matches(REGEX_NUMBERS_ROW);
     }
 
     private boolean isEmpty(String numbers) {
