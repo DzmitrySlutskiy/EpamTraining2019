@@ -15,7 +15,9 @@ public class MortgageInstallmentCalculator {
             return principalAmount / termInMonths;
         }
 
-        double monthlyPayment = (principalAmount * monthlyRate) / (1 - Math.pow(1 + monthlyRate, -termInMonths));
+        double monthlyPercentageAtPrincipalAmount = monthlyRate / (1 - Math.pow(1 + monthlyRate, -termInMonths));
+        double monthlyPayment = principalAmount * monthlyPercentageAtPrincipalAmount;
+
         return monthlyPayment;
     }
 

@@ -21,15 +21,15 @@ public class Calculator {
 
         validate(numbers);
 
-        for (String s : numbers.split(SEPARATOR)) {
-            if (!s.isEmpty()) {
+        for (String numberInString : numbers.split(SEPARATOR)) {
+            if (!numberInString.isEmpty()) {
                 switch (operation) {
                     case SUM:
-                        result += Integer.valueOf(s);
+                        result += Integer.valueOf(numberInString);
 
                         break;
                     case MUL:
-                        result *= Integer.valueOf(s);
+                        result *= Integer.valueOf(numberInString);
 
                         break;
                 }
