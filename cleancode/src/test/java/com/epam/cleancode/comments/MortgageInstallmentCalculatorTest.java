@@ -1,5 +1,7 @@
 package com.epam.cleancode.comments;
 
+import com.epam.cleancode.exceptions.InvalidInputException;
+
 import org.junit.Assert;
 import org.junit.Test;
 

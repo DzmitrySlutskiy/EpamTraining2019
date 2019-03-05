@@ -1,39 +1,38 @@
 package com.epam.cleancode.comments;
 
+import com.epam.cleancode.common.Constants;
+import com.epam.cleancode.common.DateUtils;
+import com.epam.cleancode.common.NumberUtils;
+import com.epam.cleancode.exceptions.InvalidInputException;
+
 public class MortgageInstallmentCalculator {
+    public static double calculateMonthlyPayment(int principalAmount,
+                                                 int termOfMortgageInYears,
+                                                 double rateOfInterests) throws InvalidInputException {
+        MortgageParameters parameters = new MortgageParameters(principalAmount, termOfMortgageInYears, rateOfInterests);
 
-    /**
-     *
-     * @param p principal amount
-     * @param t term of mortgage in years
-     * @param r rate of interest
-     * @return monthly payment amount
-     */
-    public static double calculateMonthlyPayment(
-            int p, int t, double r) {
-
-        //cannot have negative loanAmount, term duration and rate of interest
-        if (p < 0 || t <= 0 || r < 0) {
-            throw new InvalidInputException("Negative values are not allowed");
+        if (parameters.isInvalid()) {
+            throw new InvalidInputException(Constants.NEGATIVE_VALUE_EXCEPTION_MSG);
         }
 
-        // Convert interest rate into a decimal - eg. 6.5% = 0.065
-        r /= 100.0;
+        double termOfMortgageInMonths = DateUtils.inMonths(parameters.getTermOfMortgageInYears());
 
-        // convert term in years to term in months
-        double tim = t * 12;
+        if (rateOfInterestsAbsent(parameters))
+            return parameters.getPrincipalAmount() / termOfMortgageInMonths;
 
-        //for zero interest rates
-        if(r==0)
-            return  p/tim;
+        double monthlyRate = monthlyRate(parameters);
 
-        // convert into monthly rate
-        double m = r / 12.0;
+        double dividend = parameters.getPrincipalAmount() * monthlyRate;
+        double divisor = 1 - Math.pow(1 + monthlyRate, -termOfMortgageInMonths);
 
-        // Calculate the monthly payment
-        // The Math.pow() method is used calculate values raised to a power
-        double monthlyPayment = (p * m) / (1 - Math.pow(1 + m, -tim));
+        return dividend / divisor;
+    }
 
-        return monthlyPayment;
+    private static double monthlyRate(MortgageParameters parameters) {
+        return NumberUtils.shiftDecimalPoint(parameters.getRateOfInterests(), Constants.TWO_SIGNS) / Constants.MONTHS_OF_YEAR;
+    }
+
+    private static boolean rateOfInterestsAbsent(MortgageParameters parameters) {
+        return NumberUtils.isZero(parameters.getRateOfInterests());
     }
 }

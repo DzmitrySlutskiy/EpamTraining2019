@@ -1,48 +1,39 @@
 package com.epam.cleancode.singleresponsibility;
 
-public class Calculator{
+import com.epam.cleancode.common.Constants;
+import com.epam.cleancode.common.StringValidator;
+import com.epam.cleancode.exceptions.WrongFormatException;
 
-    private static final String SEPARATOR = ",";
+class Calculator {
+    private StringValidator validator = StringValidator.getInstance();
 
-    public String add(String numbers) {
-        validate(numbers);
-        return "sum: " + String.valueOf(getSum(numbers));
+    String add(String numbers) throws WrongFormatException {
+        validator.validate(numbers);
+        return makeResult(Constants.SUM_PREFIX, perform(0,
+                numbers.split(Constants.SEPARATOR),
+                Operator.ADDITION));
     }
 
-    public String multiply(String numbers) {
-        validate(numbers);
-        return "product: " + String.valueOf(getProduct(numbers));
+    String multiply(String numbers) throws WrongFormatException {
+        validator.validate(numbers);
+        return makeResult(Constants.PRODUCT_PREFIX, perform(1,
+                numbers.split(Constants.SEPARATOR),
+                Operator.MULTIPLICATION));
     }
 
-    private int getSum(String numbers) {
-        int sum = 0;
-        for (String s : numbers.split(SEPARATOR)) if (isNotEmpty(s)) sum += Integer.valueOf(s);
-        return sum;
+    private int perform(int initialValue, String[] numbers, Operator operator) {
+        int result = initialValue;
+        for (String number : numbers) {
+            if (validator.isNotEmpty(number))
+                result = operator.apply(result, Integer.valueOf(number));
+        }
+        return result;
     }
 
-    private int getProduct(String numbers) {
-        int sum = 1;
-        for (String s : numbers.split(SEPARATOR))
-            if (isNotEmpty(s))
-                sum *= Integer.valueOf(s);
-        return sum;
+    private String makeResult(String prefix, int result) {
+        StringBuilder builder = new StringBuilder();
+        builder.append(prefix);
+        builder.append(result);
+        return builder.toString();
     }
-
-    private boolean isNotEmpty(String numbers) {
-        return !numbers.isEmpty();
-    }
-
-    private void validate(String numbers) {
-        if (numbers == null || isNotDigits(numbers))
-            throw new WrongFormatException();
-    }
-
-    private boolean isNotDigits(String numbers) {
-        return !isDigits(numbers);
-    }
-
-    private boolean isDigits(String numbers) {
-        return numbers.matches("[\\d" + SEPARATOR + "]*");
-    }
-
 }
