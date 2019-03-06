@@ -1,9 +1,9 @@
 [Useful links and plugins](/Useful_things.md) 😉
 
 # Homework flow:
-## Issues should be created in this repository!
-## Make homework in separate branch with following format: homework_DD.MM_theme_name (*homework_28.02_clean_code*)
-## Open pull request in you repository and provide link in issue.
+* Issues should be created in this repository!
+* Make homework in separate branch with following format: homework_DD.MM_theme_name (*homework_28.02_clean_code*)
+* Open pull request in you repository and provide link in issue.
 
 # Feel free to create issue if some links don't work or you need some help
 
