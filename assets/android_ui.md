@@ -11,6 +11,7 @@ I think, you feel like 🤯 or 😰 after lesson, but let's learn Android step b
   * use `include` tag;
   * add mentor name for all available lessons;
   * make opening lesson screen.
+  * attach screenshow with result (inside _assets_ folder)
     
 Open `activity_lessons.xml` and will see `include` tag. It is very useful thing to reuse xml layouts or extract big layout to small components.
 
@@ -19,3 +20,13 @@ https://developer.android.com/training/improving-layouts/reusing-layouts
 👌🏻 First correct pull request will be merged.
 
 <a><img src='training_app.png' width="200"/></a>
+
+# 2. Second task.
+
+for all these subtasks:
+* attach result screenshot
+* attach screenshot with enable *Show layout bounds*
+* attach screenshot with enable *Debug GPU overdraw*
+
+1. VK profile page
+2. Google Podcasts
