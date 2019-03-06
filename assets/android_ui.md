@@ -18,4 +18,4 @@ https://developer.android.com/training/improving-layouts/reusing-layouts
 
 👌🏻 First correct pull request will be merged.
 
-<a><img src='assets/training_app.png' width="200"/></a>
+<a><img src='training_app.png' width="200"/></a>
