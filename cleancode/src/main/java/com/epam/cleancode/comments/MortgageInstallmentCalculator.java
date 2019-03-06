@@ -29,7 +29,9 @@ class MortgageInstallmentCalculator {
     }
 
     private static void checkValidation(int principalAmount, int termOfMortgageInYears, double rateOfInterest){
-        if (principalAmount < 0 || termOfMortgageInYears <= 0 || rateOfInterest < 0) {
+        if (principalAmount < 0
+                || termOfMortgageInYears <= 0
+                || rateOfInterest < 0) {
             throw new InvalidInputException(INVALID_INPUT_EXCEPTION);
         }
     }

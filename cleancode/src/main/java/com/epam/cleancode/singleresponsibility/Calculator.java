@@ -47,7 +47,8 @@ class Calculator {
     }
 
     private void validate(String numbers) {
-        if (numbers == null || !isDigits(numbers)) {
+        if (numbers == null
+                || !isDigits(numbers)) {
             throw new WrongFormatException(WRONG_FORMAT_EXCEPTION);
         }
     }
