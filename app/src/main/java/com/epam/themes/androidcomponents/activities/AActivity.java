@@ -1,4 +1,4 @@
-package com.epam.activities;
+package com.epam.themes.androidcomponents.activities;
 
 import android.os.Bundle;
 

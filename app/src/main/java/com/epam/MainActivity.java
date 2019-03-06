@@ -10,9 +10,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.epam.cleancodetest.R;
-import com.epam.activities.AActivity;
-import com.epam.activities.BActivity;
-import com.epam.activities.CActivity;
+import com.epam.themes.androidcomponents.activities.AActivity;
+import com.epam.themes.androidcomponents.activities.BActivity;
+import com.epam.themes.androidcomponents.activities.CActivity;
+import com.epam.themes.androidcomponents.SimpleBroadcastReceiver;
+import com.epam.themes.androidcomponents.SimpleFragment;
+import com.epam.themes.androidcomponents.SimpleService;
 
 public class MainActivity extends AppCompatActivity {
 
