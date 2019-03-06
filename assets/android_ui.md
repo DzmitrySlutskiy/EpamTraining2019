@@ -5,7 +5,7 @@ I think, you feel like 🤯 or 😰 after lesson, but let's learn Android step b
 
 # You homework contains 2 parts:
 
-# First task (you make changes in our repository and then create pull requst):
+# 1. First task (you make changes in our repository and then create pull requst):
 
 1. Add `Android UI` lesson in project application
   * use `include` tag;
