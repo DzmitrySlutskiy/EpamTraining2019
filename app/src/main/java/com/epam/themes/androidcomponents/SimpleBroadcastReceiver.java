@@ -1,4 +1,4 @@
-package com.epam;
+package com.epam.themes.androidcomponents;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;

@@ -16,13 +16,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.epam.activities.AActivity" android:launchMode="singleInstance"/>
-        <activity android:name="com.epam.activities.BActivity" />
-        <activity android:name="com.epam.activities.CActivity" />
+        <activity android:name="com.epam.themes.androidcomponents.activities.AActivity" android:launchMode="singleInstance"/>
+        <activity android:name="com.epam.themes.androidcomponents.activities.BActivity" />
+        <activity android:name="com.epam.themes.androidcomponents.activities.CActivity" />
 
-        <service android:name="com.epam.SimpleService"/>
+        <service android:name="com.epam.themes.androidcomponents.SimpleService"/>
 
-        <receiver android:name="com.epam.SimpleBroadcastReceiver">
+        <receiver android:name="com.epam.themes.androidcomponents.SimpleBroadcastReceiver">
             <intent-filter>
                 <action android:name="com.epam.CUSTOM_ACTION"/>
             </intent-filter>

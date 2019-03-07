@@ -1,4 +1,4 @@
-package com.epam;
+package com.epam.themes.androidcomponents;
 
 import android.app.Service;
 import android.content.Intent;
@@ -44,13 +44,13 @@ public class SimpleService extends Service {
         return mSimpleBinder;
     }
 
-    Object getResult() {
+    public Object getResult() {
         return mResult;
     }
 
-    class SimpleBinder extends Binder {
+    public class SimpleBinder extends Binder {
 
-        SimpleService getService() {
+        public SimpleService getService() {
             return SimpleService.this;
         }
     }

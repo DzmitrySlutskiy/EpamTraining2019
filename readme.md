@@ -1,7 +1,29 @@
 [Useful links and plugins](/Useful_things.md) 😉
 
-# HW Issues should be created in this repo!
-## Feel free to create issue if some links don't work or you need some help
+# Homework flow:
+* Issues should be created in this repository!
+* Make homework in separate branch with following format: homework_DD.MM_theme_name (*homework_28.02_clean_code*)
+* Open pull request in you repository and provide link in issue.
+
+# Feel free to create issue if some links don't work or you need some help
+
+
+# HW 06.03.2019
+More about Android Views: 
+
+sp, dp, px: https://startandroid.ru/ru/11-pamjatka/40-edinitsy-izmerenija-chem-otlichaetsja-dp-dip-ot-px-screen-density.html
+
+Android Layouts:
+
+https://o7planning.org/en/10423/android-ui-layouts-tutorial
+
+https://habr.com/ru/post/181820/
+
+https://developer.android.com/guide/topics/ui/declaring-layout?hl=ru
+
+Dark mode: https://medium.com/androiddevelopers/appcompat-v23-2-daynight-d10f90c83e94
+
+Homework you can find inside 👉 [doc](assets/android_ui.md).
 
 # HW 04.03.2019
 
