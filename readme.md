@@ -1,5 +1,9 @@
 [Useful links and plugins](/Useful_things.md) 😉
 
+
+# Training chat in Telegram:
+https://t.me/joinchat/DNzoqBZ3iHcGMtD4CzR5fw
+
 # Homework flow:
 * Issues should be created in this repository!
 * Make homework in separate branch with following format: homework_DD.MM_theme_name (*homework_28.02_clean_code*)
