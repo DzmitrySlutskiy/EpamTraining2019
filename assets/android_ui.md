@@ -28,8 +28,9 @@ for all these subtasks:
 * attach screenshot with enable *Show layout bounds*
 * attach screenshot with enable *Debug GPU overdraw*
 
-1. VK profile page
-<a><img src='hw_1.png' width="200"/></a>
+## 1. VK profile page
+<a><img src='HW_1.png' width="1000"/></a>
 
-2. Google Podcasts
-<a><img src='hw_2.png' width="200"/></a>
+
+## 2. Google Podcasts
+<a><img src='HW_2.png' width="1000"/></a>
