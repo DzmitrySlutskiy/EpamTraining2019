@@ -13,7 +13,7 @@ I think, you feel like 🤯 or 😰 after lesson, but let's learn Android step b
   * make opening lesson screen.
   * attach screenshow with result (inside _assets_ folder)
     
-Open `activity_lessons.xml` and will see `include` tag. It is very useful thing to reuse xml layouts or extract big layout to small components.
+Open `activity_lessons.xml` and you will see `include` tag. It is very useful thing to reuse xml layouts or extract big layout to small components.
 
 https://developer.android.com/training/improving-layouts/reusing-layouts
 
