@@ -1,12 +1,14 @@
 package com.epam.cleancode.singleresponsibility;
 
-public class Calculator{
+public class Calculator {
 
     private static final String SEPARATOR = ",";
+    private static final String REGULAR_EXPRESSION = "[\\d" + SEPARATOR + "]*";
     private static final String MESSAGE_BAD_INPUT_PARAMETER = "Only digits are allowed!";
 
     public String add(String numbers) {
         validate(numbers);
+
         return "sum: " + getSum(numbers);
     }
 
@@ -17,11 +19,13 @@ public class Calculator{
                 sum += Integer.valueOf(number);
             }
         }
+
         return sum;
     }
 
     public String multiply(String numbers) {
         validate(numbers);
+
         return "product: " + getProduct(numbers);
     }
 
@@ -32,6 +36,7 @@ public class Calculator{
                 sum *= Integer.valueOf(number);
             }
         }
+
         return sum;
     }
 
@@ -42,6 +47,6 @@ public class Calculator{
     }
 
     private boolean isDigits(String numbers) {
-        return numbers.matches("[\\d" + SEPARATOR + "]*");
+        return numbers.matches(REGULAR_EXPRESSION);
     }
 }

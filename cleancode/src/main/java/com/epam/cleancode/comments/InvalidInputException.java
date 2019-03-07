@@ -1,12 +1,12 @@
 package com.epam.cleancode.comments;
 
-public class InvalidInputException extends RuntimeException{
+public class InvalidInputException extends RuntimeException {
 
     String message;
 
-    public InvalidInputException(String s) {
+    public InvalidInputException(String _message) {
         super();
-        this.message = s;
+        message = _message;
     }
 
     @Override

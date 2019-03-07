@@ -4,9 +4,9 @@ public class WrongFormatException extends RuntimeException {
 
     private String message;
 
-    public WrongFormatException(String s) {
+    public WrongFormatException(String _message) {
         super();
-        this.message = s;
+        message = _message;
     }
 
     @Override
