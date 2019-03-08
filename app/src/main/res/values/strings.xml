@@ -4,9 +4,9 @@
 
     <string name="theme_android_components">Android Components</string>
     <string name="date_android_components">04.03.2019</string>
-    <string name="mentor_name_android_components">Artyom</string>
+    <string name="mentor_name_android_components">Artiom</string>
 
     <string name="theme_ui_components">Android UI</string>
     <string name="date_ui_components">06.03.2019</string>
-    <string name="mentor_name_ui_components">Yahor</string>
+    <string name="mentor_name_ui_components">Egor</string>
 </resources>
