@@ -1,8 +1,54 @@
 [Useful links and plugins](/Useful_things.md) 😉
 
-# HW Issues should be created in this repo!
-## Feel free to create issue if some links don't work or you need some help
 
+# Training chat in Telegram:
+https://t.me/joinchat/DNzoqBZ3iHcGMtD4CzR5fw
+
+# Homework flow:
+* Issues should be created in this repository!
+* Make homework in separate branch with following format: homework_DD.MM_theme_name (*homework_28.02_clean_code*)
+* Open pull request in you repository and provide link in issue.
+
+# Feel free to create issue if some links don't work or you need some help
+
+
+# HW 06.03.2019
+More about Android Views: 
+
+sp, dp, px: https://startandroid.ru/ru/11-pamjatka/40-edinitsy-izmerenija-chem-otlichaetsja-dp-dip-ot-px-screen-density.html
+
+Android Layouts:
+
+https://o7planning.org/en/10423/android-ui-layouts-tutorial
+
+https://habr.com/ru/post/181820/
+
+https://developer.android.com/guide/topics/ui/declaring-layout?hl=ru
+
+Dark mode: https://medium.com/androiddevelopers/appcompat-v23-2-daynight-d10f90c83e94
+
+Homework you can find inside 👉 [doc](assets/android_ui.md).
+
+# HW 04.03.2019
+
+Remember - answer on almost every question you can ask is covered at https://developer.android.com/.
+If you don't understand what is service - you go to https://developer.android.com/guide/components/services.
+If you forgot what is BroadcastReceiver - you go to https://developer.android.com/guide/components/broadcasts and so on.
+In case items described too complicated, read usual articles on native language and then go back to the offical docs.
+
+## Theory
+- Read what is foreground service.
+- Read about service/broadcast limitations on new Android versions and what is LocalBroadcastManager.
+- Read how to handle long-running operation using BroadcastReceiver.
+- Other ways to manage back-stack - activity attributes (f.i. taskAffinity, allowTaskReparenting) and intent flags (f.i. FLAG_ACTIVITY_CLEAR_TOP)
+
+## Practics
+- Write simple Fragment which restores its state.
+- Write Activity, Service and BroadcastReceiver. Service sends data, Activity receives using Broadcast and shows it (show using Toast or logs, if you have no experience in UI). Preferable to execute at least one long-running operation, but it's optional.
+
+## Optional for self-development
+- Create custom Application class, which will provide singleton instances (any custom classes).
+- Create you own implementation of IntentService.
 
 # HW 28.02.2019
 - Familiarize with code style guide.
