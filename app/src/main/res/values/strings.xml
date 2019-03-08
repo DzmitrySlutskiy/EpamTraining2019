@@ -3,5 +3,9 @@
     <string name="available_lessons_text">Available lessons</string>
 
     <string name="theme_android_components">Android Components</string>
+    <string name="mentor_name_android_components">Artiom</string>
+    <string name="date_android_components">04.03.2019</string>
     <string name="theme_android_ui">Android UI</string>
+    <string name="mentor_name_android_ui">Egor</string>
+    <string name="date_android_ui">06.03.2019</string>
 </resources>
