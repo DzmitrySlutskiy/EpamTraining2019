@@ -132,6 +132,7 @@ task mergeRequestFastCheck {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(':awesomemodule')
+    implementation project(':repositorymodule')
     implementation 'com.android.support:appcompat-v7:28.0.0'
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'
     fullImplementation 'com.squareup.picasso:picasso:2.71828'

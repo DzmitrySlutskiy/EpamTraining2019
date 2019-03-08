@@ -1,1 +1,1 @@
-include ':app', ':awesomemodule', ':networkmodule'
+include ':app', ':awesomemodule', ':networkmodule', ':othernetworkmodule', ':repositorymodule'

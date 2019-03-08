@@ -24,22 +24,6 @@ android {
         }
     }
 
-    flavorDimensions "environment"
-
-    productFlavors {
-        prod {
-            dimension "environment"
-        }
-
-        preprod {
-            dimension "environment"
-        }
-
-        labs {
-            dimension "environment"
-        }
-    }
-
 }
 
 dependencies {
