@@ -17,14 +17,19 @@ public class LessonsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lessons);
 
-        findViewById(R.id.lesson_components_root_view).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.lesson_android_components_root_view).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openLesson(UIComponentsActivity.class);
+                openLesson(AndroidComponentsActivity.class);
             }
         });
 
-        //todo open ui activity
+        findViewById(R.id.lesson_ui_components_root_view).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openLesson(UIComponentsActivity.class);
+            }
+        });
     }
 
     private void openLesson(Class<? extends Activity> lessonActivityClass) {

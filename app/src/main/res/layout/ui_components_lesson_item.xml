@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/lesson_android_components_root_view"
+    android:id="@+id/lesson_ui_components_root_view"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="?attr/selectableItemBackground"
@@ -12,33 +12,33 @@
     tools:showIn="@layout/activity_lessons">
 
     <ImageView
-        android:id="@+id/lesson_android_components_avatar"
+        android:id="@+id/lesson_ui_components_avatar"
         android:layout_width="40dp"
         android:layout_height="40dp"
         app:srcCompat="@drawable/ic_account_circle" />
 
     <TextView
-        android:id="@+id/lesson_android_components_theme"
+        android:id="@+id/lesson_ui_components_theme"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
-        android:layout_toLeftOf="@+id/lesson_android_components_date"
-        android:layout_toRightOf="@id/lesson_android_components_avatar"
-        android:text="@string/theme_android_components"
+        android:layout_toLeftOf="@+id/lesson_ui_components_date"
+        android:layout_toRightOf="@id/lesson_ui_components_avatar"
+        android:text="@string/theme_ui_components"
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/lesson_android_components_mentor_name"
+        android:id="@+id/lesson_ui_components_mentor_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/lesson_android_components_theme"
+        android:layout_below="@+id/lesson_ui_components_theme"
         android:layout_alignParentBottom="true"
         android:layout_marginLeft="16dp"
-        android:layout_toRightOf="@id/lesson_android_components_avatar"
-        android:text="@string/mentor_name_android_components" />
+        android:layout_toRightOf="@id/lesson_ui_components_avatar"
+        android:text="@string/mentor_name_ui_components" />
 
     <TextView
-        android:id="@+id/lesson_android_components_date"
+        android:id="@+id/lesson_ui_components_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
@@ -46,7 +46,7 @@
         android:layout_marginLeft="16dp"
         android:layout_marginTop="2dp"
         android:layout_marginRight="2dp"
-        android:text="@string/date_android_components"
+        android:text="@string/date_ui_components"
         android:textSize="12sp" />
 
 </RelativeLayout>

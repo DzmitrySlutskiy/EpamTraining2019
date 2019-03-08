@@ -24,6 +24,6 @@
 
         <include layout="@layout/android_components_lesson_item" />
 
-        <!--TODO add new item-->
+        <include layout="@layout/ui_components_lesson_item" />
     </LinearLayout>
 </ScrollView>
