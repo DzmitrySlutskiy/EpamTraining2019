@@ -8,6 +8,7 @@ import android.view.View;
 
 import com.epam.cleancodetest.R;
 import com.epam.themes.androidcomponents.AndroidComponentsActivity;
+import com.epam.themes.uicomponents.AndroidUIActivity;
 import com.epam.themes.uicomponents.UIComponentsActivity;
 
 public class LessonsActivity extends AppCompatActivity {
@@ -23,8 +24,12 @@ public class LessonsActivity extends AppCompatActivity {
                 openLesson(UIComponentsActivity.class);
             }
         });
-
-        //todo open ui activity
+        findViewById(R.id.lesson_ui_root_view).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openLesson(AndroidUIActivity.class);
+            }
+        });
     }
 
     private void openLesson(Class<? extends Activity> lessonActivityClass) {

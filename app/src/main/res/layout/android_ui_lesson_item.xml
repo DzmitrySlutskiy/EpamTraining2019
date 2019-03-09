@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/lesson_components_root_view"
+    android:id="@+id/lesson_ui_root_view"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="?attr/selectableItemBackground"
@@ -24,19 +24,19 @@
             android:layout_height="40dp"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            app:srcCompat="@drawable/ic_account_circle" />
+            app:srcCompat="@drawable/ic_color_lens_black_24dp" />
 
         <TextView
             android:id="@+id/mentor_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:layout_alignParentBottom = "true"
+            android:layout_alignParentBottom="true"
             android:fontFamily="cursive"
+            android:gravity="center_horizontal"
+            android:text="@string/mentor_two_name"
             android:textColor="@color/colorAccent"
-            android:text="@string/mentor_name"
             android:textSize="14sp" />
-     </RelativeLayout>
+    </RelativeLayout>
 
     <TextView
         android:id="@+id/lesson_theme"
@@ -44,7 +44,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_toRightOf="@id/avatar_container"
-        android:text="@string/theme_android_components"
+        android:text="@string/theme_android_ui"
         android:textStyle="bold" />
 
     <TextView
@@ -54,7 +54,6 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="24dp"
         android:layout_toRightOf="@id/avatar_container"
-        android:text="04.03.2019" />
+        android:text="28.02.2019" />
 
 </RelativeLayout>
-    

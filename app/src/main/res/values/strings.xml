@@ -4,4 +4,6 @@
 
     <string name="theme_android_components">Android Components</string>
     <string name="theme_android_ui">Android UI</string>
+    <string name="mentor_name">Mentor anonymous</string>
+    <string name="mentor_two_name">Mentor 2 anonymous</string>
 </resources>
