@@ -2,6 +2,16 @@
     <string name="app_name">Epam Training 😅</string>
     <string name="available_lessons_text">Available lessons</string>
 
+    <string name="theme_clean_code">Clean Code</string>
     <string name="theme_android_components">Android Components</string>
     <string name="theme_android_ui">Android UI</string>
+
+    <string name="mentor_name_yahor">Yahor</string>
+    <string name="mentor_name_arziom">Arziom</string>
+
+    <string name="first_lesson_date">28.02.2019</string>
+    <string name="second_lesson_date">04.03.2019</string>
+    <string name="third_lesson_date">06.03.2019</string>
+
+    <string name="clean_code_lesson_title">Clean Code</string>
 </resources>

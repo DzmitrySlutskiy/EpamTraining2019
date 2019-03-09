@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/lesson_components_root_view"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="?attr/selectableItemBackground"
@@ -10,32 +8,45 @@
     android:focusable="true"
     android:focusableInTouchMode="true"
     android:orientation="horizontal"
-    android:padding="16dp"
+    android:padding="@dimen/double_indent"
     tools:showIn="@layout/activity_lessons">
 
-    <ImageView
-        android:id="@+id/avatar"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        app:srcCompat="@drawable/ic_account_circle" />
-
-    <TextView
-        android:id="@+id/lesson_theme"
+    <LinearLayout
+        android:id="@+id/android_components_mentor_linear_layout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_toRightOf="@id/avatar"
-        android:text="@string/theme_android_components"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/android_components_mentor_image_view"
+            android:layout_width="@dimen/icon_size"
+            android:layout_height="@dimen/icon_size" />
+
+        <TextView
+            android:id="@+id/android_components_mentor_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:textSize="@dimen/min_text_size" />
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/android_components_lesson_theme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/quadruple_indent"
+        android:layout_toEndOf="@id/android_components_mentor_linear_layout"
+        android:textSize="@dimen/medium_text_size"
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/lesson_date"
+        android:id="@+id/android_components_lesson_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginLeft="16dp"
-        android:layout_toRightOf="@id/avatar"
-        android:text="04.03.2019" />
-
+        android:layout_marginStart="@dimen/quadruple_indent"
+        android:layout_toEndOf="@id/android_components_mentor_linear_layout"
+        android:textSize="@dimen/min_text_size" />
 </RelativeLayout>
     

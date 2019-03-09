@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="single_indent">8dp</dimen>
+    <dimen name="double_indent">16dp</dimen>
+    <dimen name="triple_indent">24dp</dimen>
+    <dimen name="quadruple_indent">32dp</dimen>
+
+    <dimen name="icon_size">64dp</dimen>
+
+    <dimen name="min_text_size">16sp</dimen>
+    <dimen name="medium_text_size">24sp</dimen>
+    <dimen name="large_text_size">32sp</dimen>
+</resources>
