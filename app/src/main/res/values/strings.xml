@@ -1,7 +1,21 @@
 <resources>
     <string name="app_name">Epam Training 😅</string>
     <string name="available_lessons_text">Available lessons</string>
-
     <string name="theme_android_components">Android Components</string>
     <string name="theme_android_ui">Android UI</string>
+    <string name="lector_yahor">Yahor</string>
+    <string name="components_lesson_date">04.03.2019</string>
+    <string name="lector_dima">Dima</string>
+    <string name="github_lesson_date">18.02.2019</string>
+    <string name="theme_github">Github</string>
+    <string name="android_studio_tools_lesson_date">22.02.2019</string>
+    <string name="theme_android_studio_tools">Android Studio tools</string>
+    <string name="theme_java_basics">Java Basics</string>
+    <string name="java_basics_lesson_date">25.02.2019</string>
+    <string name="lector_mikhail">Mikhail</string>
+    <string name="lector_artem">Artem</string>
+    <string name="theme_clean_code">Clean Code</string>
+    <string name="clean_code_lesson_date">28.02.2019</string>
+    <string name="view_components_lesson_date">06.03.2019</string>
+    <string name="theme_view_components">View components</string>
 </resources>

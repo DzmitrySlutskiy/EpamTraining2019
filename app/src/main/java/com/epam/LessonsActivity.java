@@ -7,7 +7,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.epam.cleancodetest.R;
-import com.epam.themes.androidcomponents.AndroidComponentsActivity;
 import com.epam.themes.uicomponents.UIComponentsActivity;
 
 public class LessonsActivity extends AppCompatActivity {
@@ -23,6 +22,43 @@ public class LessonsActivity extends AppCompatActivity {
                 openLesson(UIComponentsActivity.class);
             }
         });
+
+        findViewById(R.id.lesson_github_root_view).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openLesson(UIComponentsActivity.class);
+            }
+        });
+
+        findViewById(R.id.lesson_clean_code_root_view).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openLesson(UIComponentsActivity.class);
+            }
+        });
+
+        findViewById(R.id.lesson_java_basics_root_view).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openLesson(UIComponentsActivity.class);
+            }
+        });
+
+        findViewById(R.id.lesson_android_studio_tools_root_view).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openLesson(UIComponentsActivity.class);
+            }
+        });
+
+        findViewById(R.id.lesson_view_components_root_view).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openLesson(UIComponentsActivity.class);
+            }
+        });
+
+
 
         //todo open ui activity
     }

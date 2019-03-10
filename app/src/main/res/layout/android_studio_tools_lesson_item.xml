@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/lesson_components_root_view"
+    android:id="@+id/lesson_android_studio_tools_root_view"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="?attr/selectableItemBackground"
@@ -24,7 +24,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/avatar"
-        android:text="@string/lector_artem"
+        android:text="@string/lector_dima"
         android:textColor="@color/colorBlack"
         android:textSize="18sp"
         android:textStyle="bold" />
@@ -35,7 +35,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
         android:layout_toRightOf="@id/avatar"
-        android:text="@string/theme_android_components"
+        android:text="@string/theme_android_studio_tools"
         android:textSize="24sp"
         android:textStyle="bold" />
 
@@ -47,6 +47,6 @@
         android:layout_marginLeft="16dp"
         android:layout_marginTop="8dp"
         android:layout_toRightOf="@id/avatar"
-        android:text="@string/components_lesson_date" />
+        android:text="@string/android_studio_tools_lesson_date" />
 
 </RelativeLayout>
