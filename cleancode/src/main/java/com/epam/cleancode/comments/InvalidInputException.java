@@ -4,9 +4,9 @@ public class InvalidInputException extends RuntimeException {
 
     String message;
 
-    public InvalidInputException(String _message) {
+    public InvalidInputException(String errorMessage) {
         super();
-        message = _message;
+        message = errorMessage;
     }
 
     @Override
