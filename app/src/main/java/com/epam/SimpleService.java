@@ -19,7 +19,6 @@ public class SimpleService extends Service {
         mResult = new Object();
 
         sendBroadcast(new Intent("com.epam.CUSTOM_ACTION") {
-
             {
                 putExtra("RESULT", (Bundle) mResult);
             }

@@ -1,6 +1,6 @@
 package com.epam.cleancode.singleresponsibility;
 
-public class Calculator{
+public class Calculator {
 
     private static final String SEPARATOR = ",";
 
