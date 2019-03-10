@@ -8,6 +8,8 @@ import android.view.View;
 
 import com.epam.cleancodetest.R;
 import com.epam.themes.androidcomponents.AndroidComponentsActivity;
+import com.epam.themes.androidcomponents.activities.GooglePodcastsActivity;
+import com.epam.themes.androidcomponents.activities.VKProfilePageActivity;
 import com.epam.themes.uicomponents.AndroidUIActivity;
 import com.epam.themes.uicomponents.UIComponentsActivity;
 
@@ -30,6 +32,19 @@ public class LessonsActivity extends AppCompatActivity {
                 openLesson(AndroidUIActivity.class);
             }
         });
+        findViewById(R.id.lesson_vk_profile_root_view).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openLesson(VKProfilePageActivity.class);
+            }
+        });
+        findViewById(R.id.lesson_google_podcasts_root_view).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openLesson(GooglePodcastsActivity.class);
+            }
+        });
+
     }
 
     private void openLesson(Class<? extends Activity> lessonActivityClass) {

@@ -26,5 +26,9 @@
 
         <include layout="@layout/android_ui_lesson_item" />
 
+        <include layout="@layout/android_vk_profile_lesson_item" />
+
+        <include layout="@layout/android_google_podcasts_lesson_item" />
+
     </LinearLayout>
 </ScrollView>

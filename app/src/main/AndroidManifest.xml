@@ -11,8 +11,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name="com.epam.themes.uicomponents.AndroidUIActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
+        <activity  android:name="com.epam.themes.androidcomponents.activities.GooglePodcastsActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity android:name="com.epam.themes.androidcomponents.activities.VKProfilePageActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name="com.epam.themes.uicomponents.AndroidUIActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity android:name="com.epam.LessonsActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -4,6 +4,18 @@
 
     <string name="theme_android_components">Android Components</string>
     <string name="theme_android_ui">Android UI</string>
+    <string name="theme_vk_profile">Vk Profile Page</string>
+    <string name="theme_google_podcasts">Google Podcasts</string>
+
     <string name="mentor_name">Mentor anonymous</string>
     <string name="mentor_two_name">Mentor 2 anonymous</string>
+    <string name="edit">Edit</string>
+    <string name="profile_account_status">Hi Ultra, hi tomorrowland!</string>
+    <string name="profile_account_friends">166 friends</string>
+    <string name="profile_account_address">Lives in Oslo</string>
+    <string name="profile_account_showinfo">Show info</string>
+    <string name="profile_account_whatsnew">What\'s new?</string>
+    <string name="profile_account_photos">Photos</string>
+    <string name="profile_account_photos_num">1902</string>
+
 </resources>
