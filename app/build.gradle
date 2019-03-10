@@ -1,5 +1,3 @@
-import com.google.common.collect.ImmutableList
-
 apply plugin: 'com.android.application'
 
 android {
@@ -17,8 +15,10 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
+            shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+
             buildConfigField "String", "SERVER_PREFIX", "\"\""
         }
 
@@ -115,7 +115,7 @@ task printV() {
 
 task mergeRequestFastCheck {
     dependsOn 'clean'
-    dependsOn ':awesomemodule:testDebugUnitTest'
+    dependsOn ':repositorymodule:testDebugUnitTest'
     dependsOn 'testFullMinApi21DebugUnitTest'
 
     doLast {
