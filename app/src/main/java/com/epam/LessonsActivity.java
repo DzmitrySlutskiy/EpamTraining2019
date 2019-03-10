@@ -20,11 +20,17 @@ public class LessonsActivity extends AppCompatActivity {
         findViewById(R.id.lesson_components_root_view).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                openLesson(AndroidComponentsActivity.class);
+            }
+        });
+
+        findViewById(R.id.lesson_ui_view).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
                 openLesson(UIComponentsActivity.class);
             }
         });
 
-        //todo open ui activity
     }
 
     private void openLesson(Class<? extends Activity> lessonActivityClass) {
