@@ -1,5 +1,7 @@
 [Useful links and plugins](/Useful_things.md) 😉
 
+# Homework statuses:
+https://docs.google.com/spreadsheets/d/1cMIg0OQsFTpISKxCy6Zlni_V2iDcj9CCzytG3qtckkY/edit?usp=sharing
 
 # Training chat in Telegram:
 https://t.me/joinchat/DNzoqBZ3iHcGMtD4CzR5fw
