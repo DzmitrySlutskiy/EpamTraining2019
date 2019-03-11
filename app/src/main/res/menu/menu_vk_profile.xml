@@ -1,0 +1,14 @@
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" >
+    <item
+        android:id="@+id/action_micro"
+        android:icon="@drawable/ic_content_copy_white_24dp"
+        android:title="@string/content"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_back"
+        android:icon="@drawable/ic_more_vert_white_24dp"
+        android:title="@string/back"
+        app:showAsAction="always" />
+</menu>

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.epam.themes.androidcomponents.activities.VKProfilePageActivity">
+
+    <include layout="@layout/vk_toolbar" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:adjustViewBounds="true"
+        android:contentDescription="profile photo"
+        android:scaleType="centerCrop"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/guideline"
+        app:srcCompat="@drawable/hw0603_2_bugatti_pic" />
+
+    <TextView
+        android:id="@+id/profile_owner_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginBottom="28dp"
+        android:text="@string/profile_account_owner_name"
+        android:textColor="@color/real_white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/profile_owner_online"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginBottom="8dp"
+        android:alpha="0.5"
+        android:text="@string/profile_account_owner_online"
+        android:textColor="@color/real_white"
+        android:textSize="11sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imagePhotoTop"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:layout_marginEnd="16dp"
+        android:layout_toLeftOf="@id/imagePhoto"
+        android:alpha="0.5"
+        android:contentDescription="target icon"
+        android:scaleType="fitXY"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/profile_owner_online"
+        app:srcCompat="@drawable/ic_local_see_white_24dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="1dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.32"/>
+
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="0dp"
+        android:layout_height="32dp"
+        android:layout_margin="8dp"
+        android:background="@drawable/rounded_button"
+        android:text="@string/edit"
+        android:textAllCaps="false"
+        android:textColor="@color/design_default_color_primary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <LinearLayout
+        android:id="@+id/profile_data"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/button"
+        tools:layout_editor_absoluteX="0dp">
+
+        <include layout="@layout/vk_profile_page_status_item" />
+        <include layout="@layout/vk_profile_page_friends_item" />
+        <include layout="@layout/vk_profile_page_address_item" />
+        <include layout="@layout/vk_profile_page_showinfo_item" />
+        <View
+            android:id="@+id/up_divider"
+            android:layout_width="match_parent"
+            android:layout_height="4dp"
+            android:alpha="0.5"
+            android:background="@color/design_default_color_primary" />
+        <include layout="@layout/vk_profile_page_whatsnew_item" />
+        <View
+            android:id="@+id/up_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="4dp"
+            android:alpha="0.5"
+            android:background="@color/design_default_color_primary" />
+        <include layout="@layout/vk_profile_page_photos_scroll_item" />
+
+    </LinearLayout>
+
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/vk_bottom_navigation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/menu_bottom_navigation" />
+
+</android.support.constraint.ConstraintLayout>
