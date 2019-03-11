@@ -1,6 +1,7 @@
 [Useful links and plugins](/Useful_things.md) 😉
 
-# Homework statuses:
+# Homework progress and deadline:
+#### Don't hesitate to ask your mentor to actualize document.
 https://docs.google.com/spreadsheets/d/1cMIg0OQsFTpISKxCy6Zlni_V2iDcj9CCzytG3qtckkY/edit?usp=sharing
 
 # Training chat in Telegram:
