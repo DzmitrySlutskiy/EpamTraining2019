@@ -24,6 +24,8 @@
 
         <include layout="@layout/android_components_lesson_item" />
 
+        <include layout="@layout/compound_view_item" android:id="@+id/lesson_compound_view" />
+
         <!--TODO add new item-->
     </LinearLayout>
 </ScrollView>

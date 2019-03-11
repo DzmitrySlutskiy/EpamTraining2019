@@ -7,7 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.epam.cleancodetest.R;
-import com.epam.themes.androidcomponents.AndroidComponentsActivity;
+import com.epam.themes.compoundview.CompoundViewActivity;
 import com.epam.themes.uicomponents.UIComponentsActivity;
 
 public class LessonsActivity extends AppCompatActivity {
@@ -24,7 +24,12 @@ public class LessonsActivity extends AppCompatActivity {
             }
         });
 
-        //todo open ui activity
+        findViewById(R.id.lesson_compound_view).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openLesson(CompoundViewActivity.class);
+            }
+        });
     }
 
     private void openLesson(Class<? extends Activity> lessonActivityClass) {
