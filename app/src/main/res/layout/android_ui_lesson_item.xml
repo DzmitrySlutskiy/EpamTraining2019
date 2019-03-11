@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/lesson_components_root_view"
+    android:id="@+id/lesson_ui_root_view"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="?attr/selectableItemBackground"
@@ -23,7 +23,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/avatar"
-        android:text="@string/artem_name"
+        android:text="@string/yahor_name"
         android:textStyle="bold" />
 
     <TextView
@@ -34,7 +34,7 @@
         android:layout_marginLeft="24dp"
         android:layout_marginTop="16dp"
         android:layout_toRightOf="@id/avatar"
-        android:text="@string/theme_android_components"
+        android:text="@string/android_ui"
         android:textStyle="bold" />
 
     <TextView
@@ -44,6 +44,5 @@
         android:layout_below="@id/lesson_theme"
         android:layout_marginLeft="24dp"
         android:layout_toRightOf="@id/avatar"
-        android:text="@string/components_date" />
+        android:text="@string/ui_date" />
 </RelativeLayout>
-    

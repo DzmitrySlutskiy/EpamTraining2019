@@ -22,8 +22,9 @@
             android:textSize="24sp"
             app:fontFamily="@font/indie_flower" />
 
+        <include layout="@layout/android_ui_lesson_item" />
+
         <include layout="@layout/android_components_lesson_item" />
 
-        <!--TODO add new item-->
     </LinearLayout>
 </ScrollView>
