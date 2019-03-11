@@ -1,0 +1,39 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" >
+    <item
+        android:id="@+id/action_newsfeed"
+        android:checkable="false"
+        android:enabled="true"
+        android:icon="@drawable/ic_newsfeed_black_24dp"
+        android:title="@string/profile_account_bottom_nav_newsfeed"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_search"
+        android:checkable="false"
+        android:enabled="true"
+        android:icon="@drawable/ic_searched_for_black_24dp"
+        android:title="@string/profile_account_bottom_nav_search"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_message"
+        android:checkable="false"
+        android:enabled="true"
+        android:icon="@drawable/ic_message_black_24dp"
+        android:title="@string/profile_account_bottom_nav_message"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_notify"
+        android:checkable="false"
+        android:enabled="true"
+        android:icon="@drawable/ic_notifications_none_black_24dp"
+        android:title="@string/profile_account_bottom_nav_notify"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_settings"
+        android:checkable="false"
+        android:enabled="true"
+        android:icon="@drawable/ic_settings_black_24dp"
+        android:title="@string/profile_account_bottom_nav_settings"
+        app:showAsAction="always" />
+
+</menu>

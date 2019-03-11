@@ -5,6 +5,6 @@
     <color name="colorAccent">#AD1457</color>
 
     <color name="real_black">#ff000000</color>
-    <color name="real_white">#fff</color>
+    <color name="real_white">#FFFFFF</color>
     <color name="blue_50">#E3F2FD</color>
 </resources>

@@ -21,6 +21,44 @@
         app:layout_constraintBottom_toTopOf="@+id/guideline"
         app:srcCompat="@drawable/hw0603_2_bugatti_pic" />
 
+    <TextView
+        android:id="@+id/profile_owner_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginBottom="28dp"
+        android:text="@string/profile_account_owner_name"
+        android:textColor="@color/real_white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/profile_owner_online"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginBottom="8dp"
+        android:alpha="0.5"
+        android:text="@string/profile_account_owner_online"
+        android:textColor="@color/real_white"
+        android:textSize="11sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imagePhotoTop"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:layout_marginEnd="16dp"
+        android:layout_toLeftOf="@id/imagePhoto"
+        android:alpha="0.5"
+        android:contentDescription="target icon"
+        android:scaleType="fitXY"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/profile_owner_online"
+        app:srcCompat="@drawable/ic_local_see_white_24dp" />
+
     <android.support.constraint.Guideline
         android:id="@+id/guideline"
         android:layout_width="1dp"
@@ -71,5 +109,16 @@
         <include layout="@layout/vk_profile_page_photos_scroll_item" />
 
     </LinearLayout>
+
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/vk_bottom_navigation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/menu_bottom_navigation" />
 
 </android.support.constraint.ConstraintLayout>
