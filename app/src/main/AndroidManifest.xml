@@ -24,6 +24,8 @@
             android:name="com.epam.themes.uicomponents.UIComponentsActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
 
+        <activity android:name="com.epam.themes.compoundview.CompoundViewActivity" />
+
         <activity android:name="com.epam.themes.androidcomponents.AndroidComponentsActivity" />
 
         <activity
