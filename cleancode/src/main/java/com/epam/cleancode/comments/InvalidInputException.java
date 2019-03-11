@@ -6,7 +6,7 @@ public class InvalidInputException extends RuntimeException {
     public InvalidInputException(String s) {
         super();
 
-        this.message = s;
+        this.message = messageText;
     }
 
     @Override
