@@ -2,6 +2,12 @@
     <string name="app_name">Epam Training 😅</string>
     <string name="available_lessons_text">Available lessons</string>
 
-    <string name="theme_android_components">Android Components</string>
+    <string name="android_components_theme">Android Components</string>
     <string name="theme_android_ui">Android UI</string>
+    <string name="hw_04_03_2019">04.03.2019</string>
+    <string name="mentor_photo">mentor photo</string>
+    <string name="mentor_artiom">Artiom</string>
+    <string name="mentor_egor">Egor</string>
+    <string name="hw_06_03_2019">06.03.2019</string>
+    <string name="user_interface_theme">User Interface</string>
 </resources>

@@ -28,7 +28,7 @@ public class AndroidComponentsActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_main);
 
-        setTitle(R.string.theme_android_components);
+        setTitle(R.string.android_components_theme);
 
         mIntent = new Intent(this, SimpleService.class);
 

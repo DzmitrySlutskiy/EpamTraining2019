@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/android_components_lesson_item"
+    android:id="@+id/user_interface_lesson_item"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="?attr/selectableItemBackground"
@@ -14,38 +14,37 @@
     <include layout="@layout/artiom_avatar" android:id="@+id/avatar"/>
 
     <TextView
-        android:id="@+id/android_components_lesson_theme"
+        android:id="@+id/user_interface_lesson_theme"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_marginStart="16dp"
         android:layout_toEndOf="@id/avatar"
-        android:text="@string/android_components_theme"
+        android:text="@string/user_interface_theme"
         android:textSize="18sp"
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/android_components_lesson_date"
+        android:id="@+id/user_interface_lesson_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_marginStart="64dp"
-        android:layout_toEndOf="@id/android_components_lesson_theme"
-        android:text="@string/hw_04_03_2019"
+        android:layout_toEndOf="@id/user_interface_lesson_theme"
+        android:text="@string/hw_06_03_2019"
         android:textAlignment="textEnd" />
 
     <TextView
-        android:id="@+id/android_components_lesson_mentor"
+        android:id="@+id/user_interface_lesson_mentor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/android_components_lesson_theme"
+        android:layout_below="@id/user_interface_lesson_theme"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:layout_toEndOf="@id/avatar"
-        android:text="@string/mentor_artiom"
+        android:text="@string/mentor_egor"
         android:textStyle="italic" />
 
 </RelativeLayout>
-    
