@@ -7,6 +7,18 @@
 
 # Feel free to create issue if some links don't work or you need some help
 
+# HW 11.03.2019
+
+Compound view:
+https://code.tutsplus.com/tutorials/creating-compound-views-on-android--cms-22889
+
+Navigation Drawer:
+https://developer.android.com/training/implementing-navigation/nav-drawer#java
+
+You need to create `Activity` with Navigation Drawer and two `Fragments` which you will switch after clicking in NavDrawer.
+
+Header is a compound view with Vector icon, User name, and email. 
+Icon should be clickable and each click will change icon color (can be random color or predifined list)
 
 # HW 06.03.2019
 More about Android Views: 
