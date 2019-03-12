@@ -6,4 +6,14 @@
     <string name="theme_android_ui">Android UI</string>
     <string name="theme_android_compound_view">Compound View</string>
     <string name="theme_android_collection_views">Collection Views</string>
+
+    <string name="compound_view_lesson_date">11.03.2019</string>
+    <string name="android_components_lesson_date">04.03.2019</string>
+    <string name="android_ui_lesson_date">06.03.2019</string>
+    <string name="android_collection_views_lesson_date">14.03.2019</string>
+
+    <string name="android_components_mentor_name">Artiom Zagrebantsev</string>
+    <string name="android_ui_mentor_name">Yahor Urbanovich</string>
+    <string name="compound_view_mentor_name">Yahor Urbanovich</string>
+    <string name="android_collection_views_mentor_name">Artiom Zagrebantsev</string>
 </resources>
