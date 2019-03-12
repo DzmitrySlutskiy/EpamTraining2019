@@ -1,13 +1,13 @@
 package com.epam.cleancode.singleresponsibility;
 
-public class Calculator{
+public class Calculator {
 
     private static final String SEPARATOR = ",";
 
     public String add(String numbers) {
         validate(numbers);
 
-        return "sum: " +getSum(numbers);
+        return "sum: " + getSum(numbers);
     }
 
     public String multiply(String numbers) {
