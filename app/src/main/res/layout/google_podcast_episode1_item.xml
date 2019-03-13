@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/google_podcast_episode1_item_root"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="4dp"
+    android:paddingLeft="4dp">
+
+    <android.support.v7.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/card_view_ep1_item"
+        android:layout_gravity="center"
+        android:layout_width="64dp"
+        android:layout_height="44dp"
+        card_view:cardCornerRadius="8dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/cars_1" />
+    </android.support.v7.widget.CardView>
+
+    <TextView
+        android:id="@+id/google_podcast_episode1_item_desciption_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="10dp"
+        android:layout_toRightOf="@id/card_view_ep1_item"
+        android:text="@string/google_podcast_episode1_item_desciption"
+        android:textColor="@color/real_black"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/google_podcast_episode1_item_posted_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/card_view_ep1_item"
+        android:layout_marginStart="10dp"
+        android:layout_toEndOf="@+id/card_view_ep1_item"
+        android:text="@string/google_podcast_episode1_item_posted"
+        android:textSize="12sp" />
+
+    <ImageView
+        android:id="@+id/google_podcast_episode_item_play"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_margin="4dp"
+        android:scaleType="fitXY"
+        app:srcCompat="@drawable/ic_play_circle_24dp" />
+
+</RelativeLayout>

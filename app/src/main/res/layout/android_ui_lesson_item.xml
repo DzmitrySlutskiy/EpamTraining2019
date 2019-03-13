@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -10,50 +9,57 @@
     android:focusable="true"
     android:focusableInTouchMode="true"
     android:orientation="horizontal"
-    android:padding="16dp"
+    android:padding="4dp"
     tools:showIn="@layout/activity_lessons">
 
     <RelativeLayout android:id="@+id/avatar_container"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
         android:baselineAligned="false">
 
         <ImageView
             android:id="@+id/avatar"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            app:srcCompat="@drawable/ic_color_lens_black_24dp" />
+            app:srcCompat="@drawable/ic_account_circle"
+            android:tint="#E91E63"/>
 
         <TextView
             android:id="@+id/mentor_name"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="20dp"
+            android:layout_below="@+id/avatar"
             android:layout_alignParentBottom="true"
-            android:fontFamily="cursive"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="serif"
             android:gravity="center_horizontal"
-            android:text="@string/mentor_two_name"
+            android:text="@string/mentor_name"
             android:textColor="@color/colorAccent"
-            android:textSize="14sp" />
+            android:textSize="8sp"
+            android:textStyle="bold|italic"
+            app:autoSizeTextType="none" />
     </RelativeLayout>
 
     <TextView
         android:id="@+id/lesson_theme"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_toRightOf="@id/avatar_container"
+        android:layout_marginStart="20dp"
+        android:layout_toEndOf="@id/avatar_container"
         android:text="@string/theme_android_ui"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:textSize="18sp"/>
 
     <TextView
         android:id="@+id/lesson_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="24dp"
-        android:layout_toRightOf="@id/avatar_container"
+        android:layout_marginStart="20dp"
+        android:layout_toEndOf="@id/avatar_container"
+        android:textSize="12sp"
         android:text="28.02.2019" />
 
 </RelativeLayout>

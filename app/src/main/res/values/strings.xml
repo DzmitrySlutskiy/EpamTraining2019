@@ -29,4 +29,18 @@
     <string name="profile_account_bottom_nav_notify">notify</string>
     <string name="profile_account_bottom_nav_settings">settings</string>
 
+    <string name="google_podcasts">Google Podcasts</string>
+    <string name="new_label">New</string>
+    <string name="for_you">For you</string>
+    <string name="google_podcasts_tab_new_epizod">New episodes</string>
+    <string name="google_podcasts_tab_progress">In progress</string>
+    <string name="google_podcasts_tab_download">Downloads</string>
+    <string name="google_podcast_episode1_item_desciption">154: Developer Growth. Start writing</string>
+    <string name="google_podcast_episode1_item_posted">2 days ago - 67 min</string>
+    <string name="google_podcast_episode2_item_desciption">Выпуск 79: Android in Car.(Android Auto)</string>
+    <string name="google_podcast_episode2_item_posted">2 days ago - 73 min</string>
+    <string name="google_podcast_episode3_item_desciption">Полодка #101- Базы данных</string>
+    <string name="google_podcast_episode3_item_posted">3 days ago - 12 min</string>
+    <string name="google_podcasts_all_new_episodes">All new episodes</string>
+
 </resources>

@@ -6,4 +6,196 @@
     android:layout_height="match_parent"
     tools:context="com.epam.themes.androidcomponents.activities.GooglePodcastsActivity">
 
+    <include layout="@layout/google_podcasts_toolbar" />
+
+    <ImageView
+        android:id="@+id/imageView_gp1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="?attr/actionBarSize"
+        android:padding="2dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent=".25"
+        android:cropToPadding="true"
+        app:srcCompat="@drawable/cars_1" />
+
+    <ImageView
+        android:id="@+id/imageView_gp2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="?attr/actionBarSize"
+        app:layout_constraintWidth_percent = ".25"
+        android:scaleType="centerCrop"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintLeft_toRightOf="@+id/imageView_gp1"
+        android:padding="2dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:cropToPadding="true"
+        app:srcCompat="@drawable/cars_2" />
+
+    <ImageView
+        android:id="@+id/imageView_gp3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="?attr/actionBarSize"
+        app:layout_constraintWidth_percent = ".25"
+        app:layout_constraintDimensionRatio="1:1"
+        android:scaleType="centerCrop"
+        app:layout_constraintLeft_toRightOf="@+id/imageView_gp2"
+        android:padding="2dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:cropToPadding="true"
+        app:srcCompat="@drawable/cars_3" />
+
+    <ImageView
+        android:id="@+id/imageView_gp4"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="?attr/actionBarSize"
+        app:layout_constraintWidth_percent = ".25"
+        app:layout_constraintDimensionRatio="1:1"
+        android:scaleType="centerCrop"
+        app:layout_constraintLeft_toRightOf="@+id/imageView_gp3"
+        android:padding="2dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:cropToPadding="true"
+        app:srcCompat="@drawable/cars_4" />
+
+    <ImageView
+        android:id="@+id/imageView_gp5"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:padding="2dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView_gp1"
+        app:layout_constraintWidth_percent=".25"
+        android:cropToPadding="true"
+        app:srcCompat="@drawable/cars_4" />
+
+    <TextView
+        android:id="@+id/new_label1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        android:background="@android:color/holo_blue_dark"
+        android:text="@string/new_label"
+        android:textColor="@color/real_white"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView_gp1"
+        app:layout_constraintLeft_toLeftOf="@+id/imageView_gp1" />
+
+    <TextView
+        android:id="@+id/new_label2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        android:background="@android:color/holo_blue_dark"
+        android:text="@string/new_label"
+        android:textColor="@color/real_white"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView_gp2"
+        app:layout_constraintLeft_toLeftOf="@+id/imageView_gp2" />
+
+    <TextView
+        android:id="@+id/new_label5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        android:background="@android:color/holo_blue_dark"
+        android:text="@string/new_label"
+        android:textColor="@color/real_white"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView_gp5"
+        app:layout_constraintLeft_toLeftOf="@+id/imageView_gp5" />
+
+    <TextView
+        android:id="@+id/for_you"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/for_you"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView_gp5" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/google_podcasts_viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/for_you">
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/google_podcasts_tablayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:tabGravity="center"
+            app:tabIndicatorColor="@color/design_default_color_primary"
+            app:tabSelectedTextColor="@color/design_default_color_primary"
+            app:tabTextAppearance="@android:style/TextAppearance.Widget.TabWidget">
+
+            <android.support.design.widget.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/google_podcasts_tab_new_epizod" />
+
+            <android.support.design.widget.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/google_podcasts_tab_new_epizod" />
+
+            <android.support.design.widget.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/google_podcasts_tab_download" />
+        </android.support.design.widget.TabLayout>
+
+    </android.support.v4.view.ViewPager>
+
+    <LinearLayout
+        android:id="@+id/podcasts_episodes"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="58dp"
+        android:layout_marginBottom="8dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/all_new_episodes"
+        app:layout_constraintTop_toBottomOf="@+id/for_you">
+
+        <include layout="@layout/google_podcast_episode1_item" />
+
+        <include layout="@layout/google_podcast_episode2_item" />
+
+        <include layout="@layout/google_podcast_episode3_item" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/all_new_episodes_arrow"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_margin="4dp"
+        android:scaleType="fitXY"
+        app:srcCompat="@drawable/ic_arrow_forward_24dp" />
+
+    <TextView
+        android:id="@+id/all_new_episodes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/google_podcasts_all_new_episodes"
+        android:textColor="@color/design_default_color_primary"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/all_new_episodes_arrow"
+        app:layout_constraintStart_toEndOf="@id/all_new_episodes_arrow"
+        app:layout_constraintTop_toTopOf="@+id/all_new_episodes_arrow" />
+
 </android.support.constraint.ConstraintLayout>
