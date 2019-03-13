@@ -1,36 +1,35 @@
 package com.epam.cleancode.comments;
 
+
 class MortgageInstallmentCalculator {
+
+    private static final String INVALID_INPUT_EXCEPTION = "Negative values are not allowed";
+    private static final double NUMBER_FOR_CONVERT_TO_DECIMAL = 100.0;
+    private static final double AMOUNT_OF_MONTHS = 12.0;
+    private static final double MIN_VALUE = 12.0;
 
     /**
      *
-     * @param LoanAmount principal amount
-     * @param TermDurationInYears term of mortgage in years
-     * @param RateOfInterest rate of interest
+     * @param loanAmount principal amount
+     * @param termDurationInYears term of mortgage in years
+     * @param digitaRateOfInterest rate of interest
      * @return monthly payment amount
      */
-    static double calculateMonthlyPayment(int LoanAmount, int TermDurationInYears, double RateOfInterest) {
+    static double calculateMonthlyPayment(final int loanAmount, final int termDurationInYears, double digitaRateOfInterest) {
 
-        //cannot have negative loanAmount, term duration and rate of interest
-        if (LoanAmount < 0 || TermDurationInYears <= 0 || RateOfInterest < 0) {
-            throw new InvalidInputException("Negative values are not allowed");
+        digitaRateOfInterest = digitaRateOfInterest / NUMBER_FOR_CONVERT_TO_DECIMAL;
+        double rateOfMonthlyInterest = digitaRateOfInterest /AMOUNT_OF_MONTHS;
+        double termDurationInMonths = termDurationInYears * AMOUNT_OF_MONTHS;
+
+        if (loanAmount < MIN_VALUE || termDurationInYears <= MIN_VALUE || digitaRateOfInterest < MIN_VALUE) {
+            throw new InvalidInputException(INVALID_INPUT_EXCEPTION);
         }
 
-        // Convert interest rate into a decimal - eg. 6.5% = 0.065
-        RateOfInterest /= 100.0;
+        if(digitaRateOfInterest == 0) {
+            return loanAmount / termDurationInMonths;
+        }
 
-        // convert term in years to term in months
-        double TermDurationInMonths = TermDurationInYears * 12;
-
-        //for zero interest rates
-        if(RateOfInterest==0)
-            return  LoanAmount/TermDurationInMonths;
-
-        // convert into monthly rate
-        double RateOfMonthlyInterest = RateOfInterest / 12.0;
-
-        // Calculate the monthly payment
-        // The Math.pow() method is used calculate values raised to a power
-        return (LoanAmount * RateOfMonthlyInterest) / (1 - Math.pow(1 + RateOfMonthlyInterest, -TermDurationInMonths));
+        return (loanAmount * rateOfMonthlyInterest) / (1 - Math.pow(1 + rateOfMonthlyInterest, -termDurationInMonths));
     }
+
 }
