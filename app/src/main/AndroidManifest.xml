@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.epam.cleancodetest">
+    package="com.epam">
 
     <application
         android:allowBackup="true"
@@ -16,9 +16,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.epam.activities.AActivity" android:launchMode="singleInstance"/>
-        <activity android:name="com.epam.activities.BActivity" />
-        <activity android:name="com.epam.activities.CActivity" />
+
+        <activity android:name="com.epam.Activity1"/>
+
+        <activity android:name="com.epam.Activity2"/>
+
+        <activity android:name="com.epam.Activity3"/>
+
+        <service android:name="com.epam.TestService"/>
 
     </application>
 
