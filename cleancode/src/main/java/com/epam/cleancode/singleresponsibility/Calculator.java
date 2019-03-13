@@ -19,9 +19,9 @@ class Calculator {
     private int getSum(String numbers) {
         int sum = 0;
 
-        for (String s : numbers.split(SEPARATOR)) {
-            if (isNotEmpty(s)) {
-                sum += Integer.valueOf(s);
+        for (String number : numbers.split(SEPARATOR)) {
+            if (isNotEmpty(number)) {
+                sum += Integer.valueOf(number);
             }
         }
 
@@ -31,9 +31,9 @@ class Calculator {
     private int getProduct(String numbers) {
         int sum = 1;
 
-        for (String s : numbers.split(SEPARATOR)) {
-            if (isNotEmpty(s)) {
-                sum *= Integer.valueOf(s);
+        for (String number : numbers.split(SEPARATOR)) {
+            if (isNotEmpty(number)) {
+                sum *= Integer.valueOf(number);
             }
         }
 
