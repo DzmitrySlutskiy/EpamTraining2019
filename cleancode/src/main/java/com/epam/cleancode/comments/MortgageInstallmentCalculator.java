@@ -1,39 +1,36 @@
 package com.epam.cleancode.comments;
 
-public class MortgageInstallmentCalculator {
+class MortgageInstallmentCalculator {
 
     /**
      *
-     * @param p principal amount
-     * @param t term of mortgage in years
-     * @param r rate of interest
+     * @param LoanAmount principal amount
+     * @param TermDurationInYears term of mortgage in years
+     * @param RateOfInterest rate of interest
      * @return monthly payment amount
      */
-    public static double calculateMonthlyPayment(
-            int p, int t, double r) {
+    static double calculateMonthlyPayment(int LoanAmount, int TermDurationInYears, double RateOfInterest) {
 
         //cannot have negative loanAmount, term duration and rate of interest
-        if (p < 0 || t <= 0 || r < 0) {
+        if (LoanAmount < 0 || TermDurationInYears <= 0 || RateOfInterest < 0) {
             throw new InvalidInputException("Negative values are not allowed");
         }
 
         // Convert interest rate into a decimal - eg. 6.5% = 0.065
-        r /= 100.0;
+        RateOfInterest /= 100.0;
 
         // convert term in years to term in months
-        double tim = t * 12;
+        double TermDurationInMonths = TermDurationInYears * 12;
 
         //for zero interest rates
-        if(r==0)
-            return  p/tim;
+        if(RateOfInterest==0)
+            return  LoanAmount/TermDurationInMonths;
 
         // convert into monthly rate
-        double m = r / 12.0;
+        double RateOfMonthlyInterest = RateOfInterest / 12.0;
 
         // Calculate the monthly payment
         // The Math.pow() method is used calculate values raised to a power
-        double monthlyPayment = (p * m) / (1 - Math.pow(1 + m, -tim));
-
-        return monthlyPayment;
+        return (LoanAmount * RateOfMonthlyInterest) / (1 - Math.pow(1 + RateOfMonthlyInterest, -TermDurationInMonths));
     }
 }
