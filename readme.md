@@ -14,6 +14,26 @@ https://t.me/joinchat/DNzoqBZ3iHcGMtD4CzR5fw
 
 # Feel free to create issue if some links don't work or you need some help
 
+# HW 14.03.2019
+
+Related documentation:
+- https://developer.android.com/training/animation/screen-slide
+- https://developer.android.com/guide/topics/ui/layout/recyclerview
+- https://developer.android.com/reference/android/support/v7/widget/DividerItemDecoration
+- https://developer.android.com/reference/android/support/v7/util/DiffUtil
+- https://developer.android.com/reference/android/support/v7/widget/DefaultItemAnimator
+- https://developer.android.com/reference/android/support/v7/widget/helper/ItemTouchHelper
+
+## Theory
+- Take a look at the related documentation and learn items you didn't understand during the lesson.
+- Find out how to use https://developer.android.com/reference/android/arch/paging/PagedListAdapter. Do not use it in HW practics!
+
+## Practics
+- Create compound view wih custom attributes for student UI item
+- Create Backend data <-> RecyclerView UI relations (you can fork lesson implementation and finish it, or use your own).
+Backend data could be mocked, but it should give possibility to pull, delete and edit entities.
+RecyclerView should support drag'n'drop, swipe-to-delete and pagination features
+
 # HW 11.03.2019
 
 Compound view:
