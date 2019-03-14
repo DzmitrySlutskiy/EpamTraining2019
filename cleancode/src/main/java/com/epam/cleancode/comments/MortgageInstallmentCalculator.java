@@ -3,9 +3,9 @@ package com.epam.cleancode.comments;
 class MortgageInstallmentCalculator {
 
     private static final int monthsInYear = 12;
+    private static final double hundred = 100.0;
 
-    static double calculateMonthlyPayment
-            (int principalAmount, int mortgageTermInYears, double interestRate) {
+    static double calculateMonthlyPayment(int principalAmount, int mortgageTermInYears, double interestRate) {
 
         if (principalAmount < 0
                 || interestRate < 0
@@ -13,7 +13,7 @@ class MortgageInstallmentCalculator {
             throw new InvalidInputException("Negative values are not allowed");
         }
 
-        interestRate /= 100.0;
+        interestRate /= hundred;
         double mortgageTermInMonths = mortgageTermInYears * monthsInYear;
 
         if(interestRate == 0) {
