@@ -5,4 +5,5 @@
     <string name="theme_android_components">Android Components</string>
     <string name="theme_android_ui">Android UI</string>
     <string name="theme_android_compound_view">Compound View</string>
+    <string name="theme_android_collection_views">Collection Views</string>
 </resources>
