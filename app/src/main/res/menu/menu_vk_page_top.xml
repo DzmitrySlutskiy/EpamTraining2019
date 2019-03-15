@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_about"
+        android:title="@string/about_action_title" />
+
+    <item
+        android:id="@+id/action_edit"
+        android:icon="@drawable/ic_copy"
+        android:title="@string/copy_link_toolbar"
+        app:showAsAction="always" />
+</menu>

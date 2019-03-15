@@ -14,6 +14,7 @@ import com.epam.themes.androidcomponents.AndroidComponentsActivity;
 import com.epam.themes.collectionviews.CollectionViewsActivity;
 import com.epam.themes.compoundview.CompoundViewActivity;
 import com.epam.themes.uicomponents.UIComponentsActivity;
+import com.epam.themes.uicomponents.VKPageActivity;
 
 public class LessonsActivity extends AppCompatActivity {
     @Override
@@ -50,6 +51,12 @@ public class LessonsActivity extends AppCompatActivity {
                 openLesson(CollectionViewsActivity.class);
             }
         });
+        findViewById(R.id.vk_page_view_item).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openLesson(VKPageActivity.class);
+            }
+        });
     }
 
     private void openLesson(Class<? extends Activity> lessonActivityClass) {
@@ -80,6 +87,12 @@ public class LessonsActivity extends AppCompatActivity {
                 R.string.theme_android_collection_views,
                 R.string.android_collection_views_lesson_date,
                 R.string.android_collection_views_mentor_name,
+                R.drawable.ic_account_circle));
+
+        binding.setVkPageItemModel(new LessonItemModel(
+                R.string.theme_vk_page_view,
+                R.string.vk_page_lesson_date,
+                R.string.vk_page_mentor_name,
                 R.drawable.ic_account_circle));
     }
 }

@@ -21,6 +21,10 @@
         <variable
             name="collectionComponentsViewsItemModel"
             type="com.epam.themes.LessonItemModel" />
+
+        <variable
+            name="vkPageItemModel"
+            type="com.epam.themes.LessonItemModel" />
     </data>
 
     <ScrollView
@@ -64,6 +68,11 @@
                 android:id="@+id/lesson_collection_components_views_item"
                 layout="@layout/item_view"
                 bind:item="@{collectionComponentsViewsItemModel}" />
+
+            <include
+                android:id="@+id/vk_page_view_item"
+                layout="@layout/item_view"
+                bind:item="@{vkPageItemModel}" />
 
         </LinearLayout>
     </ScrollView>

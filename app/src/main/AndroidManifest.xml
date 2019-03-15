@@ -37,6 +37,8 @@
         <activity android:name="com.epam.themes.collectionviews.CollectionViewsActivity" />
         <activity android:name="com.epam.themes.collectionviews.StudentsActivity" />
 
+        <activity android:name="com.epam.themes.uicomponents.VKPageActivity" />
+
         <service android:name="com.epam.themes.androidcomponents.SimpleService" />
 
         <receiver android:name="com.epam.themes.androidcomponents.SimpleBroadcastReceiver">
