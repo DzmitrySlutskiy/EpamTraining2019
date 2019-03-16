@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/lesson_components_root_view"
+    android:id="@+id/lesson_ui_view"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="?attr/selectableItemBackground"
@@ -14,18 +13,18 @@
     tools:showIn="@layout/activity_lessons">
 
     <ImageView
-        android:id="@+id/avatar"
+        android:id="@+id/avatar_java_basics"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        app:srcCompat="@drawable/ic_mentor_artiom" />
+        android:src="@drawable/mik" />
 
     <TextView
-        android:id="@+id/lesson_theme"
+        android:id="@+id/lesson_theme_java_basics"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_toEndOf="@id/avatar"
-        android:text="@string/theme_android_components"
+        android:layout_toEndOf="@id/avatar_java_basics"
+        android:text="@string/theme_java_basics"
         android:textStyle="bold" />
 
     <TextView
@@ -34,18 +33,17 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="16dp"
-        android:layout_toEndOf="@id/avatar"
-        android:text="@string/_04_03_2019" />
+        android:layout_toEndOf="@id/avatar_java_basics"
+        android:text="@string/_25_02_2019" />
 
     <TextView
         android:id="@+id/lesson_mentor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
         android:layout_marginStart="16dp"
-        android:text="@string/zagrebantsev_artiom" />
+        android:text="@string/mikhail_sianko" />
 
 
 </RelativeLayout>
-    

@@ -26,6 +26,11 @@
 
         <include layout="@layout/android_components_lesson_item" />
 
+<<<<<<< HEAD
+        <include layout="@layout/clean_code_lesson_item" />
+
+        <include layout="@layout/java_basics_lesson_item" />
+=======
         <include
             android:id="@+id/lesson_compound_view"
             layout="@layout/compound_view_item" />
@@ -40,5 +45,6 @@
             app:lessonTheme="@string/theme_android_collection_views" />
 
         <!--TODO add new item-->
+>>>>>>> 815d2b98c69d318ad8e542f2c92664715c4a9a16
     </LinearLayout>
 </ScrollView>
