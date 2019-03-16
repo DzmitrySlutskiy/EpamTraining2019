@@ -4,13 +4,6 @@
 
     <string name="theme_android_components">Android Components</string>
     <string name="theme_android_ui">Android UI</string>
-    <string name="zagrebantsev_artiom">Zagrebantsev Artiom</string>
-    <string name="_04_03_2019">04.03.2019</string>
-    <string name="_06_03_2019">06_03_2019</string>
-    <string name="egor_egorikftp">Egor egorikftp</string>
-    <string name="clean_code">Clean code</string>
-    <string name="_28_02_2019">28.02.2019</string>
-    <string name="mikhail_sianko">Mikhail Sianko</string>
-    <string name="_25_02_2019">25.02.2019</string>
-    <string name="theme_java_basics">Java Basics</string>
+    <string name="theme_android_compound_view">Compound View</string>
+    <string name="theme_android_collection_views">Collection Views</string>
 </resources>
