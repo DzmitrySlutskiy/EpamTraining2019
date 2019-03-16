@@ -32,8 +32,7 @@ public class LessonsActivity extends AppCompatActivity {
             }
         });
 
-<<<<<<< HEAD
-=======
+
         findViewById(R.id.lesson_compound_view).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -47,7 +46,6 @@ public class LessonsActivity extends AppCompatActivity {
                 openLesson(CollectionViewsActivity.class);
             }
         });
->>>>>>> 815d2b98c69d318ad8e542f2c92664715c4a9a16
     }
 
     private void openLesson(Class<? extends Activity> lessonActivityClass) {
