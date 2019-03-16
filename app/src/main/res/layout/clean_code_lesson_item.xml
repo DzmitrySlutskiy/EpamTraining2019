@@ -25,7 +25,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_toEndOf="@id/avatar"
-        android:text="@string/theme_android_ui"
+        android:text="@string/clean_code"
         android:textStyle="bold" />
 
     <TextView
@@ -35,7 +35,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="16dp"
         android:layout_toEndOf="@id/avatar"
-        android:text="@string/_06_03_2019" />
+        android:text="@string/_28_02_2019" />
 
     <TextView
         android:id="@+id/lesson_mentor"
