@@ -13,7 +13,7 @@ import java.util.Random;
 
 public class StudentsWebService implements IWebService<Student> {
 
-    private List<String> nameStudents = Arrays.asList(
+    public static List<String> nameStudents = Arrays.asList(
             "Комар Андрей",
             "Aliaksei Shvants",
             "Maryia Senkevich",
@@ -42,14 +42,16 @@ public class StudentsWebService implements IWebService<Student> {
             "Vladyslav Vsemirnov"
     );
 
+    private Long lastId;
     private List<Student> studentList = new ArrayList<>();
     private Random random = new Random();
     private Handler handler = new Handler(Looper.getMainLooper());
 
     {
         for (int i = 0; i < 26; i++) {
+            lastId = (long) i;
             Student student = new Student();
-            student.setId((long) i);
+            student.setId(lastId);
             student.setHwCount(1 + random.nextInt(5));
             student.setName(nameStudents.get(i));
             student.setName(String.valueOf(i));
@@ -58,8 +60,13 @@ public class StudentsWebService implements IWebService<Student> {
     }
 
     @Override
-    public void getEntities(ICallback<List<Student>> callback) {
-        callback.onResult(studentList);
+    public void getEntities(final ICallback<List<Student>> callback) {
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                callback.onResult(studentList);
+            }
+        }, 3000);
     }
 
     @Override
@@ -79,6 +86,18 @@ public class StudentsWebService implements IWebService<Student> {
                 } else {
                     callback.onResult(null);
                 }
+            }
+        }, 3000);
+    }
+
+    public void insertEntity(final int position, final Student student, final ICallback<Long> callback) {
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                lastId++;
+                student.setId(lastId);
+                studentList.add(position, student);
+                callback.onResult(lastId);
             }
         }, 3000);
     }

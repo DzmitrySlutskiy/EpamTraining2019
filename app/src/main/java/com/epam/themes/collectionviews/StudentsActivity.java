@@ -7,27 +7,34 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
+import android.view.View;
+import android.widget.ImageButton;
 
 import com.epam.cleancodetest.R;
 import com.epam.themes.backend.IWebService;
 import com.epam.themes.backend.StudentsWebService;
 import com.epam.themes.backend.entities.Student;
-import com.epam.themes.collectionviews.recyclerview.StudentsAdapter;
 import com.epam.themes.collectionviews.recyclerview.StudentTouchCallback;
+import com.epam.themes.collectionviews.recyclerview.StudentsAdapter;
 import com.epam.themes.util.ICallback;
 import com.epam.themes.util.StudentAdapterCallback;
 
 import java.util.List;
+import java.util.Random;
+
+import static com.epam.themes.backend.StudentsWebService.nameStudents;
 
 public class StudentsActivity extends AppCompatActivity {
 
-    public static final int PAGE_SIZE = 5;
+    public static final int PAGE_SIZE = 10;
     public static final int MAX_VISIBLE_ITEMS = 100;
     private final IWebService<Student> studentsWebService = new StudentsWebService();
     private boolean isLoadComplete = false;
     private boolean isLoading = false;
     private StudentsAdapter studentsAdapter;
     private LinearLayoutManager linearLayoutManager;
+    private ImageButton addStudentImageButton;
+    private Random random = new Random();
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -35,9 +42,31 @@ public class StudentsActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_students);
 
+        setupAddButton();
         setupRecyclerView();
-
         loadMoreItems(0, PAGE_SIZE);
+    }
+
+    private void setupAddButton() {
+        addStudentImageButton = findViewById(R.id.addStudentImageButton);
+        addStudentImageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final Student newStudent = new Student()
+                        .setId(-1L)
+                        .setName(nameStudents.get(random.nextInt(26)))
+                        .setHwCount(random.nextInt(10));
+                int insertPosition = linearLayoutManager.findFirstVisibleItemPosition() + 1;
+
+                studentsWebService.insertEntity(insertPosition, newStudent, new ICallback<Long>() {
+                    @Override
+                    public void onResult(Long result) {
+                        newStudent.setId(result);
+                    }
+                });
+                studentsAdapter.insertItem(insertPosition, newStudent);
+            }
+        });
     }
 
     private void setupRecyclerView() {

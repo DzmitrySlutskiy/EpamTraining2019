@@ -79,9 +79,16 @@ public class StudentsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         }
     }
 
-    public void addItems(final List<Student> pResult) {
-        studentList.addAll(pResult);
-        notifyDataSetChanged();
+    public void addItems(final List<Student> studentList) {
+        int oldSize = this.studentList.size();
+        this.studentList.addAll(studentList);
+        notifyItemRangeInserted(this.studentList.size() - studentList.size(), studentList.size());
+    }
+
+
+    public void insertItem(final int position, final Student student) {
+        studentList.add(position, student);
+        notifyItemInserted(position);
     }
 
     public void onItemMove(int fromPosition, int toPosition) {
@@ -101,8 +108,8 @@ public class StudentsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     }
 
     public void onItemDismiss(int adapterPosition) {
-        if (getItemViewType(adapterPosition) == ViewType.STUDENT) {
-            long id = studentList.get(adapterPosition).getId();
+        Long id = studentList.get(adapterPosition).getId();
+        if (getItemViewType(adapterPosition) == ViewType.STUDENT && id != -1L) {
             studentList.remove(adapterPosition);
             studentAdapterCallback.onStudentRemove(id);
             notifyItemRemoved(adapterPosition);

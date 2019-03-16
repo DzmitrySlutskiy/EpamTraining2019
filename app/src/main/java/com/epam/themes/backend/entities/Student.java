@@ -10,23 +10,29 @@ public class Student {
         return mId;
     }
 
-    public void setId(Long mId) {
+    public Student setId(Long mId) {
         this.mId = mId;
+
+        return this;
     }
 
     public String getName() {
         return mName;
     }
 
-    public void setName(String name) {
+    public Student setName(String name) {
         this.mName = name;
+
+        return this;
     }
 
     public int getHwCount() {
         return mHwCount;
     }
 
-    public void setHwCount(int hwCount) {
+    public Student setHwCount(int hwCount) {
         mHwCount = hwCount;
+
+        return this;
     }
 }
