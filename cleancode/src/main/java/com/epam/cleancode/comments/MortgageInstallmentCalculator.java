@@ -1,21 +1,27 @@
 package com.epam.cleancode.comments;
 
 public class MortgageInstallmentCalculator {
+    private static final int ZERO = 0;
+    private static final int ONE = 1;
+    private static final double HUNDRED = 100.0;
+    private static final double TWELVE = 12.0;
 
     public static double calculateMonthlyPayment(
             int principalAmount, int termOfMortgage, double rateOfInterest) {
 
-        if (principalAmount < 0 || termOfMortgage <= 0 || rateOfInterest < 0) {
+        if (principalAmount < ZERO || termOfMortgage <= ZERO || rateOfInterest < ZERO) {
             throw new InvalidInputException("Negative values are not allowed");
         }
-        rateOfInterest /= 100.0;
-        double time = termOfMortgage * 12;
 
-        if (rateOfInterest == 0) {
+        rateOfInterest /= HUNDRED;
+        double time = termOfMortgage * TWELVE;
+
+        if (rateOfInterest == ZERO) {
             return principalAmount / time;
         }
-        double m = rateOfInterest / 12.0;
-        double monthlyPayment = (principalAmount * m) / (1 - Math.pow(1 + m, -time));
+
+        double monthlyRate = rateOfInterest / TWELVE;
+        double monthlyPayment = (principalAmount * monthlyRate) / (ONE - Math.pow(ONE + monthlyRate, -time));
 
         return monthlyPayment;
     }

@@ -3,6 +3,8 @@ package com.epam.cleancode.singleresponsibility;
 public class Calculator {
 
     private static final String SEPARATOR = ",";
+    private static final int ZERO = 0;
+    private static final int ONE = 1;
 
     public String add(String numbers) {
         validate(numbers);
@@ -15,13 +17,13 @@ public class Calculator {
     }
 
     private int getSum(String numbers) {
-        int sum = 0;
+        int sum = ZERO;
         for (String s : numbers.split(SEPARATOR)) if (isNotEmpty(s)) sum += Integer.valueOf(s);
         return sum;
     }
 
     private int getProduct(String numbers) {
-        int sum = 1;
+        int sum = ONE;
         for (String s : numbers.split(SEPARATOR))
             if (isNotEmpty(s))
                 sum *= Integer.valueOf(s);
