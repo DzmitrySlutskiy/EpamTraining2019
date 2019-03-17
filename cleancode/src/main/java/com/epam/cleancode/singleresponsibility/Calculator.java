@@ -1,48 +1,64 @@
 package com.epam.cleancode.singleresponsibility;
 
-public class Calculator{
+public class Calculator {
 
     private static final String SEPARATOR = ",";
+    private static final String REGEX = "[\\d" + SEPARATOR + "]*";
+    private static final String SUM = "sum: ";
+    private static final String PRODUCT = "product: ";
 
-    public String add(String numbers) {
+    public String add(final String numbers) {
         validate(numbers);
-        return "sum: " + String.valueOf(getSum(numbers));
+        final String result = String.valueOf(getSum(numbers));
+
+        return SUM.concat(result);
     }
 
-    public String multiply(String numbers) {
+    public String multiply(final String numbers) {
         validate(numbers);
-        return "product: " + String.valueOf(getProduct(numbers));
+        final String result = String.valueOf(getProduct(numbers));
+
+        return PRODUCT.concat(result);
     }
 
-    private int getSum(String numbers) {
+    private int getSum(final String numbers) {
         int sum = 0;
-        for (String s : numbers.split(SEPARATOR)) if (isNotEmpty(s)) sum += Integer.valueOf(s);
+
+        for (final String number : numbers.split(SEPARATOR)) {
+            if (isNotEmpty(number)) {
+                sum += Integer.valueOf(number);
+            }
+        }
+
         return sum;
     }
 
-    private int getProduct(String numbers) {
+    private int getProduct(final String numbers) {
         int sum = 1;
-        for (String s : numbers.split(SEPARATOR))
-            if (isNotEmpty(s))
-                sum *= Integer.valueOf(s);
+
+        for (final String number : numbers.split(SEPARATOR))
+            if (isNotEmpty(number)) {
+                sum *= Integer.valueOf(number);
+            }
+
         return sum;
     }
 
-    private boolean isNotEmpty(String numbers) {
+    private boolean isNotEmpty(final String numbers) {
         return !numbers.isEmpty();
     }
 
-    private void validate(String numbers) {
+    private void validate(final String numbers) {
         if (numbers == null || isNotDigits(numbers))
             throw new WrongFormatException();
     }
 
-    private boolean isNotDigits(String numbers) {
+    private boolean isNotDigits(final String numbers) {
         return !isDigits(numbers);
     }
 
-    private boolean isDigits(String numbers) {
-        return numbers.matches("[\\d" + SEPARATOR + "]*");
+    private boolean isDigits(final String numbers) {
+        return numbers.matches(REGEX);
     }
 
 }
