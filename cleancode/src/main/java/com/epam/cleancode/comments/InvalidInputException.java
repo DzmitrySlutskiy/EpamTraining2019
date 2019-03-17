@@ -10,6 +10,7 @@ public class InvalidInputException extends RuntimeException {
 
     @Override
     public String getMessage() {
+
         return message;
     }
 
