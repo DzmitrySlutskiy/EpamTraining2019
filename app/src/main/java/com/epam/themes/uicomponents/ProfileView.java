@@ -58,6 +58,7 @@ public class ProfileView extends LinearLayout {
         profileIcon = findViewById(R.id.profile_image);
         profileNameView = findViewById(R.id.profile_name);
         profileAdd = findViewById(R.id.button_add);
+
     }
 
     public void updateUserInfo(ProfileModel profileModel) {

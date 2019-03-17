@@ -6,4 +6,14 @@
     <string name="theme_android_ui">Android UI</string>
     <string name="theme_android_compound_view">Compound View</string>
     <string name="theme_android_collection_views">Collection Views</string>
+    <string name="_06_03_2019">06.03.2019</string>
+    <string name="egor_egorikftp">egor_egorikftp</string>
+    <string name="_04_03_2019">04_03_2019</string>
+    <string name="zagrebantsev_artiom">zagrebantsev_artiom</string>
+    <string name="audio">audio</string>
+    <string name="bike">bike</string>
+    <string name="first_fragment">first_fragment</string>
+    <string name="second_fragment">second_fragment</string>
+    <string name="header_email">header_user@email.com</string>
+    <string name="header_user_name">header_user_name</string>
 </resources>

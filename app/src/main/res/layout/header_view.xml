@@ -2,38 +2,35 @@
 <merge xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/root"
+    android:id="@+id/root_header_view"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:orientation="vertical"
     tools:parentTag="android.widget.LinearLayout">
 
     <ImageView
-        android:id="@+id/profile_image"
+        android:id="@+id/header_image"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_gravity="center"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        app:srcCompat="@drawable/ic_account_circle"
-        tools:srcCompat="@tools:sample/avatars[2]" />
+        app:srcCompat="@drawable/ic_account_circle" />
 
     <TextView
-        android:id="@+id/profile_name"
+        android:id="@+id/header_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="16dp"
-        android:text="Profile name"
-        tools:text="User name" />
+        android:text="@string/header_user_name" />
 
-    <Button
-        android:id="@+id/button_add"
+    <TextView
+        android:id="@+id/header_email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="16dp"
-        android:text="Add user Info"
-        android:textAllCaps="false" />
+        android:text="@string/header_email" />
 </merge>

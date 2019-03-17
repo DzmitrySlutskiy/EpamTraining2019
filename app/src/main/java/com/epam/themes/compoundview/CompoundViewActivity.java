@@ -18,6 +18,7 @@ public class CompoundViewActivity extends AppCompatActivity {
         final ProfileModel profileModel = getProfileModel();
 
         final ProfileView profileView = findViewById(R.id.profile_view);
+
         profileView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
