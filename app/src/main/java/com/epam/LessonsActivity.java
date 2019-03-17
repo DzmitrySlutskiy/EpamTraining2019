@@ -13,6 +13,7 @@ import com.epam.themes.LessonItemModel;
 import com.epam.themes.androidcomponents.AndroidComponentsActivity;
 import com.epam.themes.collectionviews.CollectionViewsActivity;
 import com.epam.themes.compoundview.CompoundViewActivity;
+import com.epam.themes.uicomponents.GooglePodcastsActivity;
 import com.epam.themes.uicomponents.UIComponentsActivity;
 import com.epam.themes.uicomponents.VKPageActivity;
 
@@ -21,42 +22,8 @@ public class LessonsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lessons);
-
         bindLessonsItems();
-
-        findViewById(R.id.lesson_components_item).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openLesson(AndroidComponentsActivity.class);
-            }
-        });
-
-        findViewById(R.id.lesson_ui_item).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openLesson(UIComponentsActivity.class);
-            }
-        });
-
-        findViewById(R.id.lesson_compound_view_item).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openLesson(CompoundViewActivity.class);
-            }
-        });
-
-        findViewById(R.id.lesson_collection_components_views_item).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openLesson(CollectionViewsActivity.class);
-            }
-        });
-        findViewById(R.id.vk_page_view_item).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openLesson(VKPageActivity.class);
-            }
-        });
+        setOnClickListeners();
     }
 
     private void openLesson(Class<? extends Activity> lessonActivityClass) {
@@ -94,5 +61,54 @@ public class LessonsActivity extends AppCompatActivity {
                 R.string.vk_page_lesson_date,
                 R.string.vk_page_mentor_name,
                 R.drawable.ic_account_circle));
+        binding.setGooglePodcastsItemModel(new LessonItemModel(
+                R.string.theme_google_podcasts_view,
+                R.string.vk_page_lesson_date,
+                R.string.google_podcasts_mentor_name,
+                R.drawable.ic_account_circle));
+    }
+
+    private void setOnClickListeners() {
+        findViewById(R.id.lesson_components_item).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openLesson(AndroidComponentsActivity.class);
+            }
+        });
+
+        findViewById(R.id.lesson_ui_item).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openLesson(UIComponentsActivity.class);
+            }
+        });
+
+        findViewById(R.id.lesson_compound_view_item).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openLesson(CompoundViewActivity.class);
+            }
+        });
+
+        findViewById(R.id.lesson_collection_components_views_item).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openLesson(CollectionViewsActivity.class);
+            }
+        });
+
+        findViewById(R.id.vk_page_view_item).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openLesson(VKPageActivity.class);
+            }
+        });
+
+        findViewById(R.id.google_podcasts_view_item).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openLesson(GooglePodcastsActivity.class);
+            }
+        });
     }
 }

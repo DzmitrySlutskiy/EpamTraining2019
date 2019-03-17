@@ -7,18 +7,21 @@
     <string name="theme_android_compound_view">Compound View</string>
     <string name="theme_android_collection_views">Collection Views</string>
     <string name="theme_vk_page_view">VK Page</string>
+    <string name="theme_google_podcasts_view">Google Podcasts</string>
 
     <string name="compound_view_lesson_date">11.03.2019</string>
     <string name="android_components_lesson_date">04.03.2019</string>
     <string name="android_ui_lesson_date">06.03.2019</string>
     <string name="android_collection_views_lesson_date">14.03.2019</string>
     <string name="vk_page_lesson_date">14.03.2019</string>
+    <string name="google_podcasts_lesson_date">16.03.2019</string>
 
     <string name="android_components_mentor_name">Artiom Zagrebantsev</string>
     <string name="android_ui_mentor_name">Yahor Urbanovich</string>
     <string name="compound_view_mentor_name">Yahor Urbanovich</string>
     <string name="android_collection_views_mentor_name">Artiom Zagrebantsev</string>
     <string name="vk_page_mentor_name">Kiryl Shreyter</string>
+    <string name="google_podcasts_mentor_name">Kiryl Shreyter</string>
 
     <string name="copy_link_toolbar">Copy Link</string>
     <string name="edit_vk_page">Edit</string>
@@ -39,4 +42,15 @@
     <string name="photos_number">19</string>
 
     <string name="vk_page_activity_title">VK Profile Page</string>
+    <string name="action_settings">Settings</string>
+    <string name="send_feedback_about_application">Send feedback about application</string>
+    <string name="new_episodes">New episodes</string>
+    <string name="in_progress">In progress</string>
+    <string name="downloads">Downloads</string>
+    <string name="for_you">For you</string>
+    <string name="developer_growth">154: Developer Growth: Start Writing</string>
+    <string name="google_podcast_time_1">2 days ago - 67 min</string>
+    <string name="android_in_a_car">Выпуск 89. Android in a car (Android Auto)</string>
+    <string name="google_podcast_time_2">2 days ago - 19 min</string>
+    <string name="google_podcast_time_3">2 days ago - 155 min</string>
 </resources>

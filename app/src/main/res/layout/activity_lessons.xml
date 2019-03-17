@@ -25,6 +25,10 @@
         <variable
             name="vkPageItemModel"
             type="com.epam.themes.LessonItemModel" />
+
+        <variable
+            name="googlePodcastsItemModel"
+            type="com.epam.themes.LessonItemModel" />
     </data>
 
     <ScrollView
@@ -74,6 +78,10 @@
                 layout="@layout/item_view"
                 bind:item="@{vkPageItemModel}" />
 
+            <include
+                android:id="@+id/google_podcasts_view_item"
+                layout="@layout/item_view"
+                bind:item="@{googlePodcastsItemModel}" />
         </LinearLayout>
     </ScrollView>
 </layout>
