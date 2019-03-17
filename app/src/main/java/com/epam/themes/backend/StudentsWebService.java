@@ -54,7 +54,6 @@ public class StudentsWebService implements IWebService<Student> {
             student.setId(lastId);
             student.setHwCount(1 + random.nextInt(5));
             student.setName(nameStudents.get(i));
-            student.setName(String.valueOf(i));
             studentList.add(student);
         }
     }
