@@ -22,6 +22,8 @@ import com.epam.themes.util.StudentAdapterCallback;
 import java.util.List;
 import java.util.Random;
 
+import static com.epam.themes.backend.StudentsWebService.MAX_HW_COUNT;
+import static com.epam.themes.backend.StudentsWebService.NULL_ID;
 import static com.epam.themes.backend.StudentsWebService.nameStudents;
 
 public class StudentsActivity extends AppCompatActivity {
@@ -53,9 +55,9 @@ public class StudentsActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 final Student newStudent = new Student()
-                        .setId(-1L)
-                        .setName(nameStudents.get(random.nextInt(26)))
-                        .setHwCount(random.nextInt(10));
+                        .setId(NULL_ID)
+                        .setName(nameStudents.get(random.nextInt(nameStudents.size())))
+                        .setHwCount(random.nextInt(MAX_HW_COUNT));
                 int insertPosition = linearLayoutManager.findFirstVisibleItemPosition() + 1;
 
                 studentsWebService.insertEntity(insertPosition, newStudent, new ICallback<Long>() {

@@ -13,6 +13,8 @@ import java.util.Random;
 
 public class StudentsWebService implements IWebService<Student> {
 
+    public static final int MAX_HW_COUNT = 10;
+    public static final long NULL_ID = -1L;
     public static List<String> nameStudents = Arrays.asList(
             "Комар Андрей",
             "Aliaksei Shvants",
@@ -41,14 +43,17 @@ public class StudentsWebService implements IWebService<Student> {
             "Maksim Siamashka",
             "Vladyslav Vsemirnov"
     );
-
     private Long lastId;
     private List<Student> studentList = new ArrayList<>();
     private Random random = new Random();
     private Handler handler = new Handler(Looper.getMainLooper());
 
-    {
-        for (int i = 0; i < 26; i++) {
+    public StudentsWebService() {
+        createStudentList();
+    }
+
+    private void createStudentList() {
+        for (int i = 0; i < nameStudents.size(); i++) {
             lastId = (long) i;
             Student student = new Student();
             student.setId(lastId);

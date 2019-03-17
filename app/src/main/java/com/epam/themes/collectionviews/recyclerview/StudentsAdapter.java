@@ -18,6 +18,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import static com.epam.themes.backend.StudentsWebService.NULL_ID;
+
 public class StudentsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     private final List<Student> studentList = new ArrayList<>();
@@ -109,7 +111,7 @@ public class StudentsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
     public void onItemDismiss(int adapterPosition) {
         Long id = studentList.get(adapterPosition).getId();
-        if (getItemViewType(adapterPosition) == ViewType.STUDENT && id != -1L) {
+        if (getItemViewType(adapterPosition) == ViewType.STUDENT && id != NULL_ID) {
             studentList.remove(adapterPosition);
             studentAdapterCallback.onStudentRemove(id);
             notifyItemRemoved(adapterPosition);
