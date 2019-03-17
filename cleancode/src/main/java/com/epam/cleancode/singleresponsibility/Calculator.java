@@ -3,7 +3,7 @@ package com.epam.cleancode.singleresponsibility;
 public class Calculator {
 
     private static final String SEPARATOR = ",";
-    private static final String REGULAR_EXPRESSION = "[\\d" + SEPARATOR + "]*";
+    private static final String REGULAR_EXPRESSION_THAT_FINDS_NUMBERS = "[\\d" + SEPARATOR + "]*";
     private static final String MESSAGE_BAD_INPUT_PARAMETER = "Only digits are allowed!";
 
     public String add(String numbers) {
@@ -47,6 +47,6 @@ public class Calculator {
     }
 
     private boolean isDigits(String numbers) {
-        return numbers.matches(REGULAR_EXPRESSION);
+        return numbers.matches(REGULAR_EXPRESSION_THAT_FINDS_NUMBERS);
     }
 }
