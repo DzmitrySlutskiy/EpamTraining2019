@@ -5,4 +5,11 @@
     <string name="theme_android_components">Android Components</string>
     <string name="theme_android_ui">Android UI</string>
     <string name="theme_android_compound_view">Compound View</string>
+    <string name="theme_navigation_drawer">Navigation Drawer</string>
+
+    <string name="show_fragment_one">Show First Fragment</string>
+    <string name="show_fragment_two">Show Second Fragment</string>
+    <string name="drawer_user_name">Any Anonymous</string>
+    <string name="drawer_user_email">any@anonimous.com</string>
+    <string name="page">Page</string>
 </resources>
