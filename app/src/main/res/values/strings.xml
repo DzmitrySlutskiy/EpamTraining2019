@@ -4,4 +4,9 @@
 
     <string name="theme_android_components">Android Components</string>
     <string name="theme_android_ui">Android UI</string>
+    <string name="android_ui">Android UI</string>
+    <string name="ui_date">06.03.2019</string>
+    <string name="yahor_name">Yahor</string>
+    <string name="artem_name">Artem</string>
+    <string name="components_date">04.03.2019</string>
 </resources>
