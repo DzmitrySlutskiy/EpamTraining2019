@@ -5,11 +5,13 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.helper.ItemTouchHelper;
 
 import com.epam.cleancodetest.R;
 import com.epam.themes.backend.IWebService;
 import com.epam.themes.backend.StudentsWebService;
 import com.epam.themes.backend.entities.Student;
+import com.epam.themes.collectionviews.recyclerview.ItemTouchCallbackStudent;
 import com.epam.themes.collectionviews.recyclerview.StudentsAdapter;
 import com.epam.themes.util.ICallback;
 
@@ -69,6 +71,8 @@ public class StudentsActivity extends AppCompatActivity {
         });
 
         loadMoreItems(0, PAGE_SIZE);
+
+        new ItemTouchHelper(new ItemTouchCallbackStudent(recyclerView, mAdapter)).attachToRecyclerView(recyclerView);
     }
 
     private void loadMoreItems(final int pStartPosition, final int pEndPosition) {
