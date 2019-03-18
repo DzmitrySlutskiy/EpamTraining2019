@@ -11,12 +11,10 @@ import com.epam.cleancodetest.R;
 public class VKPageActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vkpage);
-        setTitle(R.string.vk_page_activity_title);
         setSupportActionBar((Toolbar) findViewById(R.id.vkpage_toolbar));
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
     }
 
     @Override
@@ -24,5 +22,4 @@ public class VKPageActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.menu_vk_page_top, menu);
         return true;
     }
-
 }

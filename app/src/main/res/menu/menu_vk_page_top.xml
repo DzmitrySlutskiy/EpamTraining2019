@@ -2,12 +2,20 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/action_about"
-        android:title="@string/about_action_title" />
-
+        android:id="@+id/action_copy"
+        android:icon="@drawable/ic_copy_white"
+        android:title=""
+        app:showAsAction="ifRoom" />
     <item
-        android:id="@+id/action_edit"
-        android:icon="@drawable/ic_copy"
-        android:title="@string/copy_link_toolbar"
-        app:showAsAction="always" />
+        android:id="@+id/action_more"
+        android:icon="@drawable/ic_more_vertical_white"
+        android:title=""
+        app:showAsAction="always">
+        <menu>
+            <item
+                android:id="@+id/action_about"
+                android:title="@string/about"
+                app:showAsAction="ifRoom" />
+        </menu>
+    </item>
 </menu>

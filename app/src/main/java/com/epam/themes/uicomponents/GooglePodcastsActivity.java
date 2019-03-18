@@ -15,7 +15,7 @@ import com.epam.cleancodetest.R;
 public class GooglePodcastsActivity extends AppCompatActivity {
     GooglePodcastsFragmentAdapter googlePodcastsFragmentAdapter;
     ViewPager googlePodcastsPager;
-    static final int NUM_ITEMS = 3;
+    final int NUM_ITEMS = 3;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -26,7 +26,6 @@ public class GooglePodcastsActivity extends AppCompatActivity {
         googlePodcastsFragmentAdapter = new GooglePodcastsFragmentAdapter(getSupportFragmentManager());
         googlePodcastsPager = findViewById(R.id.google_podcasts_pager);
         googlePodcastsPager.setAdapter(googlePodcastsFragmentAdapter);
-
     }
 
     @Override
@@ -35,8 +34,9 @@ public class GooglePodcastsActivity extends AppCompatActivity {
         return true;
     }
 
-    public static class GooglePodcastsFragmentAdapter extends FragmentPagerAdapter {
+    public class GooglePodcastsFragmentAdapter extends FragmentPagerAdapter {
         private String tabTitles[] = new String[]{"New episodes", "In progress", "Downloads"};
+
         GooglePodcastsFragmentAdapter(FragmentManager fragmentManager) {
             super(fragmentManager);
         }

@@ -23,12 +23,18 @@ public class LabeledImageView extends AppCompatImageView {
     public LabeledImageView(Context context, AttributeSet attrs) {
         super(context, attrs);
         setDrawableLabel(context, attrs);
-        if (!isDrawableValidToProceed(getDrawable())) return;
-        setImageBitmap(getLabeledImageBitmap());
+
     }
 
     public LabeledImageView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
+    }
+
+    @Override
+    protected void onDraw(Canvas canvas) {
+        if (!isDrawableValidToProceed(getDrawable())) return;
+
+        canvas.drawBitmap(getLabeledImageBitmap(), 0, 0, null);
     }
 
     private Bitmap getLabeledImageBitmap() {
@@ -43,17 +49,17 @@ public class LabeledImageView extends AppCompatImageView {
         else
             finalBitmap = bitmap;
 
-        Bitmap tempBitmap = Bitmap.createBitmap(finalBitmap.getWidth(), finalBitmap.getHeight(), Bitmap.Config.ARGB_8888);
+        Bitmap resultBitmap = Bitmap.createBitmap(finalBitmap.getWidth(), finalBitmap.getHeight(), Bitmap.Config.ARGB_8888);
 
-        Canvas resultCanvast = new Canvas(tempBitmap);
+        Canvas canvas = new Canvas(resultBitmap);
 
         Rect rect = createRect(finalBitmap, false);
-        resultCanvast.drawBitmap(bitmap, null, rect, null);
+        canvas.drawBitmap(bitmap, null, rect, null);
 
         if (isLabelValidToProceed()) {
-            resultCanvast.drawBitmap(bitmapDrawableLabelBitmap, null, createRect(finalBitmap, true), null);
+            canvas.drawBitmap(bitmapDrawableLabelBitmap, null, createRect(finalBitmap, true), null);
         }
-        return tempBitmap;
+        return resultBitmap;
     }
 
     private Rect createRect(Bitmap f, boolean isLabelRect) {
