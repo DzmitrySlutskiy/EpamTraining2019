@@ -9,51 +9,55 @@ import android.view.ViewGroup;
 
 import com.epam.cleancodetest.R;
 import com.epam.themes.backend.entities.Student;
-import com.epam.themes.uicomponents.LessonView;
 import com.epam.themes.uicomponents.base.BaseViewHolder;
+import com.epam.themes.util.StudentAdapterCallback;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+
+import static com.epam.themes.backend.StudentsWebService.NULL_ID;
 
 public class StudentsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
-    private boolean mIsShowLastViewAsLoading = false;
+    private final List<Student> studentList = new ArrayList<>();
+    private final StudentAdapterCallback studentAdapterCallback;
+    private final LayoutInflater layoutInflater;
+    private boolean isShowLastViewAsLoading = false;
 
-    private final LayoutInflater mInflater;
-    private final List<Student> mStudents = new ArrayList<>();
-
-    public StudentsAdapter(final Context pContext) {
-        mInflater = (LayoutInflater) pContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+    public StudentsAdapter(final Context context, StudentAdapterCallback studentAdapterCallback) {
+        layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        this.studentAdapterCallback = studentAdapterCallback;
     }
 
     @NonNull
     @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull final ViewGroup pParent,
-                                                      @ViewType final int pViewType) {
-        if (pViewType == ViewType.STUDENT) {
-            return new BaseViewHolder<>(new LessonView(pParent.getContext()));
+    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull final ViewGroup viewGroup,
+                                                      @ViewType final int viewType) {
+        if (viewType == ViewType.STUDENT) {
+            return new BaseViewHolder<>(new StudentView(viewGroup.getContext()));
         } else {
-            return new BaseViewHolder<>(mInflater.inflate(R.layout.layout_progress, pParent, false));
+            return new BaseViewHolder<>(layoutInflater.inflate(R.layout.layout_progress, viewGroup, false));
         }
     }
 
     @Override
-    public void onBindViewHolder(@NonNull final RecyclerView.ViewHolder pViewHolder, final int pPosition) {
-        if (getItemViewType(pPosition) == ViewType.STUDENT) {
-            final Student student = mStudents.get(pPosition);
+    public void onBindViewHolder(@NonNull final RecyclerView.ViewHolder viewHolder, final int position) {
+        if (getItemViewType(position) == ViewType.STUDENT) {
+            final Student student = studentList.get(position);
 
-            ((LessonView) pViewHolder.itemView)
-                    .setLessonDate(student.getName())
-                    .setLessonTheme(String.valueOf(student.getHwCount()));
+            ((StudentView) viewHolder.itemView)
+                    .setStudentName(student.getName())
+                    .setStudentHwCount(student.getHwCount());
         }
     }
 
     @ViewType
     @Override
-    public int getItemViewType(final int pPosition) {
-        if (pPosition < mStudents.size()) {
+    public int getItemViewType(final int position) {
+        if (position < studentList.size()) {
             return ViewType.STUDENT;
         } else {
             return ViewType.LOADING;
@@ -63,23 +67,74 @@ public class StudentsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
     @Override
     public int getItemCount() {
-        if (mIsShowLastViewAsLoading) {
-            return mStudents.size() + 1;
+        if (isShowLastViewAsLoading) {
+            return studentList.size() + 1;
         } else {
-            return mStudents.size();
+            return studentList.size();
         }
     }
 
-    public void setShowLastViewAsLoading(final boolean pIsShow) {
-        if (pIsShow != mIsShowLastViewAsLoading) {
-            mIsShowLastViewAsLoading = pIsShow;
+    public void setShowLastViewAsLoading(final boolean isShow) {
+        if (isShow != isShowLastViewAsLoading) {
+            isShowLastViewAsLoading = isShow;
             notifyDataSetChanged();
         }
     }
 
-    public void addItems(final List<Student> pResult) {
-        mStudents.addAll(pResult);
-        notifyDataSetChanged();
+    public boolean getIsShowLastViewAsLoading(){
+        return isShowLastViewAsLoading;
+    }
+
+    public List<Student> getItems(){
+        return studentList;
+    }
+
+    public void addItems(final List<Student> studentList) {
+        this.studentList.addAll(studentList);
+        notifyItemRangeInserted(this.studentList.size() - studentList.size(), studentList.size());
+    }
+
+
+    public void insertItem(final int position, final Student student) {
+        studentList.add(position, student);
+        notifyItemInserted(position);
+    }
+
+    public void onItemMove(int fromPosition, int toPosition) {
+        if (getItemViewType(fromPosition) == ViewType.STUDENT && getItemViewType(toPosition) == ViewType.STUDENT) {
+            if (fromPosition < toPosition) {
+                for (int i = fromPosition; i < toPosition; i++) {
+                    Collections.swap(studentList, i, i + 1);
+                }
+            } else {
+                for (int i = fromPosition; i > toPosition; i--) {
+                    Collections.swap(studentList, i, i - 1);
+                }
+            }
+
+            notifyItemMoved(fromPosition, toPosition);
+        }
+    }
+
+    public void onItemDismiss(int adapterPosition) {
+        Long id = studentList.get(adapterPosition).getId();
+        if (getItemViewType(adapterPosition) == ViewType.STUDENT && id != NULL_ID) {
+            studentList.remove(adapterPosition);
+            studentAdapterCallback.onStudentRemove(id);
+            notifyItemRemoved(adapterPosition);
+        } else {
+            notifyItemChanged(adapterPosition);
+        }
+    }
+
+    public void onItemChange(int adapterPosition) {
+        if (getItemViewType(adapterPosition) == ViewType.STUDENT) {
+            Student student = studentList.get(adapterPosition);
+            student.setHwCount(student.getHwCount() + 1);
+            studentAdapterCallback.onStudentChange(student);
+        }
+
+        notifyItemChanged(adapterPosition);
     }
 
     @IntDef({ViewType.STUDENT, ViewType.LOADING})
