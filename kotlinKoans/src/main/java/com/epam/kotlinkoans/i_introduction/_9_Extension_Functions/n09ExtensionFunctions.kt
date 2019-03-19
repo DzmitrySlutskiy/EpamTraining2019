@@ -27,9 +27,9 @@ fun todoTask9(): Nothing = TODO(
     documentation = doc9(),
     references = { 1.r(); Pair(1, 2).r(); RationalNumber(1, 9) })
 
-data class RationalNumber(val numerator: Int, val denominator: Int)
+data class RationalNumber(val numerator: Int, val denominator: Int = 1)
 
-fun Int.r(): RationalNumber = todoTask9()
-fun Pair<Int, Int>.r(): RationalNumber = todoTask9()
+fun Int.r() = RationalNumber(this)
+fun Pair<Int, Int>.r() = RationalNumber(first, second)
 
 
