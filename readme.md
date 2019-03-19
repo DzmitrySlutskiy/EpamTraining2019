@@ -20,7 +20,7 @@ Book: Kotlin in Action (Ru or EN)
 
 Slides: https://docs.google.com/presentation/d/16ZdYrWNw9p0B5LHGAkcVW6wquiXM2pbR17c5aRWZ88o/edit?usp=drivesdk
 
-Kotlin cheats 😉: [Kotlin_Cheat_Sheet](assets/Kotlin_Cheat_Sheet.pdf).
+Kotlin cheats 😉: [Kotlin Cheat Sheet](assets/Kotlin_Cheat_Sheet.pdf).
 
 Homework:
 Make all exercises in `kotlinKoans` module and make sure that all test passes successfully.
