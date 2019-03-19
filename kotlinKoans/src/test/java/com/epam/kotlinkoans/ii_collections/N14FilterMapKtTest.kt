@@ -1,8 +1,8 @@
 package ii_collections
 
 import ii_collections.data.*
-import org.junit.jupiter.api.Assertions.assertEquals
-import org.junit.jupiter.api.Test
+import org.junit.Assert.assertEquals
+import org.junit.Test
 
 class N14FilterMapKtTest {
     @Test

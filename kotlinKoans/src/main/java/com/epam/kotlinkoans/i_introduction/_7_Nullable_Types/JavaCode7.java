@@ -10,7 +10,9 @@ import i_introduction._7_Nullable_Types.Mailer;
 import i_introduction._7_Nullable_Types.PersonalInfo;
 
 public class JavaCode7 extends JavaCode {
-    public void sendMessageToClient(@Nullable Client client, @Nullable String message, @NotNull Mailer mailer) {
+    public void sendMessageToClient(@Nullable Client client,
+                                    @Nullable String message,
+                                    @NotNull Mailer mailer) {
         if (client == null || message == null) return;
 
         PersonalInfo personalInfo = client.getPersonalInfo();
