@@ -11,6 +11,7 @@ https://t.me/joinchat/DNzoqBZ3iHcGMtD4CzR5fw
 * Issues should be created in this repository!
 * Make homework in separate branch with following format: homework_DD.MM_theme_name (*homework_28.02_clean_code*)
 * Open pull request in you repository and provide link in issue.
+* Add screenshots whe you done some UI changes
 
 # Feel free to create issue if some links don't work or you need some help
 
