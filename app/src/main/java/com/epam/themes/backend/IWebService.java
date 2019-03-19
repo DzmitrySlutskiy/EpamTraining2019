@@ -1,6 +1,5 @@
 package com.epam.themes.backend;
 
-import com.epam.themes.backend.entities.Student;
 import com.epam.themes.util.ICallback;
 
 import java.util.List;
@@ -14,7 +13,7 @@ public interface IWebService<T> {
                      final ICallback<List<T>> callback);
 
     void insertEntity(final int position,
-                      final Student student,
+                      final T student,
                       final ICallback<Long> callback);
 
     void removeEntity(final Long id);

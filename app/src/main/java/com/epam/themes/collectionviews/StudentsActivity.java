@@ -1,6 +1,7 @@
 package com.epam.themes.collectionviews;
 
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -19,6 +20,7 @@ import com.epam.themes.collectionviews.recyclerview.StudentsAdapter;
 import com.epam.themes.util.ICallback;
 import com.epam.themes.util.StudentAdapterCallback;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
@@ -30,6 +32,10 @@ public class StudentsActivity extends AppCompatActivity {
 
     public static final int PAGE_SIZE = 10;
     public static final int MAX_VISIBLE_ITEMS = 100;
+    public static final String LINEAR_LAYOUT_MANAGER_STATE_KEY = "LinearLayoutManagerStateKey";
+    public static final String STUDENT_LIST_STATE_KEY = "studentListStateKey";
+    public static final String IS_SHOW_LAST_VIEW_AS_LOADING_STATE_KEY = "isShowLastViewAsLoadingStateKey";
+    public static final String IS_LOAD_COMPLETE_STATE_KEY = "isLoadCompleteStateKey";
     private final IWebService<Student> studentsWebService = new StudentsWebService();
     private boolean isLoadComplete = false;
     private boolean isLoading = false;
@@ -46,7 +52,15 @@ public class StudentsActivity extends AppCompatActivity {
 
         setupAddButton();
         setupRecyclerView();
-        loadMoreItems(0, PAGE_SIZE);
+
+        if (savedInstanceState != null) {
+            studentsAdapter.addItems(savedInstanceState.<Student>getParcelableArrayList(STUDENT_LIST_STATE_KEY));
+            linearLayoutManager.onRestoreInstanceState(savedInstanceState.getParcelable(LINEAR_LAYOUT_MANAGER_STATE_KEY));
+            studentsAdapter.setShowLastViewAsLoading(savedInstanceState.getBoolean(IS_SHOW_LAST_VIEW_AS_LOADING_STATE_KEY));
+            isLoadComplete = savedInstanceState.getBoolean(IS_LOAD_COMPLETE_STATE_KEY);
+        } else {
+            loadMoreItems(0, PAGE_SIZE);
+        }
     }
 
     private void setupAddButton() {
@@ -71,10 +85,21 @@ public class StudentsActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+
+        outState.putParcelable(LINEAR_LAYOUT_MANAGER_STATE_KEY, linearLayoutManager.onSaveInstanceState());
+        outState.putParcelableArrayList(STUDENT_LIST_STATE_KEY, (ArrayList<? extends Parcelable>) studentsAdapter.getItems());
+        outState.putBoolean(IS_SHOW_LAST_VIEW_AS_LOADING_STATE_KEY, studentsAdapter.getIsShowLastViewAsLoading());
+        outState.putBoolean(IS_LOAD_COMPLETE_STATE_KEY, isLoadComplete);
+    }
+
     private void setupRecyclerView() {
         final RecyclerView studentsRecyclerView = findViewById(android.R.id.list);
 
         linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
+
         studentsRecyclerView.setLayoutManager(linearLayoutManager);
         studentsAdapter = new StudentsAdapter(this, new StudentAdapterCallback() {
             @Override

@@ -81,8 +81,15 @@ public class StudentsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         }
     }
 
+    public boolean getIsShowLastViewAsLoading(){
+        return isShowLastViewAsLoading;
+    }
+
+    public List<Student> getItems(){
+        return studentList;
+    }
+
     public void addItems(final List<Student> studentList) {
-        int oldSize = this.studentList.size();
         this.studentList.addAll(studentList);
         notifyItemRangeInserted(this.studentList.size() - studentList.size(), studentList.size());
     }
