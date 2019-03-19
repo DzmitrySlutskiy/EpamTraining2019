@@ -16,6 +16,7 @@ https://t.me/joinchat/DNzoqBZ3iHcGMtD4CzR5fw
 
 # HW 18.04.2019
 Kotlin: https://kotlinlang.ru/
+
 Book: Kotlin in Action (Ru or EN)
 
 Slides: https://docs.google.com/presentation/d/16ZdYrWNw9p0B5LHGAkcVW6wquiXM2pbR17c5aRWZ88o/edit?usp=drivesdk
