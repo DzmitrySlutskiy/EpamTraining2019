@@ -9,10 +9,10 @@ import android.view.View;
 import com.epam.cleancodetest.R;
 import com.epam.themes.collectionviews.CollectionViewsActivity;
 import com.epam.themes.compoundview.CompoundViewActivity;
+import com.epam.themes.navigationdrawer.NavigationDrawerActivity;
 import com.epam.themes.uicomponents.UIComponentsActivity;
 
 public class LessonsActivity extends AppCompatActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +36,13 @@ public class LessonsActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 openLesson(CollectionViewsActivity.class);
+            }
+        });
+
+        findViewById(R.id.lesson_navigation_drawer).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openLesson(NavigationDrawerActivity.class);
             }
         });
     }

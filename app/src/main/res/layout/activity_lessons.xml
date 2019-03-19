@@ -37,6 +37,10 @@
             app:lessonDate="14.03.2019"
             app:lessonTheme="@string/theme_android_collection_views" />
 
+        <include
+            android:id="@+id/lesson_navigation_drawer"
+            layout="@layout/navigation_drawer_item" />
+
         <!--TODO add new item-->
     </LinearLayout>
 </ScrollView>

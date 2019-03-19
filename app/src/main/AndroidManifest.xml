@@ -36,6 +36,7 @@
         <activity android:name="com.epam.themes.androidcomponents.activities.CActivity" />
         <activity android:name="com.epam.themes.collectionviews.CollectionViewsActivity" />
         <activity android:name="com.epam.themes.collectionviews.StudentsActivity" />
+        <activity android:name="com.epam.themes.navigationdrawer.NavigationDrawerActivity" />
 
         <service android:name="com.epam.themes.androidcomponents.SimpleService" />
 
