@@ -1,15 +1,20 @@
 package com.epam.themes.collectionviews;
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.helper.ItemTouchHelper;
+import android.view.MotionEvent;
+import android.view.View;
 
 import com.epam.cleancodetest.R;
 import com.epam.themes.backend.IWebService;
 import com.epam.themes.backend.StudentsWebService;
 import com.epam.themes.backend.entities.Student;
+import com.epam.themes.collectionviews.recyclerview.ItemStudentTouchCallback;
 import com.epam.themes.collectionviews.recyclerview.StudentsAdapter;
 import com.epam.themes.util.ICallback;
 
@@ -21,24 +26,26 @@ public class StudentsActivity extends AppCompatActivity {
     public static final int MAX_VISIBLE_ITEMS = 40;
 
     private boolean mIsLoading = false;
-    private StudentsAdapter mAdapter;
+    private StudentsAdapter adapter;
     private LinearLayoutManager mLayoutManager;
     private final IWebService<Student> mWebService = new StudentsWebService();
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_students);
 
         final RecyclerView recyclerView = findViewById(android.R.id.list);
 
         mLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(mLayoutManager);
-        mAdapter = new StudentsAdapter(this);
-        recyclerView.setAdapter(mAdapter);
-        recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+        adapter = new StudentsAdapter(this);
+        recyclerView.setAdapter(adapter);
+        new ItemTouchHelper(new ItemStudentTouchCallback(adapter)).attachToRecyclerView(recyclerView);
 
+
+
+        recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
             public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
                 super.onScrollStateChanged(recyclerView, newState);
@@ -50,7 +57,7 @@ public class StudentsActivity extends AppCompatActivity {
                 int totalItemCount = mLayoutManager.getItemCount();
 
                 if (totalItemCount > MAX_VISIBLE_ITEMS) {
-                    mAdapter.setShowLastViewAsLoading(false);
+                    adapter.setShowLastViewAsLoading(false);
 
                     return;
                 }
@@ -73,12 +80,12 @@ public class StudentsActivity extends AppCompatActivity {
 
     private void loadMoreItems(final int pStartPosition, final int pEndPosition) {
         mIsLoading = true;
-        mAdapter.setShowLastViewAsLoading(true);
+        adapter.setShowLastViewAsLoading(true);
         mWebService.getEntities(pStartPosition, pEndPosition, new ICallback<List<Student>>() {
 
             @Override
             public void onResult(List<Student> pResult) {
-                mAdapter.addItems(pResult);
+                adapter.addItems(pResult);
                 mIsLoading = false;
             }
         });

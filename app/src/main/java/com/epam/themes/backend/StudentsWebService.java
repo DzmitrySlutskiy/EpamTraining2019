@@ -17,10 +17,10 @@ public class StudentsWebService implements IWebService<Student> {
     private Handler mHandler = new Handler(Looper.getMainLooper());
 
     {
-        for (int i = 0; i < 1000; i++) {
+        for (int i = 0; i < 100; i++) {
             Student student = new Student();
             student.setId((long) i);
-            student.setHwCount(1 + mRandom.nextInt(5));
+            student.setHwCount(1 + mRandom.nextInt(55));
             student.setName(String.valueOf(i));
             mStudents.add(student);
         }

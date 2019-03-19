@@ -4,4 +4,8 @@
         <attr name="lessonDate" format="string" />
         <attr name="lessonTheme" format="string" />
     </declare-styleable>
+    <declare-styleable name="StudentView">
+        <attr name="studentName" format="string" />
+        <attr name="studentAge" format="string" />
+    </declare-styleable>
 </resources>

@@ -11,8 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name="com.epam.LessonsActivity" />
-        <activity android:name="com.epam.hw11and03.MainHWActivity">
+        <activity android:name="com.epam.LessonsActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

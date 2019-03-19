@@ -16,4 +16,6 @@
     <string name="second_fragment">second_fragment</string>
     <string name="header_email">header_user@email.com</string>
     <string name="header_user_name">header_user_name</string>
+    <string name="student_name_tv">student_name_tv</string>
+    <string name="student_age_tv">student_age_tv</string>
 </resources>
