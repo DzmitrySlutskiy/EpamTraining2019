@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/real_white"
     tools:context="com.epam.LessonsActivity">
 
     <LinearLayout
@@ -16,14 +17,23 @@
             android:layout_height="wrap_content"
             android:background="@color/blue_50"
             android:gravity="center"
-            android:padding="15dp"
+            android:padding="@dimen/double_indent"
             android:text="@string/available_lessons_text"
             android:textColor="@color/real_black"
-            android:textSize="24sp"
+            android:textSize="@dimen/large_text_size"
             app:fontFamily="@font/indie_flower" />
 
-        <include layout="@layout/android_components_lesson_item" />
+        <include
+            android:id="@+id/fist_lesson"
+            layout="@layout/android_components_lesson_item" />
 
-        <!--TODO add new item-->
+        <include
+            android:id="@+id/second_lesson"
+            layout="@layout/android_components_lesson_item" />
+
+        <include
+            android:id="@+id/third_lesson"
+            layout="@layout/android_components_lesson_item" />
+
     </LinearLayout>
 </ScrollView>

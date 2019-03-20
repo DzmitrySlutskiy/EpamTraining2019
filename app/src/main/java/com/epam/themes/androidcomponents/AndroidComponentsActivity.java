@@ -26,7 +26,7 @@ public class AndroidComponentsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_components);
 
         setTitle(R.string.theme_android_components);
 
