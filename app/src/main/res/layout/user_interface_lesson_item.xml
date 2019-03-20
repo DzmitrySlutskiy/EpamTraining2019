@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/user_interface_lesson_item"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -11,7 +12,13 @@
     android:padding="16dp"
     tools:showIn="@layout/activity_lessons">
 
-    <include layout="@layout/artiom_avatar" android:id="@+id/avatar"/>
+    <ImageView
+        android:id="@+id/artiom_avatar"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        app:srcCompat="@drawable/ic_account_circle"
+        tools:ignore="VectorDrawableCompat"
+        android:contentDescription="@string/mentor_photo" />
 
     <TextView
         android:id="@+id/user_interface_lesson_theme"
@@ -19,7 +26,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_marginStart="16dp"
-        android:layout_toEndOf="@id/avatar"
+        android:layout_toEndOf="@id/artiom_avatar"
         android:text="@string/user_interface_theme"
         android:textSize="18sp"
         android:textStyle="bold" />
@@ -43,7 +50,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
-        android:layout_toEndOf="@id/avatar"
+        android:layout_toEndOf="@id/artiom_avatar"
         android:text="@string/mentor_egor"
         android:textStyle="italic" />
 
