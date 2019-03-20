@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <declare-styleable name="LessonView">
         <attr name="lessonDate" format="string" />
         <attr name="lessonTheme" format="string" />
     </declare-styleable>
+
+    <declare-styleable name="StudentView">
+        <attr name="studentName" format="string" />
+        <attr name="studentEmail" format="string" />
+        <attr name="studentAddress" format="string" />
+    </declare-styleable>
+
 </resources>
