@@ -8,8 +8,10 @@ import com.epam.cleancodetest.R;
 public class CleanCodeActivity extends AppCompatActivity {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_clean_code);
+
+        getSupportActionBar().setTitle(R.string.theme_clean_code);
     }
 }

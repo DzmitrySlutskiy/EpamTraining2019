@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.epam.backend.Lesson;
 import com.epam.cleancodetest.R;
 import com.epam.themes.androidcomponents.AndroidComponentsActivity;
 import com.epam.themes.cleancode.CleanCodeActivity;
@@ -29,57 +30,49 @@ public class LessonsActivity extends AppCompatActivity {
         secondLesson = findViewById(R.id.second_lesson);
         thirdLesson = findViewById(R.id.third_lesson);
 
-        setLessonParameters(firstLesson, R.drawable.ic_mentor_face, R.string.mentor_name_yahor,
+        final Lesson cleanCode = new Lesson(R.drawable.ic_mentor_face, R.string.mentor_name_yahor,
                 R.string.theme_clean_code, R.string.first_lesson_date);
 
-        setLessonParameters(secondLesson, R.drawable.ic_account_circle, R.string.mentor_name_arziom,
+        final Lesson components = new Lesson(R.drawable.ic_account_circle, R.string.mentor_name_arziom,
                 R.string.theme_android_components, R.string.second_lesson_date);
 
-        setLessonParameters(thirdLesson, R.drawable.ic_mentor_face, R.string.mentor_name_yahor,
+        final Lesson ui = new Lesson(R.drawable.ic_mentor_face, R.string.mentor_name_yahor,
                 R.string.theme_android_ui, R.string.third_lesson_date);
 
-        findViewById(R.id.fist_lesson).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openLesson(CleanCodeActivity.class);
-            }
-        });
+        setLessonParameters(firstLesson, cleanCode);
+        setLessonParameters(secondLesson, components);
+        setLessonParameters(thirdLesson, ui);
 
-        findViewById(R.id.second_lesson).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openLesson(AndroidComponentsActivity.class);
-            }
-        });
-
-        findViewById(R.id.third_lesson).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openLesson(UIComponentsActivity.class);
-            }
-        });
-
+        setListener(findViewById(R.id.fist_lesson), CleanCodeActivity.class);
+        setListener(findViewById(R.id.second_lesson), AndroidComponentsActivity.class);
+        setListener(findViewById(R.id.third_lesson), UIComponentsActivity.class);
     }
 
     private void setLessonParameters(final ViewGroup lessonItem,
-                                     final int icon,
-                                     final int name,
-                                     final int theme,
-                                     final int date) {
+                                     final Lesson lesson) {
         ((ImageView) lessonItem.findViewById(R.id.android_components_mentor_image_view))
-                .setImageResource(icon);
+                .setImageResource(lesson.getMentorIcon());
 
         ((TextView) lessonItem.findViewById(R.id.android_components_mentor_text_view))
-                .setText(name);
+                .setText(lesson.getMentorName());
 
         ((TextView) lessonItem.findViewById(R.id.android_components_lesson_theme))
-                .setText(theme);
+                .setText(lesson.getTheme());
 
         ((TextView) lessonItem.findViewById(R.id.android_components_lesson_date))
-                .setText(date);
+                .setText(lesson.getDate());
     }
 
     private void openLesson(final Class<? extends Activity> lessonActivityClass) {
         startActivity(new Intent(this, lessonActivityClass));
+    }
+
+    private void setListener(final View view, final Class clasz) {
+        view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(final View v) {
+                openLesson(clasz);
+            }
+        });
     }
 }
