@@ -11,8 +11,23 @@ https://t.me/joinchat/DNzoqBZ3iHcGMtD4CzR5fw
 * Issues should be created in this repository!
 * Make homework in separate branch with following format: homework_DD.MM_theme_name (*homework_28.02_clean_code*)
 * Open pull request in you repository and provide link in issue.
+* Add screenshots whe you done some UI changes
 
 # Feel free to create issue if some links don't work or you need some help
+
+# HW 18.04.2019
+Kotlin: https://kotlinlang.ru/
+
+Book: Kotlin in Action (Ru or EN)
+
+Slides: https://docs.google.com/presentation/d/16ZdYrWNw9p0B5LHGAkcVW6wquiXM2pbR17c5aRWZ88o/edit?usp=drivesdk
+
+Kotlin cheats 😉: [Kotlin Cheat Sheet](assets/Kotlin_Cheat_Sheet.pdf).
+
+Homework:
+Make all exercises in `kotlinKoans` module and make sure that all test passes successfully.
+
+The flow as usial: you make changes in separate branch and then open pull request + issue
 
 # HW 14.03.2019
 
