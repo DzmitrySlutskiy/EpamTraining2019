@@ -15,7 +15,7 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="@color/colorPrimary"
-            app:title="@string/theme_android_ui"
+            app:title="@string/theme_android_UI"
             app:titleTextColor="@color/real_white" />
 
         <android.support.design.widget.TabLayout
