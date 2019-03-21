@@ -1,14 +1,18 @@
-package i_introduction._7_Nullable_Types
+package com.epam.kotlinkoans.i_introduction._7_Nullable_Types
 
+import i_introduction._7_Nullable_Types.Client
+import i_introduction._7_Nullable_Types.Mailer
+import i_introduction._7_Nullable_Types.PersonalInfo
+import i_introduction._7_Nullable_Types.sendMessageToClient
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
 class N07NullableTypesKtTest {
     private fun testSendMessageToClient(
-        client: Client?,
-        message: String?,
-        email: String? = null,
-        shouldBeInvoked: Boolean = false
+            client: Client?,
+            message: String?,
+            email: String? = null,
+            shouldBeInvoked: Boolean = false
     ) {
         var invoked = false
         sendMessageToClient(client, message, object : Mailer {

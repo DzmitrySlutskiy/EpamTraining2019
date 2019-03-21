@@ -1,5 +1,6 @@
-package i_introduction._2_Named_Arguments
+package com.epam.kotlinkoans.i_introduction._2_Named_Arguments
 
+import i_introduction._2_Named_Arguments.task2
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 

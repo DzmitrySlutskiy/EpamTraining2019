@@ -1,5 +1,8 @@
-package i_introduction._8_Smart_Casts
+package com.epam.kotlinkoans.i_introduction._8_Smart_Casts
 
+import i_introduction._8_Smart_Casts.Num
+import i_introduction._8_Smart_Casts.Sum
+import i_introduction._8_Smart_Casts.eval
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 

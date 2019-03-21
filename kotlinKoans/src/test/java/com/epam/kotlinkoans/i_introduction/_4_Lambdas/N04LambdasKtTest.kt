@@ -1,5 +1,6 @@
-package i_introduction._4_Lambdas
+package com.epam.kotlinkoans.i_introduction._4_Lambdas
 
+import i_introduction._4_Lambdas.task4
 import org.junit.jupiter.api.Assertions.assertFalse
 import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test

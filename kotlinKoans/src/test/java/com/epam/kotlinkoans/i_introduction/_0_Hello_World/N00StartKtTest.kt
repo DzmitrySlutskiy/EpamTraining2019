@@ -1,5 +1,6 @@
-package i_introduction._0_Hello_World
+package com.epam.kotlinkoans.i_introduction._0_Hello_World
 
+import i_introduction._0_Hello_World.task0
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 

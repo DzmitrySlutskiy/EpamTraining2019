@@ -1,6 +1,5 @@
-package i_introduction._1_Java_To_Kotlin_Converter
+package com.epam.kotlinkoans.i_introduction._1_Java_To_Kotlin_Converter
 
-import com.epam.kotlinkoans.i_introduction._1_Java_To_Kotlin_Converter.JavaCode1
 import util.TODO
 
 fun todoTask1(collection: Collection<Int>): Nothing = TODO(
@@ -15,5 +14,5 @@ fun todoTask1(collection: Collection<Int>): Nothing = TODO(
 
 
 fun task1(collection: Collection<Int>): String {
-    todoTask1(collection)
+    return JavaCode1().task1(collection)
 }
