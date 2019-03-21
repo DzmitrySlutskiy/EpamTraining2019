@@ -48,5 +48,6 @@
         android:layout_alignParentBottom="true"
         android:text="@string/date_of_android_components_theme"
         tools:ignore="RelativeOverlap" />
+
 </RelativeLayout>
     

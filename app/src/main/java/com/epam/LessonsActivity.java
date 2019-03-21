@@ -22,7 +22,7 @@ public class LessonsActivity extends AppCompatActivity {
             public void onClick(View v) {
                 openLesson(AndroidComponentsActivity.class);
             }
-        })  ;
+        });
 
         findViewById(R.id.lesson_ui_root_view).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -31,7 +31,6 @@ public class LessonsActivity extends AppCompatActivity {
             }
         });
     }
-
 
     private void openLesson(Class<? extends Activity> lessonActivityClass) {
         startActivity(new Intent(this, lessonActivityClass));
