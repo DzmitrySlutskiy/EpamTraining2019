@@ -37,6 +37,5 @@
             app:lessonDate="14.03.2019"
             app:lessonTheme="@string/theme_android_collection_views" />
 
-        <!--TODO add new item-->
     </LinearLayout>
 </ScrollView>

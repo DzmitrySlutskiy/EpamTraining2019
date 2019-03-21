@@ -6,4 +6,7 @@
     <string name="theme_android_ui">Android UI</string>
     <string name="theme_android_compound_view">Compound View</string>
     <string name="theme_android_collection_views">Collection Views</string>
+    <string name="default_date">04.03.2019</string>
+    <string name="default_mentor_name">Mentor\'s name</string>
+    <string name="mentor_android_collection_views">Mentor\'s name</string>
 </resources>

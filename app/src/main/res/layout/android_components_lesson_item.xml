@@ -15,27 +15,41 @@
 
     <ImageView
         android:id="@+id/avatar"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         app:srcCompat="@drawable/ic_account_circle" />
 
     <TextView
         android:id="@+id/lesson_theme"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
         android:layout_marginLeft="16dp"
+        android:layout_marginTop="0dp"
         android:layout_toRightOf="@id/avatar"
         android:text="@string/theme_android_components"
         android:textStyle="bold" />
 
     <TextView
+        android:id="@+id/lesson_mentor_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="20dp"
+        android:layout_toRightOf="@id/avatar"
+        android:text="@string/default_mentor_name"
+        android:textStyle="bold|italic" />
+
+    <TextView
         android:id="@+id/lesson_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+        android:layout_alignParentTop="true"
         android:layout_marginLeft="16dp"
+        android:layout_marginTop="40dp"
         android:layout_toRightOf="@id/avatar"
-        android:text="04.03.2019" />
+        android:text="@string/default_date" />
 
 </RelativeLayout>
     
