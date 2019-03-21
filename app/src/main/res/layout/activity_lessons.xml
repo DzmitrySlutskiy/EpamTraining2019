@@ -24,7 +24,24 @@
 
         <include layout="@layout/android_components_lesson_item" />
 
+<<<<<<< HEAD
         <include layout="@layout/android_ui_lesson_item" />
 
+=======
+        <include
+            android:id="@+id/lesson_compound_view"
+            layout="@layout/compound_view_item" />
+
+        <com.epam.themes.uicomponents.LessonView
+            android:id="@+id/collectionComponentsView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackground"
+            android:padding="16dp"
+            app:lessonDate="14.03.2019"
+            app:lessonTheme="@string/theme_android_collection_views" />
+
+        <!--TODO add new item-->
+>>>>>>> upstream/master
     </LinearLayout>
 </ScrollView>

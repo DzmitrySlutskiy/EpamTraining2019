@@ -24,6 +24,8 @@
             android:name="com.epam.themes.uicomponents.UIComponentsActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
 
+        <activity android:name="com.epam.themes.compoundview.CompoundViewActivity" />
+
         <activity android:name="com.epam.themes.androidcomponents.AndroidComponentsActivity" />
 
         <activity
@@ -32,6 +34,8 @@
         <activity android:name="com.epam.themes.androidcomponents.activities.BActivity" />
 
         <activity android:name="com.epam.themes.androidcomponents.activities.CActivity" />
+        <activity android:name="com.epam.themes.collectionviews.CollectionViewsActivity" />
+        <activity android:name="com.epam.themes.collectionviews.StudentsActivity" />
 
         <service android:name="com.epam.themes.androidcomponents.SimpleService" />
 
