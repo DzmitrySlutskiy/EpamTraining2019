@@ -15,8 +15,8 @@
 
     <ImageView
         android:id="@+id/avatar"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         app:srcCompat="@drawable/ic_account_circle" />
 
     <TextView
@@ -29,11 +29,25 @@
         android:textStyle="bold" />
 
     <TextView
+        android:id="@+id/lesson_mentor_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/lesson_theme"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="0dp"
+        android:layout_toRightOf="@id/avatar"
+        android:gravity="center_vertical"
+        android:text="Mentor's name "
+        android:textStyle="bold|italic" />
+
+    <TextView
         android:id="@+id/lesson_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_marginLeft="16dp"
+        android:layout_marginBottom="0dp"
         android:layout_toRightOf="@id/avatar"
         android:text="11.03.2019" />
 
