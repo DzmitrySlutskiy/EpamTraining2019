@@ -4,15 +4,13 @@
 
     <string name="theme_android_components">Android Components</string>
     <string name="theme_android_ui">Android UI</string>
-<<<<<<< HEAD
 
     <string name="mentor_name_artiom">Артём</string>
     <string name="mentor_name_dzmitry">Дмитрий</string>
     <string name="mentor_name_egor">Егор</string>
     <string name="mentor_name_ilya">Илья</string>
     <string name="mentor_name_mikhail">Михаил</string>
-=======
+
     <string name="theme_android_compound_view">Compound View</string>
     <string name="theme_android_collection_views">Collection Views</string>
->>>>>>> upstream/master
 </resources>
