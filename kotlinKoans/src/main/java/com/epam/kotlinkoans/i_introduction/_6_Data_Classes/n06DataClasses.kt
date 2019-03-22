@@ -18,7 +18,6 @@ fun todoTask6(): Nothing = TODO(
 )
 
 
-fun task6(): List<Person> {
-    return listOf(Person("Alice", 29), Person("Bob", 31))
-}
+fun task6(): List<Person> = listOf(Person("Alice", 29), Person("Bob", 31))
+
 
