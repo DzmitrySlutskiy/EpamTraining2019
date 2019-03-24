@@ -30,7 +30,7 @@ public class NavigationDrawerActivity extends AppCompatActivity {
 
         setToolbar();
 
-        beforeCreate(navigationView);
+        initView(navigationView);
     }
 
     @Override
@@ -57,7 +57,7 @@ public class NavigationDrawerActivity extends AppCompatActivity {
                 });
     }
 
-    private void beforeCreate(NavigationView navigationView) {
+    private void initView(NavigationView navigationView) {
         View headerView = navigationView.getHeaderView(0);
         final UserView userView = headerView.findViewById(R.id.user_view);
         final ImageView imageView = headerView.findViewById(R.id.user_image);
@@ -84,20 +84,21 @@ public class NavigationDrawerActivity extends AppCompatActivity {
     private void replaceFragment(int menuItemId) {
         getSupportFragmentManager()
                 .beginTransaction()
-                .replace(R.id.content_frame, getFragment(menuItemId))
+                .replace(R.id.content_frame, newInstance(menuItemId))
                 .commit();
     }
 
-    private Fragment getFragment(int menuItemId) {
+    private static Fragment newInstance(int menuItemId) {
         NavigationDrawerFragment fragment = new NavigationDrawerFragment();
-        Bundle bundle = new Bundle();
-        int fragmentLayoutResId = getFragmentLayoutResId(menuItemId);
-        bundle.putInt(NavigationDrawerFragment.LAYOUT_ID, fragmentLayoutResId);
-        fragment.setArguments(bundle);
+
+        Bundle args = new Bundle();
+        args.putInt(NavigationDrawerFragment.LAYOUT_ID, getFragmentLayoutResId(menuItemId));
+        fragment.setArguments(args);
+
         return fragment;
     }
 
-    private int getFragmentLayoutResId(int menuItemId) {
+    private static int getFragmentLayoutResId(int menuItemId) {
         int fragmentLayoutResId;
         switch (menuItemId) {
             case R.id.nav_images:
