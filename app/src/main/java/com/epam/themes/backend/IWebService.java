@@ -6,11 +6,17 @@ import java.util.List;
 
 public interface IWebService<T> {
 
-    void getEntities(final ICallback<List<T>> pCallback);
+    public T create(final T t);
 
-    void getEntities(final int pStartRange,
-                     final int pEndRange,
-                     final ICallback<List<T>> pCallback);
+    public T read(final Long pId);
 
-    void removeEntity(final Long pId);
+    boolean update(final T t);
+
+    void delete(final Long pId);
+
+    void readAll(final ICallback<List<T>> pCallback);
+
+    void readAll(final int pStartRange,
+                 final int pEndRange,
+                 final ICallback<List<T>> pCallback);
 }

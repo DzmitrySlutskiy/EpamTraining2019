@@ -3,31 +3,20 @@ package com.epam.themes.collectionviews.recyclerview;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.util.DiffUtil;
-import android.support.v7.widget.RecyclerView;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.epam.cleancodetest.R;
+import com.epam.themes.backend.entities.Object;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
-public class PageAdapter extends RecyclerView.Adapter<PageAdapter.ViewHolder> {
-
-    private final LayoutInflater mInflater;
-    private List<Object> mItems = new ArrayList<Object>() {{
-
-        for (int i = 0; i < 10; i++) {
-            add(new Object());
-        }
-    }};
-
-
+public class PageAdapter extends BaseAdapter<Object> {
     public PageAdapter(final Context pContext) {
-        mInflater = (LayoutInflater) pContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        super(pContext, null);
+        fillItems();
     }
 
     @NonNull
@@ -43,7 +32,7 @@ public class PageAdapter extends RecyclerView.Adapter<PageAdapter.ViewHolder> {
     }
 
     private void bindItem(@NonNull final ViewHolder viewHolder, int pIndex) {
-        Object partiallyCorrectItem = mItems.get(pIndex);
+        Object partiallyCorrectItem = mEntities.get(pIndex);
         viewHolder.itemView.setTag(pIndex); //doesnt work after list modification
 
         ((TextView) viewHolder.itemView).setText("View #" + pIndex);
@@ -52,20 +41,20 @@ public class PageAdapter extends RecyclerView.Adapter<PageAdapter.ViewHolder> {
             @Override
             public void onClick(View v) {
                 int adapterPosition = viewHolder.getAdapterPosition();
-                Object correctItem = mItems.get(adapterPosition);
+                Object correctItem = mEntities.get(adapterPosition);
             }
         });
     }
 
     @Override
     public int getItemCount() {
-        return mItems.size();
+        return mEntities.size();
     }
 
     public void updateItems(final List<Object> pItems) {
-//        mItems = new ArrayList<>(pItems); no need to recreate list
-        mItems.clear();
-        mItems.addAll(pItems);
+//        mEntities = new ArrayList<>(pItems); no need to recreate list
+        mEntities.clear();
+        mEntities.addAll(pItems);
         /*
            notifyDataSetChanged();
            notifyItemRangeChanged();
@@ -95,33 +84,11 @@ public class PageAdapter extends RecyclerView.Adapter<PageAdapter.ViewHolder> {
         }).dispatchUpdatesTo(this);
     }
 
-    public void deleteByIndex(int i) {
-        mItems.remove(i);
-        notifyItemRemoved(i);
-    }
-
-    public void onItemMove(int fromPosition, int toPosition) {
-        if (fromPosition < toPosition) {
-            for (int i = fromPosition; i < toPosition; i++) {
-                Collections.swap(mItems, i, i + 1);
+    private void fillItems() {
+        mEntities = new ArrayList<Object>() {{
+            for (int i = 0; i < 10; i++) {
+                add(new Object());
             }
-        } else {
-            for (int i = fromPosition; i > toPosition; i--) {
-                Collections.swap(mItems, i, i - 1);
-            }
-        }
-
-        notifyItemMoved(fromPosition, toPosition);
-    }
-
-    public void onItemDismiss(int adapterPosition) {
-        deleteByIndex(adapterPosition);
-    }
-
-    static class ViewHolder extends RecyclerView.ViewHolder {
-
-        ViewHolder(final View view) {
-            super(view);
-        }
+        }};
     }
 }
