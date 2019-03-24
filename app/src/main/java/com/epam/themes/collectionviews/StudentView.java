@@ -42,12 +42,6 @@ public class StudentView extends LinearLayout {
     }
 
     private void init(final Context context) {
-        setOrientation(HORIZONTAL);
-        LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT,
-                LinearLayout.LayoutParams.WRAP_CONTENT);
-
-        setLayoutParams(lp);
-
         inflate(context, R.layout.student_view, this);
 
         studentNameView = findViewById(R.id.student_name);

@@ -8,12 +8,12 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.epam.cleancodetest.R;
-import com.epam.themes.backend.entities.Object;
+import com.epam.themes.backend.entities.BaseEntity;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class PageAdapter extends BaseAdapter<Object> {
+public class PageAdapter extends BaseAdapter<BaseEntity> {
     public PageAdapter(final Context pContext) {
         super(pContext, null);
         fillItems();
@@ -32,7 +32,7 @@ public class PageAdapter extends BaseAdapter<Object> {
     }
 
     private void bindItem(@NonNull final ViewHolder viewHolder, int pIndex) {
-        Object partiallyCorrectItem = mEntities.get(pIndex);
+        BaseEntity partiallyCorrectItem = mEntities.get(pIndex);
         viewHolder.itemView.setTag(pIndex); //doesnt work after list modification
 
         ((TextView) viewHolder.itemView).setText("View #" + pIndex);
@@ -41,7 +41,7 @@ public class PageAdapter extends BaseAdapter<Object> {
             @Override
             public void onClick(View v) {
                 int adapterPosition = viewHolder.getAdapterPosition();
-                Object correctItem = mEntities.get(adapterPosition);
+                BaseEntity correctItem = mEntities.get(adapterPosition);
             }
         });
     }
@@ -51,7 +51,7 @@ public class PageAdapter extends BaseAdapter<Object> {
         return mEntities.size();
     }
 
-    public void updateItems(final List<Object> pItems) {
+    public void updateItems(final List<BaseEntity> pItems) {
 //        mEntities = new ArrayList<>(pItems); no need to recreate list
         mEntities.clear();
         mEntities.addAll(pItems);
@@ -85,9 +85,9 @@ public class PageAdapter extends BaseAdapter<Object> {
     }
 
     private void fillItems() {
-        mEntities = new ArrayList<Object>() {{
+        mEntities = new ArrayList<BaseEntity>() {{
             for (int i = 0; i < 10; i++) {
-                add(new Object());
+                add(new BaseEntity());
             }
         }};
     }
