@@ -1,5 +1,7 @@
 package com.epam.themes.backend.entities;
 
+import java.util.Objects;
+
 public class Student {
 
     private Long mId;
@@ -28,5 +30,20 @@ public class Student {
 
     public void setHwCount(int hwCount) {
         mHwCount = hwCount;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Student student = (Student) o;
+        return mHwCount == student.mHwCount &&
+                Objects.equals(mId, student.mId) &&
+                Objects.equals(mName, student.mName);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(mId, mName, mHwCount);
     }
 }

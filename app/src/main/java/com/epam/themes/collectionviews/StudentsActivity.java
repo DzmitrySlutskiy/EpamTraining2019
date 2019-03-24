@@ -82,7 +82,6 @@ public class StudentsActivity extends AppCompatActivity {
         mIsLoading = true;
         adapter.setShowLastViewAsLoading(true);
         mWebService.getEntities(pStartPosition, pEndPosition, new ICallback<List<Student>>() {
-
             @Override
             public void onResult(List<Student> pResult) {
                 adapter.addItems(pResult);
