@@ -15,6 +15,8 @@ https://t.me/joinchat/DNzoqBZ3iHcGMtD4CzR5fw
 
 # Feel free to create issue if some links don't work or you need some help
 
+# HW 24.04.2019
+
 # HW 18.04.2019
 Kotlin: https://kotlinlang.ru/
 
