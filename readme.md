@@ -16,6 +16,12 @@ https://t.me/joinchat/DNzoqBZ3iHcGMtD4CzR5fw
 # Feel free to create issue if some links don't work or you need some help
 
 # HW 24.04.2019
+Gradle: https://developer.android.com/studio/build
+examples provided in /gradle branch of this project 
+
+Homework:
+- In your or some demo project use at least 4 buildVariants (using flavors and build type). Use different logic for each.
+- Using modules in your projects is additional plus
 
 # HW 18.04.2019
 Kotlin: https://kotlinlang.ru/
