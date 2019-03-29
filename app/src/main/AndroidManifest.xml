@@ -35,7 +35,8 @@
 
         <activity android:name="com.epam.themes.androidcomponents.activities.CActivity" />
         <activity android:name="com.epam.themes.collectionviews.CollectionViewsActivity" />
-        <activity android:name="com.epam.themes.collectionviews.StudentsActivity" />
+        <activity android:name="com.epam.themes.collectionviews.StudentsActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
 
         <service android:name="com.epam.themes.androidcomponents.SimpleService" />
 

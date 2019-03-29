@@ -1,32 +1,40 @@
 package com.epam.themes.backend.entities;
 
 public class Student {
-
-    private Long mId;
-    private String mName;
-    private int mHwCount;
+    private Long studentId;
+    private String studentName;
+    private String studentEmail;
+    private String studentAddress;
 
     public Long getId() {
-        return mId;
+        return studentId;
     }
 
-    public void setId(Long mId) {
-        this.mId = mId;
+    public void setId(Long id) {
+        this.studentId = id;
     }
 
     public String getName() {
-        return mName;
+        return studentName;
     }
 
     public void setName(String name) {
-        this.mName = name;
+        this.studentName = name;
     }
 
-    public int getHwCount() {
-        return mHwCount;
+    public String getEmail() {
+        return studentEmail;
     }
 
-    public void setHwCount(int hwCount) {
-        mHwCount = hwCount;
+    public void setEmail(String email) {
+        studentEmail = email;
+    }
+
+    public String getAddress() {
+        return studentAddress;
+    }
+
+    public void setAddress(String address) {
+        this.studentAddress = address;
     }
 }

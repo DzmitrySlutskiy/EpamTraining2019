@@ -2,27 +2,29 @@ package com.epam.themes.backend;
 
 import android.os.Handler;
 import android.os.Looper;
-
 import com.epam.themes.backend.entities.Student;
 import com.epam.themes.util.ICallback;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
 public class StudentsWebService implements IWebService<Student> {
+    public static final String ADDRESS = "Address: Street ";
+    public static final String NAME = "Name: ";
+    public static final String EMAIL = "Email: ";
 
-    private List<Student> mStudents = new ArrayList<>();
-    private Random mRandom = new Random();
-    private Handler mHandler = new Handler(Looper.getMainLooper());
+    private List<Student> students = new ArrayList<>();
+    private Random random = new Random();
+    private Handler handler = new Handler(Looper.getMainLooper());
 
     {
         for (int i = 0; i < 1000; i++) {
             Student student = new Student();
             student.setId((long) i);
-            student.setHwCount(1 + mRandom.nextInt(5));
-            student.setName(String.valueOf(i));
-            mStudents.add(student);
+            student.setAddress( ADDRESS + random.nextInt(555));
+            student.setName(NAME + String.valueOf(i));
+            student.setEmail(EMAIL + String.valueOf(i));
+            students.add(student);
         }
     }
 
@@ -31,20 +33,47 @@ public class StudentsWebService implements IWebService<Student> {
     }
 
     @Override
-    public void getEntities(final int pStartRange,
-                            final int pEndRange,
-                            final ICallback<List<Student>> pCallback) {
-        mHandler.postDelayed(new Runnable() {
+    public void getEntities(final int pStartRange, final int pEndRange, final ICallback<List<Student>> pCallback) {
+        handler.postDelayed(new Runnable() {
 
             @Override
             public void run() {
-                pCallback.onResult(mStudents.subList(pStartRange, pEndRange));
+                pCallback.onResult(students.subList(pStartRange, pEndRange));
             }
         }, 1000);
     }
 
     @Override
-    public void removeEntity(Long pId) {
+    public void removeEntity(final Long id) {
+        handler.postDelayed(new Runnable() {
 
+            @Override
+            public void run() {
+                for(int i=0; i < students.size(); i++) {
+                    if (students.get(i).getId() == id) {
+                        students.remove(i);
+
+                        break;
+                    }
+                }
+            }
+        }, 1000);
+    }
+
+    @Override
+    public void updateEntityById(final Long id, final Student student) {
+        handler.postDelayed(new Runnable() {
+
+            @Override
+            public void run() {
+                for(int i=0; i < students.size(); i++) {
+                    if (students.get(i).getId() == id) {
+                        students.set(i, student);
+
+                        break;
+                    }
+                }
+            }
+        }, 1000);
     }
 }

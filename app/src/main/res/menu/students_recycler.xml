@@ -1,0 +1,7 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/edit_item"
+        android:icon="@drawable/ic_edit"
+        android:title="@string/edit_student"
+        app:showAsAction="ifRoom" />
+</menu>
