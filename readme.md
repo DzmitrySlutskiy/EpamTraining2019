@@ -15,6 +15,17 @@ https://t.me/joinchat/DNzoqBZ3iHcGMtD4CzR5fw
 
 # Feel free to create issue if some links don't work or you need some help
 
+# 28.04.2019
+Patterns => http://citforum.ru/SE/project/pattern/
+
+SOLID => https://ru.wikipedia.org/wiki/SOLID
+
+KISS => https://ru.wikipedia.org/wiki/KISS_(%D0%BF%D1%80%D0%B8%D0%BD%D1%86%D0%B8%D0%BF)
+
+YAGNI => https://ru.wikipedia.org/wiki/YAGNI
+
+DRY => https://ru.wikipedia.org/wiki/Don%E2%80%99t_repeat_yourself
+
 # HW 24.04.2019
 Gradle: https://developer.android.com/studio/build
 examples provided in /gradle branch of this project 
