@@ -13,11 +13,7 @@
         tools:ignore="GoogleAppIndexingWarning">
 
         <activity android:name="com.epam.LessonsActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
         <activity
@@ -35,7 +31,14 @@
 
         <activity android:name="com.epam.themes.androidcomponents.activities.CActivity" />
         <activity android:name="com.epam.themes.collectionviews.CollectionViewsActivity" />
-        <activity android:name="com.epam.themes.collectionviews.StudentsActivity" />
+
+        <activity android:name="com.epam.themes.collectionviews.StudentsActivity">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
 
         <service android:name="com.epam.themes.androidcomponents.SimpleService" />
 

@@ -44,7 +44,18 @@ public class StudentsWebService implements IWebService<Student> {
     }
 
     @Override
-    public void removeEntity(Long pId) {
+    public void removeEntity(int pId) {
+        mStudents.remove(pId);
+    }
 
+    @Override
+    public void addEntity(Student student) {
+        mStudents.add(student);
+    }
+
+    @Override
+    public void editEntity(int position, String name, int counter) {
+        mStudents.get(position).setName(name);
+        mStudents.get(position).setHwCount(counter);
     }
 }
