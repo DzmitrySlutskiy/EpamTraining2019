@@ -24,8 +24,10 @@ public class StudentsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
     private final LayoutInflater mInflater;
     private final List<Student> mStudents = new ArrayList<>();
+    private BaseViewHolder.ClickListener clickListener;
 
-    public StudentsAdapter(final Context pContext) {
+    public StudentsAdapter(final Context pContext, BaseViewHolder.ClickListener clickListener) {
+        this.clickListener = clickListener;
         mInflater = (LayoutInflater) pContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 
@@ -34,9 +36,9 @@ public class StudentsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull final ViewGroup pParent,
                                                       @ViewType final int pViewType) {
         if (pViewType == ViewType.STUDENT) {
-            return new BaseViewHolder<>(new StudentView(pParent.getContext()));
+            return new BaseViewHolder<>(new StudentView(pParent.getContext()), clickListener);
         } else {
-            return new BaseViewHolder<>(mInflater.inflate(R.layout.layout_progress, pParent, false));
+            return new BaseViewHolder<>(mInflater.inflate(R.layout.layout_progress, pParent, false), clickListener);
         }
     }
 
@@ -81,12 +83,22 @@ public class StudentsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         mStudents.addAll(pResult);
         notifyDataSetChanged();
     }
+
     public void addItem(final int id, final Student student) {
-        mStudents.add(id,student);
+        mStudents.add(id, student);
         notifyDataSetChanged();
     }
 
-    public void deleteByIndex(int i) {
+    public void setItem(final int id, final Student student) {
+        mStudents.set(id, student);
+        notifyItemChanged(id);
+    }
+
+    public Student getItem(final int id) {
+        return mStudents.get(id);
+    }
+
+    private void deleteByIndex(int i) {
         mStudents.remove(i);
         notifyItemRemoved(i);
     }

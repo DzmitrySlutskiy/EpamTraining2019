@@ -2,6 +2,7 @@ package com.epam.themes.collectionviews.recyclerview;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
 import android.view.ViewGroup;
 
 import com.epam.themes.uicomponents.LessonView;
@@ -18,7 +19,12 @@ public class LessonViewAdapter extends RecyclerView.Adapter<BaseViewHolder<Lesso
     @Override
     public BaseViewHolder<LessonView> onCreateViewHolder(@NonNull final ViewGroup pParent,
                                                          final int pViewType) {
-        return new BaseViewHolder<>(new LessonView(pParent.getContext()));
+        return new BaseViewHolder<>(new LessonView(pParent.getContext()), new BaseViewHolder.ClickListener() {
+            @Override
+            public void onItemClick(int position, View v) {
+
+            }
+        });
     }
 
     @Override
