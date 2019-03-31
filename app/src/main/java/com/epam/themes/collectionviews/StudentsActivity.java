@@ -1,15 +1,23 @@
 package com.epam.themes.collectionviews;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.helper.ItemTouchHelper;
+import android.view.HapticFeedbackConstants;
+import android.view.View;
+import android.widget.EditText;
 
 import com.epam.cleancodetest.R;
 import com.epam.themes.backend.IWebService;
 import com.epam.themes.backend.StudentsWebService;
 import com.epam.themes.backend.entities.Student;
+import com.epam.themes.collectionviews.recyclerview.ItemTouchStudentsCallback;
 import com.epam.themes.collectionviews.recyclerview.StudentsAdapter;
 import com.epam.themes.util.ICallback;
 
@@ -31,7 +39,14 @@ public class StudentsActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_students);
 
-        final RecyclerView recyclerView = findViewById(android.R.id.list);
+        final RecyclerView recyclerView = findViewById(R.id.activity_students_recycler_view);
+        FloatingActionButton floatingActionButton = findViewById(R.id.activity_students_fab);
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openStudentDialog();
+            }
+        });
 
         mLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(mLayoutManager);
@@ -67,7 +82,7 @@ public class StudentsActivity extends AppCompatActivity {
                 }
             }
         });
-
+        new ItemTouchHelper(new ItemTouchStudentsCallback(mAdapter)).attachToRecyclerView(recyclerView);
         loadMoreItems(0, PAGE_SIZE);
     }
 
@@ -83,4 +98,40 @@ public class StudentsActivity extends AppCompatActivity {
             }
         });
     }
+
+    private void openStudentDialog() {
+        final View dialogView = getLayoutInflater().inflate(R.layout.dialog_student, null);
+        final EditText studentNameEditText = dialogView.findViewById(R.id.dialog_student_name);
+        final EditText hwCountEditText = dialogView.findViewById(R.id.dialog_student_hw_count);
+
+        AlertDialog.Builder dialog = new AlertDialog.Builder(this);
+
+        dialog.setView(dialogView)
+                .setTitle("Student info")
+                .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialogView.performHapticFeedback(HapticFeedbackConstants.KEYBOARD_TAP);
+
+                        Student student = new Student();
+                        student.setName(studentNameEditText.getText().toString());
+                        student.setHwCount(Integer.parseInt(hwCountEditText.getText().toString()));
+                        addNewStudent(student);
+                    }
+                })
+                .setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+
+        dialog.show();
+    }
+
+    private void addNewStudent(final Student newStudent) {
+        mAdapter.addItem(0, newStudent);
+        mWebService.addEntity(newStudent);
+    }
+
 }

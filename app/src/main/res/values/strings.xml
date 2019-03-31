@@ -6,4 +6,7 @@
     <string name="theme_android_ui">Android UI</string>
     <string name="theme_android_compound_view">Compound View</string>
     <string name="theme_android_collection_views">Collection Views</string>
+    <string name="student_homeworks_done_title">Homeworks:</string>
+    <string name="dialog_student_name_hint">Student name</string>
+    <string name="dialog_homework_count_hint">Homework count</string>
 </resources>
