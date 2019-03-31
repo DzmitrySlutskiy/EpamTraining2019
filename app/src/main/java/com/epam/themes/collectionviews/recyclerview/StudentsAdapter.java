@@ -9,12 +9,13 @@ import android.view.ViewGroup;
 
 import com.epam.cleancodetest.R;
 import com.epam.themes.backend.entities.Student;
-import com.epam.themes.uicomponents.LessonView;
+import com.epam.themes.collectionviews.StudentView;
 import com.epam.themes.uicomponents.base.BaseViewHolder;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class StudentsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
@@ -23,8 +24,10 @@ public class StudentsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
     private final LayoutInflater mInflater;
     private final List<Student> mStudents = new ArrayList<>();
+    private BaseViewHolder.ClickListener clickListener;
 
-    public StudentsAdapter(final Context pContext) {
+    public StudentsAdapter(final Context pContext, BaseViewHolder.ClickListener clickListener) {
+        this.clickListener = clickListener;
         mInflater = (LayoutInflater) pContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 
@@ -33,9 +36,9 @@ public class StudentsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull final ViewGroup pParent,
                                                       @ViewType final int pViewType) {
         if (pViewType == ViewType.STUDENT) {
-            return new BaseViewHolder<>(new LessonView(pParent.getContext()));
+            return new BaseViewHolder<>(new StudentView(pParent.getContext()), clickListener);
         } else {
-            return new BaseViewHolder<>(mInflater.inflate(R.layout.layout_progress, pParent, false));
+            return new BaseViewHolder<>(mInflater.inflate(R.layout.layout_progress, pParent, false), clickListener);
         }
     }
 
@@ -44,9 +47,8 @@ public class StudentsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         if (getItemViewType(pPosition) == ViewType.STUDENT) {
             final Student student = mStudents.get(pPosition);
 
-            ((LessonView) pViewHolder.itemView)
-                    .setLessonDate(student.getName())
-                    .setLessonTheme(String.valueOf(student.getHwCount()));
+            ((StudentView) pViewHolder.itemView)
+                    .setStudent(student);
         }
     }
 
@@ -81,6 +83,44 @@ public class StudentsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         mStudents.addAll(pResult);
         notifyDataSetChanged();
     }
+
+    public void addItem(final int id, final Student student) {
+        mStudents.add(id, student);
+        notifyDataSetChanged();
+    }
+
+    public void setItem(final int id, final Student student) {
+        mStudents.set(id, student);
+        notifyItemChanged(id);
+    }
+
+    public Student getItem(final int id) {
+        return mStudents.get(id);
+    }
+
+    private void deleteByIndex(int i) {
+        mStudents.remove(i);
+        notifyItemRemoved(i);
+    }
+
+    public void onItemMove(int fromPosition, int toPosition) {
+        if (fromPosition < toPosition) {
+            for (int i = fromPosition; i < toPosition; i++) {
+                Collections.swap(mStudents, i, i + 1);
+            }
+        } else {
+            for (int i = fromPosition; i > toPosition; i--) {
+                Collections.swap(mStudents, i, i - 1);
+            }
+        }
+
+        notifyItemMoved(fromPosition, toPosition);
+    }
+
+    public void onItemDismiss(int adapterPosition) {
+        deleteByIndex(adapterPosition);
+    }
+
 
     @IntDef({ViewType.STUDENT, ViewType.LOADING})
     @Retention(RetentionPolicy.SOURCE)

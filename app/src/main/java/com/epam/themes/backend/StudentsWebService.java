@@ -12,6 +12,26 @@ import java.util.Random;
 
 public class StudentsWebService implements IWebService<Student> {
 
+    private static final String[] STUDENTS_NAMES = new String[]{
+            "Aliaksei Shvants",
+            "Maryia Senkevich",
+            "Pavel Klimovich",
+            "Yahor Shymanchyk",
+            "Anton Liaskevich",
+            "Yahor Berdnikau",
+            "Maksim Zhanhialiou",
+            "Uladzislau Sitsko",
+            "Goncharov Alexander",
+            "Maksim Nasalevich",
+            "Vitali Kullikouski",
+            "Aliaksandr Litskevich",
+            "Kiryl Shreyter",
+            "Konopeshko Aleksei",
+            "Natallia Bondarava",
+            "Aliaksei Halavach",
+            "Maksim Siamashka",
+            "Vladyslav Vsemirnov"};
+
     private List<Student> mStudents = new ArrayList<>();
     private Random mRandom = new Random();
     private Handler mHandler = new Handler(Looper.getMainLooper());
@@ -21,7 +41,7 @@ public class StudentsWebService implements IWebService<Student> {
             Student student = new Student();
             student.setId((long) i);
             student.setHwCount(1 + mRandom.nextInt(5));
-            student.setName(String.valueOf(i));
+            student.setName(STUDENTS_NAMES[mRandom.nextInt(STUDENTS_NAMES.length - 1)]);
             mStudents.add(student);
         }
     }
@@ -45,6 +65,16 @@ public class StudentsWebService implements IWebService<Student> {
 
     @Override
     public void removeEntity(Long pId) {
+        mStudents.remove(pId);
+    }
 
+    @Override
+    public void addEntity(Student entity) {
+        mStudents.add(0, entity);
+    }
+
+    @Override
+    public void setEntity(long id, Student entity) {
+        mStudents.set((int) id, entity);
     }
 }

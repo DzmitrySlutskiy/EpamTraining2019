@@ -13,4 +13,8 @@ public interface IWebService<T> {
                      final ICallback<List<T>> pCallback);
 
     void removeEntity(final Long pId);
+
+    void addEntity(final T entity);
+
+    void setEntity(final long id,final T entity);
 }
