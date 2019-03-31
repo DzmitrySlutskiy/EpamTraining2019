@@ -12,17 +12,17 @@ class Num(val value: Int) : Expr()
 class Sum(val left: Expr, val right: Expr) : Expr()
 
 fun eval(e: Expr): Int =
-    when (e) {
-        is Num -> todoTask8(e)
-        is Sum -> todoTask8(e)
-    }
+        when (e) {
+            is Num -> e.value
+            is Sum -> eval(e.left) + eval(e.right)
+        }
 
 fun todoTask8(expr: Expr): Nothing = TODO(
-    """
+        """
         Task 8.
         Complete the implementation of the 'eval' function above using smart casts and 'when' expression.
         The 'JavaCode8.eval' method provides the similar functionality written in Java.
     """,
-    documentation = doc8(),
-    references = { JavaCode8().eval(expr) })
+        documentation = doc8(),
+        references = { JavaCode8().eval(expr) })
 
