@@ -7,4 +7,6 @@
     <color name="real_black">#ff000000</color>
     <color name="real_white">#fff</color>
     <color name="blue_50">#E3F2FD</color>
+    <color name="grey">#EBEBEB</color>
+    <color name="vk_page_edit_button">#426984</color>
 </resources>

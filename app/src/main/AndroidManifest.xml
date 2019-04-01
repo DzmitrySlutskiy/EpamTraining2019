@@ -31,11 +31,16 @@
         <activity
             android:name="com.epam.themes.androidcomponents.activities.AActivity"
             android:launchMode="singleInstance" />
+
         <activity android:name="com.epam.themes.androidcomponents.activities.BActivity" />
 
         <activity android:name="com.epam.themes.androidcomponents.activities.CActivity" />
         <activity android:name="com.epam.themes.collectionviews.CollectionViewsActivity" />
         <activity android:name="com.epam.themes.collectionviews.StudentsActivity" />
+
+        <activity android:name="com.epam.themes.uicomponents.VKPageActivity" />
+
+        <activity android:name="com.epam.themes.uicomponents.GooglePodcastsActivity" />
 
         <service android:name="com.epam.themes.androidcomponents.SimpleService" />
 
@@ -45,5 +50,4 @@
             </intent-filter>
         </receiver>
     </application>
-
 </manifest>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_news"
+        android:icon="@drawable/ic_news"
+        android:title="@string/news"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_search"
+        android:icon="@drawable/ic_search"
+        android:title="@string/search"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_chat"
+        android:icon="@drawable/ic_chat"
+        android:title="@string/chat"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_notification"
+        android:icon="@drawable/ic_notification"
+        android:title="@string/notification"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_menu"
+        android:icon="@drawable/ic_menu"
+        android:title="@string/menu"
+        app:showAsAction="ifRoom"
+        android:checked="true"/>
+
+</menu>

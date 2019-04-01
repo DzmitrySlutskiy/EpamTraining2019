@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp">
+
+        <android.support.v7.widget.Toolbar xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/google_podcasts_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:gravity="center"
+            android:minHeight="?attr/actionBarSize"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                app:srcCompat="@drawable/ic_search_gray" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:scaleType="centerInside"
+                android:src="@drawable/google_podcasts" />
+        </android.support.v7.widget.Toolbar>
+    </android.support.constraint.ConstraintLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/google_podcasts_toolbar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.epam.themes.uicomponents.LabeledImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_margin="5dp"
+                    android:layout_weight="0.25"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/podcast_logo_1"
+                    app:labelSrc="@drawable/new_label_blue" />
+
+                <com.epam.themes.uicomponents.LabeledImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_margin="5dp"
+                    android:layout_weight="0.25"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/podcast_logo_2"
+                    app:labelSrc="@drawable/new_label_blue" />
+
+                <com.epam.themes.uicomponents.LabeledImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_margin="5dp"
+                    android:layout_weight="0.25"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/podcast_logo_3" />
+
+                <com.epam.themes.uicomponents.LabeledImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_margin="5dp"
+                    android:layout_weight="0.25"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/podcast_logo_4"
+                    app:labelSrc="@drawable/new_label_blue" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.epam.themes.uicomponents.LabeledImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_margin="5dp"
+                    android:layout_weight="0.25"
+                    android:src="@drawable/podcast_logo_5" />
+
+                <com.epam.themes.uicomponents.LabeledImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_margin="5dp"
+                    android:layout_weight="0.25"
+                    android:src="@drawable/podcast_logo_6"
+                    app:labelSrc="@drawable/new_label_blue" />
+
+                <com.epam.themes.uicomponents.LabeledImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_margin="5dp"
+                    android:layout_weight="0.25"
+                    android:src="@drawable/podcast_logo_7" />
+
+                <com.epam.themes.uicomponents.LabeledImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_margin="5dp"
+                    android:layout_weight="0.25"
+                    android:src="@drawable/podcast_logo_8"
+                    app:labelSrc="@drawable/new_label_blue" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="330dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="35dp"
+                android:layout_marginRight="5dp"
+                android:background="@drawable/rounded_corners"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:text="@string/for_you"
+                    android:textColor="@color/real_black"
+                    android:textSize="20sp" />
+
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/google_podcasts_pager"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <android.support.design.widget.TabLayout
+                        android:id="@+id/tab_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:tabIndicatorColor="#0083FA"
+                        app:tabIndicatorFullWidth="false"
+                        app:tabPaddingEnd="0dp"
+                        app:tabPaddingStart="0dp"
+                        app:tabSelectedTextColor="#0083FA"
+                        app:tabTextAppearance="@style/CustomTextAppearance" />
+
+                </android.support.v4.view.ViewPager>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
