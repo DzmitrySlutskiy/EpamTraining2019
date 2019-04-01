@@ -1,39 +1,24 @@
 package com.epam.cleancode.comments;
 
 public class MortgageInstallmentCalculator {
-
-    /**
-     *
-     * @param p principal amount
-     * @param t term of mortgage in years
-     * @param r rate of interest
-     * @return monthly payment amount
-     */
+    
     public static double calculateMonthlyPayment(
-            int p, int t, double r) {
+            int principalAmount, int mortgageTerm, double rate) {
 
-        //cannot have negative loanAmount, term duration and rate of interest
-        if (p < 0 || t <= 0 || r < 0) {
+        if (principalAmount < 0 || mortgageTerm <= 0 || rate < 0) {
             throw new InvalidInputException("Negative values are not allowed");
         }
 
-        // Convert interest rate into a decimal - eg. 6.5% = 0.065
-        r /= 100.0;
+       double decimalRate = rate / 100;
 
-        // convert term in years to term in months
-        double tim = t * 12;
+        double mortgageTermInMonths = mortgageTerm * NUMBER_OF_MONTHS;
 
-        //for zero interest rates
-        if(r==0)
-            return  p/tim;
+        if(decimalRate == 0){
+            return  principalAmount / mortgageTermInMonths;
+        }
 
-        // convert into monthly rate
-        double m = r / 12.0;
+        double monthlyRate = decimalRate / NUMBER_OF_MONTHS;
 
-        // Calculate the monthly payment
-        // The Math.pow() method is used calculate values raised to a power
-        double monthlyPayment = (p * m) / (1 - Math.pow(1 + m, -tim));
-
-        return monthlyPayment;
+        return (principalAmount * monthlyRate) / (1 - Math.pow(1 + monthlyRate, -mortgageTermInMonths));
     }
 }
