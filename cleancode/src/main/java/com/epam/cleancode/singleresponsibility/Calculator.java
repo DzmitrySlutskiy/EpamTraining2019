@@ -22,11 +22,9 @@ public class Calculator {
         int sum = 0;
 
         for (String s : numbers.split(SEPARATOR)) {
-
             if (isNotEmpty(s)) {
                 sum += Integer.valueOf(s);
             }
-
         }
 
         return sum;
@@ -36,11 +34,9 @@ public class Calculator {
         int sum = 1;
 
         for (String s : numbers.split(SEPARATOR)) {
-
             if (isNotEmpty(s)) {
                 sum *= Integer.valueOf(s);
             }
-
         }
 
         return sum;
