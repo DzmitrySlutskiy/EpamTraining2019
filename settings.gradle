@@ -1,1 +1,1 @@
-include ':app', ':cleancode'
+include ':app', ':cleancode', ':kotlinKoans'

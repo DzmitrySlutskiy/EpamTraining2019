@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.epam.LessonsActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/available_lessons_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/blue_50"
+            android:gravity="center"
+            android:padding="15dp"
+            android:text="@string/available_lessons_text"
+            android:textColor="@color/real_black"
+            android:textSize="24sp"
+            app:fontFamily="@font/indie_flower" />
+
+        <include layout="@layout/android_components_lesson_item" />
+
+        <include
+            android:id="@+id/lesson_compound_view"
+            layout="@layout/compound_view_item" />
+
+        <com.epam.themes.uicomponents.LessonView
+            android:id="@+id/collectionComponentsView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackground"
+            android:padding="16dp"
+            app:lessonDate="14.03.2019"
+            app:lessonTheme="@string/theme_android_collection_views" />
+
+        <!--TODO add new item-->
+    </LinearLayout>
+</ScrollView>
