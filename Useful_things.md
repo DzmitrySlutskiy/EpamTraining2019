@@ -11,6 +11,9 @@ Key Promoter X: https://plugins.jetbrains.com/plugin/9792-key-promoter-x
 # Hotkeys:
 https://developer.android.com/studio/intro/keyboard-shortcuts
 
+#Ссылки на предыдущие тренинги
+https://github.com/IstiN/android-training-2017
+https://github.com/deniotokiari/training-epam-2016
 
 # Final project success criteria:
 Оценка проекта будет состоять из:
