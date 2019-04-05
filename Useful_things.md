@@ -18,6 +18,7 @@ https://developer.android.com/studio/intro/keyboard-shortcuts
 
 # Ссылки на предыдущие тренинги
 https://github.com/IstiN/android-training-2017
+
 https://github.com/deniotokiari/training-epam-2016
 
 # Final project success criteria:
