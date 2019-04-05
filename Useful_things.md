@@ -7,7 +7,7 @@ Collection of free api: https://any-api.com/
 SonarLint: https://plugins.jetbrains.com/plugin/7973-sonarlint
 
 # Useful tools
-Charles/Fiddler
+Charles/Fiddler <b>
 Postman
 
 Key Promoter X: https://plugins.jetbrains.com/plugin/9792-key-promoter-x
