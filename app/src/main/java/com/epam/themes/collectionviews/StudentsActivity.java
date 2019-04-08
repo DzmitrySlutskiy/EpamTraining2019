@@ -5,25 +5,51 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.helper.ItemTouchHelper;
+import android.view.View;
 
 import com.epam.cleancodetest.R;
 import com.epam.themes.backend.IWebService;
 import com.epam.themes.backend.StudentsWebService;
 import com.epam.themes.backend.entities.Student;
+import com.epam.themes.collectionviews.recyclerview.ItemTouchCallbackStudent;
 import com.epam.themes.collectionviews.recyclerview.StudentsAdapter;
 import com.epam.themes.util.ICallback;
 
+import java.util.Arrays;
 import java.util.List;
+import java.util.Random;
 
 public class StudentsActivity extends AppCompatActivity {
 
     public static final int PAGE_SIZE = 10;
     public static final int MAX_VISIBLE_ITEMS = 40;
+    private static final List<String> STUDENTS_LIST = Arrays.asList(
+            "Aliaksei Shvants",
+            "Maryia Senkevich",
+            "Pavel Klimovich",
+            "yahor shymanchyk",
+            "Anton Liaskevich",
+            "Yahor Berdnikau",
+            "MAKSIM ZHANHIALIOU",
+            "ULADZISLAU SITSKO",
+            "Goncharov Alexander",
+            "MAKSIM NASALEVICH",
+            "Vitali Kullikouski",
+            "ALIAKSANDR LITSKEVICH",
+            "Kiryl Shreyter",
+            "Konopeshko Aleksei",
+            "NATALLIA BONDARAVA",
+            "ALIAKSEI HALAVACH",
+            "Maksim Siamashka",
+            "Vladyslav Vsemirnov");
 
     private boolean mIsLoading = false;
     private StudentsAdapter mAdapter;
     private LinearLayoutManager mLayoutManager;
     private final IWebService<Student> mWebService = new StudentsWebService();
+    private Student student;
+    private Random random;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -69,6 +95,25 @@ public class StudentsActivity extends AppCompatActivity {
         });
 
         loadMoreItems(0, PAGE_SIZE);
+
+        new ItemTouchHelper(new ItemTouchCallbackStudent(recyclerView, mAdapter))
+                .attachToRecyclerView(recyclerView);
+
+        findViewById(R.id.add_student_button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                addStudent();
+                mAdapter.addItem(addStudent());
+            }
+        });
+    }
+
+    private Student addStudent() {
+        random = new Random();
+        student = new Student();
+        student.setName(STUDENTS_LIST.get(random.nextInt(STUDENTS_LIST.size())));
+        student.setHwCount(1 + random.nextInt(10));
+        return student;
     }
 
     private void loadMoreItems(final int pStartPosition, final int pEndPosition) {

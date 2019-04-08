@@ -6,4 +6,7 @@
     <string name="theme_android_ui">Android UI</string>
     <string name="theme_android_compound_view">Compound View</string>
     <string name="theme_android_collection_views">Collection Views</string>
+    <string name="name_hint">Name</string>
+    <string name="hw_count_hint">Hw count</string>
+    <string name="add_student">Add student</string>
 </resources>
