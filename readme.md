@@ -19,6 +19,14 @@ https://t.me/joinchat/DNzoqBZ3iHcGMtD4CzR5fw
 * Write own AsyncTask that will have the same API as android.AsyncTask, but will support screen rotation. If we already  downloaded data, we just need to reuse it, if activity was destroyed we need to destoy cache data.
 * Write home screen of your app which will load data from few places in parallel mode and combine them in screen
 
+https://blog.mindorks.com/android-core-looper-handler-and-handlerthread-bd54d69fe91a
+https://developer.android.com/guide/components/processes-and-threads.html?hl=en
+https://developer.android.com/topic/performance/threads?hl=en
+https://developer.android.com/reference/android/os/AsyncTask
+https://developer.android.com/guide/components/loaders
+https://developer.android.com/reference/android/support/v4/app/LoaderManager.html
+https://developer.android.com/reference/android/os/ResultReceiver
+
 # 28.04.2019
 Patterns => http://citforum.ru/SE/project/pattern/
 
