@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.os.IBinder;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-
 import com.epam.cleancodetest.R;
 import com.epam.themes.androidcomponents.activities.AActivity;
 import com.epam.themes.androidcomponents.activities.BActivity;

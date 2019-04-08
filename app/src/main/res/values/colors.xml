@@ -7,4 +7,7 @@
     <color name="real_black">#ff000000</color>
     <color name="real_white">#fff</color>
     <color name="blue_50">#E3F2FD</color>
+
+    <color name="light_green_400">#9CCC65</color>
+    <color name="light_green_500">#8BC34A</color>
 </resources>

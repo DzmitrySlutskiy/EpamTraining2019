@@ -15,28 +15,21 @@
             android:id="@+id/available_lessons_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/blue_50"
+            android:background="@color/light_green_400"
             android:gravity="center"
             android:padding="15dp"
             android:text="@string/available_lessons_text"
             android:textColor="@color/real_black"
-            android:textSize="24sp"
-            app:fontFamily="@font/indie_flower" />
+            android:textSize="32sp"
+            app:fontFamily="@font/might_makes_right_bb" />
 
         <include layout="@layout/android_components_lesson_item" />
 
-        <include
-            android:id="@+id/lesson_compound_view"
-            layout="@layout/compound_view_item" />
+        <include layout="@layout/android_ui_lesson_item" />
 
-        <com.epam.themes.uicomponents.LessonView
-            android:id="@+id/collectionComponentsView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="?attr/selectableItemBackground"
-            android:padding="16dp"
-            app:lessonDate="14.03.2019"
-            app:lessonTheme="@string/theme_android_collection_views" />
+        <include layout="@layout/android_compound_view_item" />
+
+        <include layout="@layout/android_collection_view_item" />
 
         <!--TODO add new item-->
     </LinearLayout>

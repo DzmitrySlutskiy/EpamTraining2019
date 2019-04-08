@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/lesson_components_root_view"
+    android:id="@+id/lesson_collection_view_root_view"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="?attr/selectableItemBackground"
@@ -10,6 +10,7 @@
     android:focusable="true"
     android:orientation="horizontal"
     android:padding="16dp"
+    app:fontFamily="@font/might_makes_right_bb"
     tools:showIn="@layout/activity_lessons">
 
     <ImageView
@@ -25,7 +26,7 @@
         android:layout_marginLeft="16dp"
         android:layout_marginBottom="16dp"
         android:layout_toRightOf="@id/avatar"
-        android:text="@string/theme_android_components"
+        android:text="@string/theme_android_collection_views"
         android:textColor="@color/real_black"
         android:textSize="24sp"
         android:textStyle="bold"
@@ -38,7 +39,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginLeft="16dp"
         android:layout_toRightOf="@id/avatar"
-        android:text="04.03.2019" />
+        android:text="14.03.2019" />
 
     <TextView
         android:id="@+id/lesson_mentor_name"

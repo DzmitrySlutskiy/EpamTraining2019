@@ -14,12 +14,11 @@ public class SimpleService extends Service {
 
     @Override
     public int onStartCommand(final Intent intent, final int flags, final int startId) {
-        Toast.makeText(this, "Service was started", Toast.LENGTH_LONG).show();
-
         mResult = new Object();
 
-        sendBroadcast(new Intent("com.epam.CUSTOM_ACTION") {
+        Toast.makeText(this, "Service was started", Toast.LENGTH_LONG).show();
 
+        sendBroadcast(new Intent("com.epam.CUSTOM_ACTION") {
             {
                 putExtra("RESULT", (Bundle) mResult);
             }
