@@ -8,12 +8,13 @@ import android.support.v7.widget.RecyclerView;
 
 import com.epam.cleancodetest.R;
 import com.epam.themes.backend.IWebService;
+import com.epam.themes.backend.StudentOperation;
 import com.epam.themes.backend.StudentsWebService;
 import com.epam.themes.backend.entities.Student;
 import com.epam.themes.collectionviews.recyclerview.StudentsAdapter;
 import com.epam.themes.util.ICallback;
 
-import java.util.List;
+import java.util.Collections;
 
 public class StudentsActivity extends AppCompatActivity {
 
@@ -74,13 +75,18 @@ public class StudentsActivity extends AppCompatActivity {
     private void loadMoreItems(final int pStartPosition, final int pEndPosition) {
         mIsLoading = true;
         mAdapter.setShowLastViewAsLoading(true);
-        mWebService.getEntities(pStartPosition, pEndPosition, new ICallback<List<Student>>() {
+        mWebService.getEntities(pStartPosition, pEndPosition, new StudentOperation(new ICallback<Student>() {
+                    @Override
+                    public void onResult(Student pResult) {
+                        //mAdapter.addItem(pResult);
+                        mIsLoading = false;
+                    }
 
-            @Override
-            public void onResult(List<Student> pResult) {
-                mAdapter.addItems(pResult);
-                mIsLoading = false;
-            }
-        });
+                    @Override
+                    public void onError(Throwable throwable) {
+
+                    }
+                })
+        );
     }
 }

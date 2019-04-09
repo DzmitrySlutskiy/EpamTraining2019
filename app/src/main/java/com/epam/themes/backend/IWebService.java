@@ -10,7 +10,7 @@ public interface IWebService<T> {
 
     void getEntities(final int pStartRange,
                      final int pEndRange,
-                     final ICallback<List<T>> pCallback);
+                     IOperation<T> poperation);
 
     void removeEntity(final Long pId);
 }
