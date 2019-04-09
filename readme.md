@@ -26,6 +26,8 @@ https://developer.android.com/reference/android/os/AsyncTask
 https://developer.android.com/guide/components/loaders
 https://developer.android.com/reference/android/support/v4/app/LoaderManager.html
 https://developer.android.com/reference/android/os/ResultReceiver
+Review Sync collections
+https://habr.com/ru/company/luxoft/blog/157273/
 
 # 28.04.2019
 Patterns => http://citforum.ru/SE/project/pattern/
