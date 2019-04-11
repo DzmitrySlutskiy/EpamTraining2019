@@ -79,6 +79,11 @@ public class StudentsActivity extends AppCompatActivity {
 
                 postponeToNextFrameLastViewAsLoading(recyclerView, false);
             }
+
+            @Override
+            public void onError(Throwable throwable) {
+
+            }
         });
     }
 

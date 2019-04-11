@@ -12,7 +12,8 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
 
-        <activity android:name="com.epam.LessonsActivity">
+        <activity android:name="com.epam.LessonsActivity"
+            android:screenOrientation="sensor">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -44,6 +45,9 @@
                 <action android:name="com.epam.CUSTOM_ACTION" />
             </intent-filter>
         </receiver>
+
+        <activity android:name="com.epam.themes.LoaderActivity"
+            android:exported="true"></activity>
     </application>
 
 </manifest>

@@ -10,6 +10,8 @@ import com.epam.themes.util.ICallback;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 import io.bloco.faker.Faker;
 
@@ -32,6 +34,8 @@ public class StudentsWebService implements IWebService<Student> {
         }
         return instance;
     }
+
+    private static ExecutorService executorService = Executors.newCachedThreadPool();
 
     @Override
     public Student create(final Student student) {
@@ -70,6 +74,12 @@ public class StudentsWebService implements IWebService<Student> {
     @Override
     public void readAll(final ICallback<List<Student>> pCallback) {
         mHandler.postDelayed(makeRunnableWebResult(pCallback, mStudents), 1000);
+    }
+
+    public void getEntities(final int pStartRange,
+                            final int pEndRange,
+                            IOperation<Student> poperation) {
+        executorService.execute(poperation);
     }
 
     @Override

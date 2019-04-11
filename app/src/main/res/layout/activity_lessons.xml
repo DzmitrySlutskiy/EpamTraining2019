@@ -12,6 +12,7 @@
         android:orientation="vertical">
 
         <TextView
+            android:id="@+id/available_lessons_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/blue_50"
@@ -21,6 +22,17 @@
             android:textColor="@color/real_black"
             android:textSize="24sp"
             app:fontFamily="@font/indie_flower" />
+
+        <TextView
+            android:id="@+id/counter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/blue_50"
+            android:gravity="center"
+            android:padding="15dp"
+            android:textColor="@color/real_black"
+            android:textSize="24sp"
+            />
 
         <include layout="@layout/android_components_lesson_item" />
 

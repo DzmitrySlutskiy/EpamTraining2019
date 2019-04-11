@@ -15,6 +15,39 @@ https://t.me/joinchat/DNzoqBZ3iHcGMtD4CzR5fw
 
 # Feel free to create issue if some links don't work or you need some help
 
+# 08.04.2019 this task is optional
+* Write own AsyncTask that will have the same API as android.AsyncTask, but will support screen rotation. If we already  downloaded data, we just need to reuse it, if activity was destroyed we need to destoy cache data.
+* Write home screen of your app which will load data from few places in parallel mode and combine them in screen
+
+https://blog.mindorks.com/android-core-looper-handler-and-handlerthread-bd54d69fe91a
+https://developer.android.com/guide/components/processes-and-threads.html?hl=en
+https://developer.android.com/topic/performance/threads?hl=en
+https://developer.android.com/reference/android/os/AsyncTask
+https://developer.android.com/guide/components/loaders
+https://developer.android.com/reference/android/support/v4/app/LoaderManager.html
+https://developer.android.com/reference/android/os/ResultReceiver
+Review Sync collections
+https://habr.com/ru/company/luxoft/blog/157273/
+
+# 28.04.2019
+Patterns => http://citforum.ru/SE/project/pattern/
+
+SOLID => https://ru.wikipedia.org/wiki/SOLID
+
+KISS => https://ru.wikipedia.org/wiki/KISS_(%D0%BF%D1%80%D0%B8%D0%BD%D1%86%D0%B8%D0%BF)
+
+YAGNI => https://ru.wikipedia.org/wiki/YAGNI
+
+DRY => https://ru.wikipedia.org/wiki/Don%E2%80%99t_repeat_yourself
+
+# HW 24.04.2019
+Gradle: https://developer.android.com/studio/build
+examples provided in /gradle branch of this project 
+
+Homework:
+- In your or some demo project use at least 4 buildVariants (using flavors and build type). Use different logic for each.
+- Using modules in your projects is additional plus
+
 # HW 18.04.2019
 Kotlin: https://kotlinlang.ru/
 

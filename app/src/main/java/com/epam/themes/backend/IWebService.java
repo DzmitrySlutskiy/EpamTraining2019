@@ -10,6 +10,10 @@ public interface IWebService<T> {
 
     public T read(final Long pId);
 
+    void getEntities(final int pStartRange,
+                     final int pEndRange,
+                     IOperation<T> poperation);
+
     boolean update(final T t);
 
     void delete(final Long pId);
