@@ -22,5 +22,6 @@ class N31InvokeKtTest {
         testInvokable(0) { it }
     }
 
-    fun Invokable.getNumberOfInvocations() = this.numberOfInvocations
+    operator fun Invokable.invoke() = this.invoke()
+    fun Invokable.getNumberOfInvocations() = this.getNumberOfInvocations()
 }

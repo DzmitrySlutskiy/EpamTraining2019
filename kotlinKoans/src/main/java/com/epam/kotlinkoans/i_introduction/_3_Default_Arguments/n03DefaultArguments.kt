@@ -1,8 +1,6 @@
 package i_introduction._3_Default_Arguments
 
-var defaultNumber = 42
-
-fun foo(name: String, number: Int = defaultNumber, toUpperCase: Boolean = false): String {
+fun foo(name: String, number: Int = 42, toUpperCase: Boolean = false): String {
     return (if (toUpperCase) name.toUpperCase() else name) + number;
 }
 

@@ -1,14 +1,19 @@
 package iii_conventions
 
 class Invokable {
-    var numberOfInvocations: Int = 0
-        private set
+    private var numberOfInvocations: Int = 0
 
     operator fun invoke(): Invokable {
         numberOfInvocations++
 
         return this
     }
+
+    fun getNumberOfInvocations(): Int {
+        return numberOfInvocations
+    }
 }
 
-fun task31(invokable: Invokable) = invokable()()()()
+fun task31(invokable: Invokable): Int {
+    return invokable()()()().getNumberOfInvocations()
+}
