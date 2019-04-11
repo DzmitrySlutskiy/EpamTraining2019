@@ -6,10 +6,10 @@ import android.support.v7.widget.helper.ItemTouchHelper;
 
 public class ItemTouchCallback extends ItemTouchHelper.SimpleCallback {
 
-    private final PageAdapter mAdapter;
+    private final BaseAdapter mAdapter;
     private final RecyclerView mRecycler;
 
-    public ItemTouchCallback(final RecyclerView pRecycler, final PageAdapter pAdapter) {
+    public ItemTouchCallback(final RecyclerView pRecycler, final BaseAdapter pAdapter) {
         super(ItemTouchHelper.UP | ItemTouchHelper.DOWN, ItemTouchHelper.START | ItemTouchHelper.END);
         mAdapter = pAdapter;
         mRecycler = pRecycler;

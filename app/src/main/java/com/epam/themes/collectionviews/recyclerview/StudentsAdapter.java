@@ -1,73 +1,69 @@
 package com.epam.themes.collectionviews.recyclerview;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.support.annotation.IntDef;
 import android.support.annotation.NonNull;
-import android.support.v7.widget.RecyclerView;
-import android.view.LayoutInflater;
+import android.support.v7.app.AlertDialog;
+import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 
 import com.epam.cleancodetest.R;
+import com.epam.themes.backend.IWebService;
 import com.epam.themes.backend.entities.Student;
-import com.epam.themes.uicomponents.LessonView;
-import com.epam.themes.uicomponents.base.BaseViewHolder;
+import com.epam.themes.collectionviews.StudentEditView;
+import com.epam.themes.collectionviews.StudentView;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
-import java.util.ArrayList;
 import java.util.List;
 
-public class StudentsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+public class StudentsAdapter extends BaseAdapter<Student> {
+    private AlertDialog.Builder builder;
 
-    private boolean mIsShowLastViewAsLoading = false;
+    private boolean mIsShowLastViewAsLoading;
 
-    private final LayoutInflater mInflater;
-    private final List<Student> mStudents = new ArrayList<>();
-
-    public StudentsAdapter(final Context pContext) {
-        mInflater = (LayoutInflater) pContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+    public StudentsAdapter(final Context pContext, final IWebService<Student> service) {
+        super(pContext, service);
+        builder = new AlertDialog.Builder(pContext);
     }
 
     @NonNull
     @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull final ViewGroup pParent,
-                                                      @ViewType final int pViewType) {
+    public ViewHolder onCreateViewHolder(@NonNull final ViewGroup pParent,
+                                         @ViewType final int pViewType) {
         if (pViewType == ViewType.STUDENT) {
-            return new BaseViewHolder<>(new LessonView(pParent.getContext()));
+            return new ViewHolder(new StudentView(pParent.getContext()));
         } else {
-            return new BaseViewHolder<>(mInflater.inflate(R.layout.layout_progress, pParent, false));
+            return new ViewHolder(mInflater.inflate(R.layout.layout_progress, pParent, false));
         }
     }
 
     @Override
-    public void onBindViewHolder(@NonNull final RecyclerView.ViewHolder pViewHolder, final int pPosition) {
+    public void onBindViewHolder(@NonNull final ViewHolder pViewHolder, final int pPosition) {
         if (getItemViewType(pPosition) == ViewType.STUDENT) {
-            final Student student = mStudents.get(pPosition);
+            final Student student = mEntities.get(pPosition);
 
-            ((LessonView) pViewHolder.itemView)
-                    .setLessonDate(student.getName())
-                    .setLessonTheme(String.valueOf(student.getHwCount()));
+            ((StudentView) pViewHolder.itemView).updateStudentInfo(student);
+
+            setOnItemClickListener(pViewHolder.itemView, student);
         }
     }
 
     @ViewType
     @Override
     public int getItemViewType(final int pPosition) {
-        if (pPosition < mStudents.size()) {
+        if (pPosition < mEntities.size()) {
             return ViewType.STUDENT;
         } else {
             return ViewType.LOADING;
         }
     }
 
-
     @Override
     public int getItemCount() {
-        if (mIsShowLastViewAsLoading) {
-            return mStudents.size() + 1;
-        } else {
-            return mStudents.size();
-        }
+        return mIsShowLastViewAsLoading ? mEntities.size() + 1 : mEntities.size();
     }
 
     public void setShowLastViewAsLoading(final boolean pIsShow) {
@@ -78,15 +74,54 @@ public class StudentsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     }
 
     public void addItems(final List<Student> pResult) {
-        mStudents.addAll(pResult);
+        mEntities.addAll(pResult);
         notifyDataSetChanged();
     }
 
     @IntDef({ViewType.STUDENT, ViewType.LOADING})
     @Retention(RetentionPolicy.SOURCE)
     @interface ViewType {
-
         int STUDENT = 0;
         int LOADING = 1;
+    }
+
+    private AlertDialog.Builder buildAlertDialog(final Context context, final Student student) {
+        builder.setTitle(R.string.edit_student_dialog_title);
+        StudentEditView view = new StudentEditView(context);
+
+        final EditText name = view.updateStudentName(student.getName());
+        final EditText hwCount = view.updateStudentHwCount(student.getHwCount());
+
+        builder.setView(view);
+
+        builder.setPositiveButton(R.string.alert_dialog_save_label, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                final Student updatedStudent = new Student();
+                updatedStudent.setName(name.getText().toString());
+                updatedStudent.setHwCount(Integer.parseInt(hwCount.getText().toString()));
+                updatedStudent.setId(student.getId());
+                updatedStudent.setIcon(student.getIcon());
+                StudentsAdapter.this.mService.update(updatedStudent);
+                notifyDataSetChanged();
+            }
+        });
+        builder.setNegativeButton(R.string.alert_dialog_close_label, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
+            }
+        });
+
+        return builder;
+    }
+
+    private void setOnItemClickListener(View itemView, final Student student) {
+        itemView.findViewById(R.id.student_view).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                buildAlertDialog(v.getContext(), student).show();
+            }
+        });
     }
 }

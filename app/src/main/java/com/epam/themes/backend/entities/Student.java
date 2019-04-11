@@ -1,18 +1,14 @@
 package com.epam.themes.backend.entities;
 
-public class Student {
+import android.support.annotation.DrawableRes;
 
-    private Long mId;
+public class Student extends BaseEntity {
+
     private String mName;
     private int mHwCount;
 
-    public Long getId() {
-        return mId;
-    }
-
-    public void setId(Long mId) {
-        this.mId = mId;
-    }
+    @DrawableRes
+    private int mIcon;
 
     public String getName() {
         return mName;
@@ -28,5 +24,13 @@ public class Student {
 
     public void setHwCount(int hwCount) {
         mHwCount = hwCount;
+    }
+
+    public int getIcon() {
+        return mIcon;
+    }
+
+    public void setIcon(@DrawableRes int mIcon) {
+        this.mIcon = mIcon;
     }
 }
