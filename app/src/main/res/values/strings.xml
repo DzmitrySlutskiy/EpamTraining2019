@@ -9,4 +9,25 @@
     <string name="name_hint">Name</string>
     <string name="hw_count_hint">Hw count</string>
     <string name="add_student">Add student</string>
+    <string-array name="students">
+        <item>Aliaksei Shvants</item>
+        <item>Maryia Senkevich</item>
+        <item>Pavel Klimovich</item>
+        <item>yahor shymanchyk</item>
+        <item>Anton Liaskevich</item>
+        <item>Yahor Berdnikau</item>
+        <item>MAKSIM ZHANHIALIOU</item>
+        <item>ULADZISLAU SITSKO</item>
+        <item>Goncharov Alexander </item>
+        <item>MAKSIM NASALEVICH</item>
+        <item>Vitali Kullikouski</item>
+        <item>ALIAKSANDR LITSKEVICH</item>
+        <item>Kiryl Shreyter</item>
+        <item>Konopeshko Aleksei</item>
+        <item>NATALLIA BONDARAVA</item>
+        <item>ALIEKSANDR ZAKHARCHANKA</item>
+        <item>ALIAKSEI HALAVACH</item>
+        <item>Maksim Siamashka</item>
+        <item>Vladyslav Vsemirnov</item>
+    </string-array>
 </resources>

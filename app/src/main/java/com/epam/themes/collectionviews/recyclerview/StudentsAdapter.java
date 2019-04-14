@@ -110,8 +110,9 @@ public class StudentsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     }
 
     private void editItem(int i, String name, int hwCount) {
-        mStudents.get(i).setName(name);
-        mStudents.get(i).setHwCount(hwCount);
+        final Student student = mStudents.get(i);
+        student.setName(name);
+        student.setHwCount(hwCount);
         iWebService.editEntity(i, name, hwCount);
         notifyItemChanged(i);
     }
