@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    package="com.epam.cleancodetest">
+          xmlns:tools="http://schemas.android.com/tools"
+          package="com.epam.cleancodetest">
 
     <application
+        android:name="com.epam.CustomApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -12,41 +13,43 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
 
-        <activity android:name="com.epam.LessonsActivity"
+        <activity
+            android:name="com.epam.LessonsActivity"
             android:screenOrientation="sensor">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
 
         <activity
             android:name="com.epam.themes.uicomponents.UIComponentsActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
 
-        <activity android:name="com.epam.themes.compoundview.CompoundViewActivity" />
+        <activity android:name="com.epam.themes.compoundview.CompoundViewActivity"/>
 
-        <activity android:name="com.epam.themes.androidcomponents.AndroidComponentsActivity" />
+        <activity android:name="com.epam.themes.androidcomponents.AndroidComponentsActivity"/>
 
         <activity
             android:name="com.epam.themes.androidcomponents.activities.AActivity"
-            android:launchMode="singleInstance" />
-        <activity android:name="com.epam.themes.androidcomponents.activities.BActivity" />
+            android:launchMode="singleInstance"/>
+        <activity android:name="com.epam.themes.androidcomponents.activities.BActivity"/>
 
-        <activity android:name="com.epam.themes.androidcomponents.activities.CActivity" />
-        <activity android:name="com.epam.themes.collectionviews.CollectionViewsActivity" />
-        <activity android:name="com.epam.themes.collectionviews.StudentsActivity" />
+        <activity android:name="com.epam.themes.androidcomponents.activities.CActivity"/>
+        <activity android:name="com.epam.themes.collectionviews.CollectionViewsActivity"/>
+        <activity android:name="com.epam.themes.collectionviews.StudentsActivity"/>
 
-        <service android:name="com.epam.themes.androidcomponents.SimpleService" />
+        <service android:name="com.epam.themes.androidcomponents.SimpleService"/>
 
         <receiver android:name="com.epam.themes.androidcomponents.SimpleBroadcastReceiver">
             <intent-filter>
-                <action android:name="com.epam.CUSTOM_ACTION" />
+                <action android:name="com.epam.CUSTOM_ACTION"/>
             </intent-filter>
         </receiver>
 
-        <activity android:name="com.epam.themes.LoaderActivity"
+        <activity
+            android:name="com.epam.themes.LoaderActivity"
             android:exported="true"></activity>
     </application>
 

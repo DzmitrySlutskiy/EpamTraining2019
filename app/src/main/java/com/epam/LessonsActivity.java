@@ -1,9 +1,15 @@
 package com.epam;
 
 import android.app.Activity;
+import android.content.ContentResolver;
+import android.content.ContentValues;
 import android.content.Intent;
+import android.database.ContentObserver;
+import android.database.Cursor;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.Looper;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -11,6 +17,9 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.epam.cleancodetest.R;
+import com.epam.database.DatabaseHelper;
+import com.epam.database.model.Tag;
+import com.epam.database.model.UserDatabaseModel;
 import com.epam.themes.collectionviews.CollectionViewsActivity;
 import com.epam.themes.compoundview.CompoundViewActivity;
 import com.epam.themes.uicomponents.UIComponentsActivity;
@@ -30,6 +39,10 @@ import java.util.concurrent.Future;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
+import static com.epam.database.Constants.DatabaseConstants.DATABASE_VERSION;
+import static com.epam.database.Constants.DatabaseConstants.TAG_TABLE_NAME;
+import static com.epam.database.Constants.DatabaseConstants.USER_TABLE_NAME;
+
 public class LessonsActivity extends AppCompatActivity {
 
     public static final String TAG = "LessonsActivity";
@@ -37,6 +50,8 @@ public class LessonsActivity extends AppCompatActivity {
     private CustomAsyncTask customAsyncTask;
     private Lock lock;
     private ExecutorService executorService = Executors.newCachedThreadPool();
+    private ContentResolver mContentResolver;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,6 +80,10 @@ public class LessonsActivity extends AppCompatActivity {
         });
 
         counter = findViewById(R.id.counter);
+        final DatabaseObserver databaseObserver = new DatabaseObserver(new Handler());
+        mContentResolver = getApplicationContext().getContentResolver();
+
+    //    mContentResolver.registerContentObserver(new Uri.Builder().appendPath("content").build(), true, databaseObserver);
     }
 
     @Override
@@ -89,7 +108,7 @@ public class LessonsActivity extends AppCompatActivity {
 
         customAsyncTask = new CustomAsyncTask(this);
         customAsyncTask.execute(0, 1000);
-
+        final DatabaseHelper databaseHelper = new DatabaseHelper(getApplicationContext(), null, DATABASE_VERSION);
 
         final Future<Integer> future1 = executorService.submit(new Callable<Integer>() {
             @Override
@@ -124,6 +143,71 @@ public class LessonsActivity extends AppCompatActivity {
                 return 10;
             }
         });
+
+        executorService.execute(new Runnable() {
+            @Override
+            public void run() {
+                final ContentValues contentValues = new ContentValues();
+
+                contentValues.put(Tag.VALUE, "Magic some");
+                contentValues.put(Tag._ID, 1);
+                contentValues.put(Tag.USER_ID, 1L);
+                databaseHelper.insert(TAG_TABLE_NAME, contentValues);
+
+                ContentValues userContentValues = new ContentValues();
+
+                userContentValues.put(UserDatabaseModel._ID, 1);
+                userContentValues.put(UserDatabaseModel.NAME, "First");
+                userContentValues.put(UserDatabaseModel.PASSWORD, "First password");
+
+                databaseHelper.insert(USER_TABLE_NAME, userContentValues);
+
+                ContentValues user2ContentValues = new ContentValues();
+
+                user2ContentValues.put(UserDatabaseModel._ID, 2);
+                user2ContentValues.put(UserDatabaseModel.NAME, "Second");
+                user2ContentValues.put(UserDatabaseModel.PASSWORD, "Second password");
+
+                databaseHelper.insert(USER_TABLE_NAME, user2ContentValues);
+
+                final Cursor joinCursor = databaseHelper.query("SELECT " + "u." + UserDatabaseModel.NAME + " AS " + "USERNAME" + ", "
+                        + "t." + Tag.VALUE + " AS TAG, " +
+                         "t." + Tag.USER_ID + " * 1000 AS USER_ID  " +
+                        " FROM " +
+                        USER_TABLE_NAME + " AS u LEFT JOIN " + TAG_TABLE_NAME + " AS t" + " on t." + Tag.USER_ID + " = " + "u." + UserDatabaseModel._ID);
+
+                try {
+                    if (joinCursor.moveToFirst()) {
+                        final String tag = joinCursor.getString(joinCursor.getColumnIndex("TAG"));
+                        final String userId = joinCursor.getString(joinCursor.getColumnIndex("USER_ID"));
+                        final String username = joinCursor.getString(joinCursor.getColumnIndex("USERNAME"));
+
+                        Log.d("Magic", "tag " + tag + " " + username + " " + userId);
+                    }
+                } finally {
+                    joinCursor.close();
+                }
+
+            //    mContentResolver.notifyChange(new Uri.Builder().appendPath("content").build(), null);
+
+
+                final Cursor query = databaseHelper.query("SELECT * FROM " + TAG_TABLE_NAME);
+
+                try {
+                    if (query.moveToFirst()) {
+                        final String string = query.getString(query.getColumnIndex(Tag.VALUE));
+                        Log.d("Magic", string);
+                    }
+                } finally {
+                    query.close();
+                }
+
+                final long delete = databaseHelper.delete(USER_TABLE_NAME, null);
+                Log.d("Magic", String.valueOf(delete));
+
+            }
+        });
+
 
         executorService.execute(new Runnable() {
             @Override
@@ -257,5 +341,24 @@ public class LessonsActivity extends AppCompatActivity {
 
     static boolean isMainThread() {
         return Looper.myLooper() == Looper.getMainLooper();
+    }
+
+    private class DatabaseObserver extends ContentObserver {
+
+        /**
+         * Creates a content observer.
+         *
+         * @param handler The handler to run {@link #onChange} on, or null if none.
+         */
+        public DatabaseObserver(final Handler handler) {
+            super(handler);
+        }
+
+        @Override
+        public void onChange(final boolean selfChange, final Uri uri) {
+            super.onChange(selfChange, uri);
+
+            Log.d("Magic", uri.toString());
+        }
     }
 }
