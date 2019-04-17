@@ -4,4 +4,9 @@
 
     <string name="theme_android_components">Android Components</string>
     <string name="theme_android_ui">Android UI</string>
+    <string name="mentor_ui_Egor">Egor</string>
+    <string name="date_of_UI_theme">06.03.2019</string>
+    <string name="date_of_android_components_theme">04.03.2019</string>
+    <string name="mentor_android_components_Artiom">Artiom</string>
+    <string name="more_lessons">Waiting new section there)</string>
 </resources>

@@ -23,7 +23,8 @@
             app:fontFamily="@font/indie_flower" />
 
         <include layout="@layout/android_components_lesson_item" />
+        <include layout="@layout/android_ui_lesson_item" />
+        <include layout="@layout/text_view_next_lessons"/>
 
-        <!--TODO add new item-->
     </LinearLayout>
 </ScrollView>

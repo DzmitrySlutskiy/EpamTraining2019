@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/lesson_components_root_view"
+    android:id="@+id/lesson_ui_root_view"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="?attr/selectableItemBackground"
@@ -25,7 +25,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_toEndOf="@id/avatar"
-        android:text="@string/theme_android_components"
+        android:text="@string/theme_android_ui"
         android:textSize="20sp"
         android:textStyle="bold" />
 
@@ -37,7 +37,7 @@
         android:layout_marginStart="16dp"
         android:layout_toEndOf="@id/avatar"
         android:layout_alignParentBottom="true"
-        android:text="@string/mentor_android_components_Artiom"
+        android:text="@string/mentor_ui_Egor"
         android:textSize="16sp" />
 
     <TextView
@@ -46,8 +46,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:text="@string/date_of_android_components_theme"
+        android:text="@string/date_of_UI_theme"
         tools:ignore="RelativeOverlap" />
 
 </RelativeLayout>
-    
