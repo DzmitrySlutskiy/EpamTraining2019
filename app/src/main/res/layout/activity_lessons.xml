@@ -49,6 +49,15 @@
             app:lessonDate="14.03.2019"
             app:lessonTheme="@string/theme_android_collection_views" />
 
+        <com.epam.themes.uicomponents.LessonView
+            android:id="@+id/imageLoaderView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackground"
+            android:padding="16dp"
+            app:lessonDate="22.04.2019"
+            app:lessonTheme="@string/theme_android_image_loader" />
+
         <!--TODO add new item-->
     </LinearLayout>
 </ScrollView>

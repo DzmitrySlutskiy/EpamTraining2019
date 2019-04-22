@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.epam.cleancodetest">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -11,8 +13,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-
-        <activity android:name="com.epam.LessonsActivity"
+        <activity
+            android:name="com.epam.themes.collectionviews.ImageLoaderActivity"
+            android:label="@string/title_activity_image_loader" />
+        <activity
+            android:name="com.epam.LessonsActivity"
             android:screenOrientation="sensor">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,20 +25,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name="com.epam.themes.uicomponents.UIComponentsActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-
         <activity android:name="com.epam.themes.compoundview.CompoundViewActivity" />
-
         <activity android:name="com.epam.themes.androidcomponents.AndroidComponentsActivity" />
-
         <activity
             android:name="com.epam.themes.androidcomponents.activities.AActivity"
             android:launchMode="singleInstance" />
         <activity android:name="com.epam.themes.androidcomponents.activities.BActivity" />
-
         <activity android:name="com.epam.themes.androidcomponents.activities.CActivity" />
         <activity android:name="com.epam.themes.collectionviews.CollectionViewsActivity" />
         <activity android:name="com.epam.themes.collectionviews.StudentsActivity" />
@@ -46,8 +46,9 @@
             </intent-filter>
         </receiver>
 
-        <activity android:name="com.epam.themes.LoaderActivity"
-            android:exported="true"></activity>
+        <activity
+            android:name="com.epam.themes.LoaderActivity"
+            android:exported="true" />
     </application>
 
 </manifest>

@@ -1,5 +1,6 @@
 package com.epam.themes.backend;
 
+import com.epam.themes.backend.entities.Student;
 import com.epam.themes.util.ICallback;
 
 import java.util.List;

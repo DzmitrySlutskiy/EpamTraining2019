@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import com.epam.cleancodetest.R;
 import com.epam.themes.collectionviews.CollectionViewsActivity;
+import com.epam.themes.collectionviews.ImageLoaderActivity;
 import com.epam.themes.compoundview.CompoundViewActivity;
 import com.epam.themes.uicomponents.UIComponentsActivity;
 
@@ -61,6 +62,13 @@ public class LessonsActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 openLesson(CollectionViewsActivity.class);
+            }
+        });
+
+        findViewById(R.id.imageLoaderView).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openLesson(ImageLoaderActivity.class);
             }
         });
 

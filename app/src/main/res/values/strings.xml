@@ -6,4 +6,6 @@
     <string name="theme_android_ui">Android UI</string>
     <string name="theme_android_compound_view">Compound View</string>
     <string name="theme_android_collection_views">Collection Views</string>
+    <string name="theme_android_image_loader">Image Loader</string>
+    <string name="title_activity_image_loader">ImageLoaderActivity</string>
 </resources>
