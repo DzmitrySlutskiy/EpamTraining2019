@@ -1,7 +1,5 @@
 package i_introduction._7_Nullable_Types
 
-import com.epam.kotlinkoans.i_introduction._7_Nullable_Types.JavaCode7
-
 fun test() {
     val s: String = "this variable cannot store null references"
     val q: String? = null
