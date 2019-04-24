@@ -1,5 +1,6 @@
-package com.epam.kotlinkoans.i_introduction._1_Java_To_Kotlin_Converter
+package i_introduction._1_Java_To_Kotlin_Converter
 
+import com.epam.kotlinkoans.i_introduction._1_Java_To_Kotlin_Converter.JavaCode1
 import util.TODO
 
 fun todoTask1(collection: Collection<Int>): Nothing = TODO(
@@ -12,4 +13,17 @@ fun todoTask1(collection: Collection<Int>): Nothing = TODO(
     """,
     references = { JavaCode1().task1(collection) })
 
-fun task1(collection: Collection<Int>): String = JavaCode1().task1(collection)
+fun task1(collection: Collection<Int>): String {
+    val sb = StringBuilder()
+    sb.append("{")
+    val iterator = collection.iterator()
+    while (iterator.hasNext()) {
+        val element = iterator.next()
+        sb.append(element)
+        if (iterator.hasNext()) {
+            sb.append(", ")
+        }
+    }
+    sb.append("}")
+    return sb.toString()
+}

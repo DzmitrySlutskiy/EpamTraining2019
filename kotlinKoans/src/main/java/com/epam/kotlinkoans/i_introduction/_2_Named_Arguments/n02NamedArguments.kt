@@ -1,6 +1,6 @@
 package i_introduction._2_Named_Arguments
 
-import com.epam.kotlinkoans.i_introduction._1_Java_To_Kotlin_Converter.task1
+import i_introduction._1_Java_To_Kotlin_Converter.task1
 import util.TODO
 import util.doc2
 
