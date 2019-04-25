@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.epam.cleancodetest.R;
+import com.epam.themes.backend.TrainingImageLoader;
 import com.epam.themes.uicomponents.base.BaseViewHolder;
 import com.epam.themes.util.IImageLoader;
 
@@ -17,12 +18,13 @@ import java.util.List;
 
 public class ImageAdapter extends RecyclerView.Adapter<BaseViewHolder> {
 
+    private final IImageLoader mImageLoader;
     private final List<String> mItems = new ArrayList<>();
-    private final IImageLoader mImageLoader = IImageLoader.Utils.getInstance();
 
     private final LayoutInflater mLayoutInflater;
 
     public ImageAdapter(final Context pContext) {
+        mImageLoader = new TrainingImageLoader(pContext);
         mLayoutInflater = (LayoutInflater) pContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 

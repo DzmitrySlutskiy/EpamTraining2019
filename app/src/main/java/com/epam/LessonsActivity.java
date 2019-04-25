@@ -1,10 +1,15 @@
 package com.epam;
 
+import android.Manifest;
 import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Looper;
+import android.support.annotation.Nullable;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -34,6 +39,7 @@ import java.util.concurrent.locks.ReentrantLock;
 public class LessonsActivity extends AppCompatActivity {
 
     public static final String TAG = "LessonsActivity";
+    public static final int RC_IMAGE_LOADER_ACTIVITY = 135;
     private TextView counter;
     private CustomAsyncTask customAsyncTask;
     private Lock lock;
@@ -68,11 +74,28 @@ public class LessonsActivity extends AppCompatActivity {
         findViewById(R.id.imageLoaderView).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openLesson(ImageLoaderActivity.class);
+                if (ContextCompat.checkSelfPermission(LessonsActivity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_DENIED) {
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                        requestPermissions(new String[] {Manifest.permission.WRITE_EXTERNAL_STORAGE}, RC_IMAGE_LOADER_ACTIVITY);
+                    } else {
+                        openLesson(ImageLoaderActivity.class);
+                    }
+                } else {
+                    openLesson(ImageLoaderActivity.class);
+                }
             }
         });
 
         counter = findViewById(R.id.counter);
+    }
+
+    @Override
+    protected void onActivityResult(final int requestCode, final int resultCode, @Nullable final Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == RC_IMAGE_LOADER_ACTIVITY && resultCode == RESULT_OK) {
+            openLesson(ImageLoaderActivity.class);
+        }
     }
 
     @Override
