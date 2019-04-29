@@ -3,8 +3,11 @@
 
 Collection of free api: https://any-api.com/
 
+
 # Useful plugins:
 SonarLint: https://plugins.jetbrains.com/plugin/7973-sonarlint
+
+Mockk: https://github.com/mockk/mockk
 
 # Useful tools
 Charles/Fiddler
