@@ -1,5 +1,7 @@
-package i_introduction._9_Extension_Functions
+package com.epam.kotlinkoans.i_introduction._9_Extension_Functions
 
+import i_introduction._9_Extension_Functions.RationalNumber
+import i_introduction._9_Extension_Functions.r
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 

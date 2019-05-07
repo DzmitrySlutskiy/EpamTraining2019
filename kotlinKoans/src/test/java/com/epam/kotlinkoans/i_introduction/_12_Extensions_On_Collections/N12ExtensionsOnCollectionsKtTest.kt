@@ -1,5 +1,6 @@
-package i_introduction._12_Extensions_On_Collections
+package com.epam.kotlinkoans.i_introduction._12_Extensions_On_Collections
 
+import i_introduction._12_Extensions_On_Collections.task12
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 

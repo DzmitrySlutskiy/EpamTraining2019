@@ -1,5 +1,6 @@
-package i_introduction._5_String_Templates
+package com.epam.kotlinkoans.i_introduction._5_String_Templates
 
+import i_introduction._5_String_Templates.task5
 import org.junit.jupiter.api.Assertions.assertFalse
 import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test

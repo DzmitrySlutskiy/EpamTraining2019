@@ -1,5 +1,6 @@
-package i_introduction._6_Data_Classes
+package com.epam.kotlinkoans.i_introduction._6_Data_Classes
 
+import i_introduction._6_Data_Classes.task6
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 

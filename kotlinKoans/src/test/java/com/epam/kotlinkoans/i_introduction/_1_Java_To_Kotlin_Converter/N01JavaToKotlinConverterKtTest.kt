@@ -1,5 +1,6 @@
-package i_introduction._1_Java_To_Kotlin_Converter
+package com.epam.kotlinkoans.i_introduction._1_Java_To_Kotlin_Converter
 
+import i_introduction._1_Java_To_Kotlin_Converter.task1
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
