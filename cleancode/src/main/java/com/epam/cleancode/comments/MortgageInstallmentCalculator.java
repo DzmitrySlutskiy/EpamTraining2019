@@ -1,39 +1,33 @@
 package com.epam.cleancode.comments;
 
 public class MortgageInstallmentCalculator {
+    private final static String NEGATIVE_VALUES_ARE_NOT_ALLOWED = "Negative values are not allowed";
 
     /**
-     *
-     * @param p principal amount
-     * @param t term of mortgage in years
-     * @param r rate of interest
+     * @param principalAmount      principal amount
+     * @param termOfMortgageInYear term of mortgage in years
+     * @param rateOfInterest       rate of interest
      * @return monthly payment amount
      */
-    public static double calculateMonthlyPayment(
-            int p, int t, double r) {
+    public static double calculateMonthlyPayment(int principalAmount, int termOfMortgageInYear, double rateOfInterest) {
 
-        //cannot have negative loanAmount, term duration and rate of interest
-        if (p < 0 || t <= 0 || r < 0) {
-            throw new InvalidInputException("Negative values are not allowed");
+        checkValidity(principalAmount, termOfMortgageInYear, rateOfInterest);
+
+
+        if (rateOfInterest / 100.0 == 0) {
+            return principalAmount / (double) (12 * termOfMortgageInYear);
         }
 
-        // Convert interest rate into a decimal - eg. 6.5% = 0.065
-        r /= 100.0;
+        return getMonthlyPayment(principalAmount, rateOfInterest / 100.0 / 12.0, (double) 12 * termOfMortgageInYear);
+    }
 
-        // convert term in years to term in months
-        double tim = t * 12;
+    private static void checkValidity(int principalAmount, int termOfMortgageInYear, double rateOfInterestInPercentage) {
+        if (principalAmount < 0 || termOfMortgageInYear <= 0 || rateOfInterestInPercentage < 0) {
+            throw new InvalidInputException(NEGATIVE_VALUES_ARE_NOT_ALLOWED);
+        }
+    }
 
-        //for zero interest rates
-        if(r==0)
-            return  p/tim;
-
-        // convert into monthly rate
-        double m = r / 12.0;
-
-        // Calculate the monthly payment
-        // The Math.pow() method is used calculate values raised to a power
-        double monthlyPayment = (p * m) / (1 - Math.pow(1 + m, -tim));
-
-        return monthlyPayment;
+    private static double getMonthlyPayment(int principalAmount, double monthlyRate, double termOfMortgageInMonths) {
+        return (principalAmount * monthlyRate) / (1 - Math.pow(1 + monthlyRate, -termOfMortgageInMonths));
     }
 }
