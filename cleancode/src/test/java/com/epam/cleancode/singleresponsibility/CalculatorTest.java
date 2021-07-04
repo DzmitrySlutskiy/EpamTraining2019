@@ -1,5 +1,7 @@
 package com.epam.cleancode.singleresponsibility;
 
+import com.epam.cleancode.exceptions.WrongFormatException;
+
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
