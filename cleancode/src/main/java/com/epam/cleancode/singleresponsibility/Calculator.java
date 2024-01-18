@@ -1,48 +1,68 @@
 package com.epam.cleancode.singleresponsibility;
 
-public class Calculator{
+class Calculator{
 
     private static final String SEPARATOR = ",";
+    private static final String DIGITREGEX = "[\\d,]*";
 
-    public String add(String numbers) {
+    String add(String numbers) {
+
         validate(numbers);
-        return "sum: " + String.valueOf(getSum(numbers));
+
+        return "sum: " + getSum(numbers);
     }
 
-    public String multiply(String numbers) {
+    String multiply(String numbers) {
+
         validate(numbers);
-        return "product: " + String.valueOf(getProduct(numbers));
+
+        return "product: " + getProduct(numbers);
     }
 
     private int getSum(String numbers) {
+
         int sum = 0;
-        for (String s : numbers.split(SEPARATOR)) if (isNotEmpty(s)) sum += Integer.valueOf(s);
+
+        for (String separatedPart : numbers.split(SEPARATOR)){
+
+            if (isNotEmpty(separatedPart)){
+                sum += Integer.valueOf(separatedPart);
+            }
+        }
+
         return sum;
     }
 
     private int getProduct(String numbers) {
+
         int sum = 1;
-        for (String s : numbers.split(SEPARATOR))
-            if (isNotEmpty(s))
-                sum *= Integer.valueOf(s);
+
+        for (String separatedPart : numbers.split(SEPARATOR))
+            if (isNotEmpty(separatedPart))
+                sum *= Integer.valueOf(separatedPart);
         return sum;
     }
 
     private boolean isNotEmpty(String numbers) {
+
         return !numbers.isEmpty();
     }
 
     private void validate(String numbers) {
-        if (numbers == null || isNotDigits(numbers))
-            throw new WrongFormatException();
+
+        if (numbers == null || isNotDigits(numbers)) {
+            throw new WrongFormatException("Only digits supported");
+        }
     }
 
     private boolean isNotDigits(String numbers) {
+
         return !isDigits(numbers);
     }
 
     private boolean isDigits(String numbers) {
-        return numbers.matches("[\\d" + SEPARATOR + "]*");
+
+        return numbers.matches(DIGITREGEX);
     }
 
 }
