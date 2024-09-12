@@ -1,4 +1,8 @@
 package com.epam.cleancode.singleresponsibility;
 
-public class WrongFormatException extends RuntimeException {
+class WrongFormatException extends RuntimeException {
+
+    WrongFormatException(String error) {
+        super();
+    }
 }
