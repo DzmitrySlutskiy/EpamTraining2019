@@ -6,25 +6,37 @@ public class Calculator{
 
     public String add(String numbers) {
         validate(numbers);
+        
         return "sum: " + String.valueOf(getSum(numbers));
     }
 
     public String multiply(String numbers) {
         validate(numbers);
+        
         return "product: " + String.valueOf(getProduct(numbers));
     }
 
     private int getSum(String numbers) {
         int sum = 0;
-        for (String s : numbers.split(SEPARATOR)) if (isNotEmpty(s)) sum += Integer.valueOf(s);
+        
+        for (String s : numbers.split(SEPARATOR)){
+            if (isNotEmpty(s)){
+                sum += Integer.valueOf(s);
+            }
+        }
+        
         return sum;
     }
 
     private int getProduct(String numbers) {
         int sum = 1;
-        for (String s : numbers.split(SEPARATOR))
-            if (isNotEmpty(s))
+        
+        for (String s : numbers.split(SEPARATOR)){
+            if (isNotEmpty(s)){
                 sum *= Integer.valueOf(s);
+            }
+        }
+        
         return sum;
     }
 
@@ -33,8 +45,9 @@ public class Calculator{
     }
 
     private void validate(String numbers) {
-        if (numbers == null || isNotDigits(numbers))
+        if (numbers == null || isNotDigits(numbers)){
             throw new WrongFormatException();
+        }
     }
 
     private boolean isNotDigits(String numbers) {
