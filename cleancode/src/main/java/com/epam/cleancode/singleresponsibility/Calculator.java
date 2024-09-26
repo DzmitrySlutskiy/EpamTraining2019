@@ -1,31 +1,43 @@
 package com.epam.cleancode.singleresponsibility;
 
-public class Calculator{
+public class Calculator {
 
     private static final String SEPARATOR = ",";
 
     public String add(String numbers) {
         validate(numbers);
-        return "sum: " + String.valueOf(getSum(numbers));
+
+        return "summa: " + getSum(numbers);
     }
 
     public String multiply(String numbers) {
         validate(numbers);
-        return "product: " + String.valueOf(getProduct(numbers));
+
+        return "product: " + getProduct(numbers);
     }
 
     private int getSum(String numbers) {
-        int sum = 0;
-        for (String s : numbers.split(SEPARATOR)) if (isNotEmpty(s)) sum += Integer.valueOf(s);
-        return sum;
+        int summa = 0;
+
+        for (String s : numbers.split(SEPARATOR)) {
+            if (isNotEmpty(s)) {
+                summa += Integer.valueOf(s);
+            }
+        }
+
+        return summa;
     }
 
     private int getProduct(String numbers) {
-        int sum = 1;
-        for (String s : numbers.split(SEPARATOR))
-            if (isNotEmpty(s))
-                sum *= Integer.valueOf(s);
-        return sum;
+        int summa = 1;
+
+        for (String s : numbers.split(SEPARATOR)) {
+            if (isNotEmpty(s)) {
+                summa *= Integer.valueOf(s);
+            }
+        }
+
+        return summa;
     }
 
     private boolean isNotEmpty(String numbers) {

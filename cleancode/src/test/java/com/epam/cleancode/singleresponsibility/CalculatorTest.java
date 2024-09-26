@@ -11,12 +11,12 @@ public class CalculatorTest {
 
     @Test
     public void shouldAddAllNumbers() {
-        add("", "sum: 0");
-        add("1", "sum: 1");
-        add("1,1", "sum: 2");
-        add("48,222", "sum: 270");
-        add("1,2,3", "sum: 6");
-        add(",1,2,,,,3,", "sum: 6");
+        add("", "summa: 0");
+        add("1", "summa: 1");
+        add("1,1", "summa: 2");
+        add("48,222", "summa: 270");
+        add("1,2,3", "summa: 6");
+        add(",1,2,,,,3,", "summa: 6");
     }
 
     @Test(expected = WrongFormatException.class)
